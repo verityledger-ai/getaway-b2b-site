@@ -1139,32 +1139,33 @@
             <p>Thanks for reaching out. We'll review your request and send you a personalized demo link within one business day.</p>
           </div>
 
-          <form class="contact-form" id="contactForm" action="mailto:hello@getaway.expert" method="get" enctype="text/plain">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvwvlqb" method="POST">
+            <input type="hidden" name="_subject" value="New Demo Request — Getaway B2B" />
             <div class="form-row">
               <div class="form-field">
                 <label>First Name</label>
-                <input type="text" name="First Name" placeholder="Laurie" required />
+                <input type="text" name="first_name" placeholder="Jane" required />
               </div>
               <div class="form-field">
                 <label>Last Name</label>
-                <input type="text" name="Last Name" placeholder="Smith" required />
+                <input type="text" name="last_name" placeholder="Smith" required />
               </div>
             </div>
             <div class="form-field">
               <label>Email</label>
-              <input type="email" name="Email" placeholder="you@visitcity.org" required />
+              <input type="email" name="email" placeholder="you@visitcity.org" required />
             </div>
             <div class="form-field">
               <label>Organization</label>
-              <input type="text" name="Organization" placeholder="Traverse City Tourism" required />
+              <input type="text" name="organization" placeholder="Traverse City Tourism" required />
             </div>
             <div class="form-field">
               <label>Destination / Region</label>
-              <input type="text" name="Destination" placeholder="Traverse City, MI" required />
+              <input type="text" name="destination" placeholder="Traverse City, MI" required />
             </div>
             <div class="form-field">
               <label>Organization Type</label>
-              <select name="Type">
+              <select name="org_type">
                 <option value="">Select one...</option>
                 <option>Convention &amp; Visitors Bureau (CVB)</option>
                 <option>Destination Marketing Organization (DMO)</option>
@@ -1176,7 +1177,7 @@
             </div>
             <div class="form-field">
               <label>Anything else we should know?</label>
-              <textarea name="Message" placeholder="Tell us about your destination, your current website, or anything specific you're hoping to accomplish..."></textarea>
+              <textarea name="message" placeholder="Tell us about your destination, your current website, or anything specific you're hoping to accomplish..."></textarea>
             </div>
             <button type="submit" class="btn-submit">Send My Request →</button>
           </form>
@@ -1190,13 +1191,13 @@
     <a href="#" class="logo">Get<em>away</em></a>
     <span class="tagline">No fees. No affiliates. Just honest travel planning.</span>
     <nav>
-      <a href="mailto:hello@getaway.expert">hello@getaway.expert</a>
+      <a href="/cdn-cgi/l/email-protection#bbd3ded7d7d4fbdcdecfdaccdac295dec3cbdec9cf"><span class="__cf_email__" data-cfemail="7b131e1717143b1c1e0f1a0c1a02551e030b1e090f">[email&#160;protected]</span></a>
       <a href="/privacy">Privacy</a>
       <a href="/terms">Terms</a>
     </nav>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
