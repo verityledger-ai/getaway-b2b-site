@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getaway — AI Trip Planning for Destinations</title>
+  <meta name="description" content="Give your visitors a branded AI trip planner. White-label travel planning software for tourism boards, CVBs, and destination marketing organizations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1A1208;
+      --terra: #C4622D;
+      --terra-light: #E8845A;
+      --terra-pale: #F2C4A8;
+      --cream: #FAF6EF;
+      --cream-dark: #F0E8DA;
+      --warm-gray: #8C7B6B;
+      --rule: #D4C4B0;
+      --mag-white: #FEFCF9;
+      --forest: #2D4A2D;
+      --font-playfair: 'Playfair Display', serif;
+      --font-jost: 'Jost', sans-serif;
+      --font-baskerville: 'Libre Baskerville', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-jost);
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250, 246, 239, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-playfair);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo em {
+      color: var(--terra);
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--terra); }
+
+    .nav-cta {
+      background: var(--terra) !important;
+      color: white !important;
+      padding: 10px 22px;
+      font-size: 0.75rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.12em !important;
+      text-transform: uppercase !important;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s !important;
+      text-decoration: none;
+    }
+
+    .nav-cta:hover { background: var(--terra-light) !important; color: white !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--ink);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1800&q=75');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.18;
+    }
+
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-top-rule {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: var(--terra);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--terra-light);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: var(--font-playfair);
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 0.95;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title em {
+      color: var(--terra-light);
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .hero-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--terra);
+      margin: 0 auto 24px;
+      opacity: 0.8;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-baskerville);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-style: italic;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 16px;
+    }
+
+    .hero-desc {
+      font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 18px 40px;
+      background: var(--terra);
+      color: #fff;
+      font-family: var(--font-jost);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 24px rgba(196, 98, 45, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--terra-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      padding: 16px 36px;
+      background: transparent;
+      color: rgba(255,255,255,0.65);
+      font-family: var(--font-jost);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.5);
+      color: #fff;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-scroll::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.15);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 100px 40px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-playfair);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .section-title em {
+      color: var(--terra);
+      font-style: italic;
+    }
+
+    .section-rule {
+      width: 40px;
+      height: 2px;
+      background: var(--terra);
+      margin-bottom: 24px;
+      opacity: 0.6;
+    }
+
+    .section-lead {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--warm-gray);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    /* ── PROBLEM SECTION ── */
+    .problem {
+      background: var(--mag-white);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 56px;
+    }
+
+    .problem-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .problem-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .problem-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--cream-dark);
+      border: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+
+    .problem-item h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .problem-item p {
+      font-size: 0.88rem;
+      color: var(--warm-gray);
+      line-height: 1.6;
+    }
+
+    .problem-quote {
+      background: var(--ink);
+      color: #fff;
+      padding: 48px 40px;
+      position: relative;
+    }
+
+    .problem-quote::before {
+      content: '"';
+      font-family: var(--font-playfair);
+      font-size: 8rem;
+      color: var(--terra);
+      opacity: 0.2;
+      position: absolute;
+      top: -10px;
+      left: 24px;
+      line-height: 1;
+    }
+
+    .problem-quote blockquote {
+      font-family: var(--font-baskerville);
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .problem-quote cite {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terra-light);
+      font-style: normal;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how {
+      background: var(--cream);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 56px;
+      background: var(--rule);
+    }
+
+    .step {
+      background: var(--mag-white);
+      padding: 48px 36px;
+      position: relative;
+    }
+
+    .step-num {
+      font-family: var(--font-playfair);
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--cream-dark);
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: -0.04em;
+    }
+
+    .step h3 {
+      font-family: var(--font-playfair);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .step p {
+      font-size: 0.9rem;
+      color: var(--warm-gray);
+      line-height: 1.7;
+    }
+
+    .step-accent {
+      width: 32px;
+      height: 3px;
+      background: var(--terra);
+      margin-bottom: 20px;
+    }
+
+    /* ── DEMO SECTION ── */
+    .demo {
+      background: var(--ink);
+      color: #fff;
+      text-align: center;
+    }
+
+    .demo .section-eyebrow { color: var(--terra-light); }
+    .demo .section-title { color: #fff; }
+    .demo .section-lead { color: rgba(255,255,255,0.55); margin: 0 auto 48px; }
+    .demo .section-rule { margin: 0 auto 24px; }
+
+    .demo-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 48px;
+    }
+
+    .demo-city-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--terra-light);
+      margin-bottom: 12px;
+    }
+
+    .demo-city-name {
+      font-family: var(--font-playfair);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .demo-city-name em {
+      color: #c4a747;
+      font-style: italic;
+    }
+
+    .demo-city-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 32px;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+    }
+
+    .demo-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(196, 98, 45, 0.15);
+      color: var(--terra-light);
+      border: 1px solid rgba(196, 98, 45, 0.25);
+      padding: 6px 14px;
+      margin-bottom: 32px;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      background: var(--cream-dark);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 56px;
+      background: var(--rule);
+    }
+
+    .feature-card {
+      background: var(--mag-white);
+      padding: 40px 36px;
+    }
+
+    .feature-card h3 {
+      font-family: var(--font-playfair);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 0.88rem;
+      color: var(--warm-gray);
+      line-height: 1.7;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--terra);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    /* ── WHO IT'S FOR ── */
+    .who {
+      background: var(--mag-white);
+      border-top: 1px solid var(--rule);
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+
+    .who-card {
+      border-top: 3px solid var(--terra);
+      padding-top: 24px;
+    }
+
+    .who-card h3 {
+      font-family: var(--font-playfair);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .who-card p {
+      font-size: 0.88rem;
+      color: var(--warm-gray);
+      line-height: 1.7;
+    }
+
+    /* ── PRICING ── */
+    .pricing {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .pricing .section-rule { margin: 0 auto 24px; }
+    .pricing .section-lead { margin: 0 auto 56px; }
+
+    .pricing-card {
+      background: var(--ink);
+      color: #fff;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 56px 48px;
+      position: relative;
+      border-top: 5px solid var(--terra);
+    }
+
+    .pricing-tag {
+      position: absolute;
+      top: -1px;
+      right: 40px;
+      background: var(--terra);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+    }
+
+    .pricing-price {
+      font-family: var(--font-playfair);
+      font-size: 4rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .pricing-price span {
+      font-family: var(--font-jost);
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .pricing-setup {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 36px;
+      letter-spacing: 0.03em;
+    }
+
+    .pricing-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 32px 0;
+    }
+
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .pricing-features li::before {
+      content: '—';
+      color: var(--terra-light);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .pricing-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.25);
+      margin-top: 20px;
+      font-style: italic;
+      font-family: var(--font-baskerville);
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: var(--terra);
+      color: #fff;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contact .section-eyebrow { color: rgba(255,255,255,0.55); }
+    .contact .section-title { color: #fff; }
+    .contact .section-rule { background: rgba(255,255,255,0.4); }
+    .contact .section-lead { color: rgba(255,255,255,0.7); }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-field label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-family: var(--font-jost);
+      font-size: 0.9rem;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus { border-color: rgba(255,255,255,0.6); }
+
+    .form-field select option { background: var(--ink); color: #fff; }
+
+    .form-field textarea { resize: vertical; min-height: 100px; }
+
+    .btn-submit {
+      padding: 18px 40px;
+      background: var(--ink);
+      color: #fff;
+      font-family: var(--font-jost);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+
+    .btn-submit:hover { background: #2d2010; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    footer .logo {
+      font-family: var(--font-playfair);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+    }
+
+    footer .logo em { color: var(--terra-light); font-style: italic; }
+
+    footer .tagline {
+      font-family: var(--font-baskerville);
+      font-style: italic;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    footer nav a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      margin-left: 24px;
+      transition: color 0.2s;
+    }
+
+    footer nav a:hover { color: var(--terra-light); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      section { padding: 72px 24px; }
+      .problem-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .steps { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .who-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+      footer nav a { margin: 0 12px; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* success message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .form-success h3 {
+      font-family: var(--font-playfair);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .form-success p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Get<em>away</em></a>
+    <ul class="nav-links">
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#demo">Live Demo</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact" class="nav-cta">Request a Demo</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-top-rule"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">For Tourism Boards &amp; DMOs</div>
+      <h1 class="hero-title">
+        Your destination.<br />
+        Your brand.<br />
+        <em>AI-powered.</em>
+      </h1>
+      <div class="hero-rule"></div>
+      <p class="hero-subtitle">Trip planning your visitors will actually use</p>
+      <p class="hero-desc">
+        Give every visitor a fully branded AI trip planner — live in under two weeks,
+        white-labeled to your destination, no technical team required.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Request a Demo</a>
+        <a href="#demo" class="btn-ghost">See It Live →</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="problem">
+    <div class="section-inner">
+      <div class="section-eyebrow">The Problem</div>
+      <h2 class="section-title">Your visitors are planning<br /><em>somewhere else</em></h2>
+      <div class="section-rule"></div>
+
+      <div class="problem-grid fade-in">
+        <ul class="problem-list">
+          <li class="problem-item">
+            <div class="problem-icon">🔍</div>
+            <div>
+              <h4>They leave your site to plan</h4>
+              <p>After browsing your destination site, visitors open ChatGPT, Google, or TripAdvisor to actually build their trip. You lose the relationship — and the data.</p>
+            </div>
+          </li>
+          <li class="problem-item">
+            <div class="problem-icon">📊</div>
+            <div>
+              <h4>You don't know what visitors want</h4>
+              <p>Traditional sites give you pageviews. Getaway gives you intent data — what travelers are asking for, what they're booking, and what's missing from your destination offer.</p>
+            </div>
+          </li>
+          <li class="problem-item">
+            <div class="problem-icon">🏷️</div>
+            <div>
+              <h4>Generic tools don't know your destination</h4>
+              <p>AI tools like ChatGPT hallucinate restaurants that closed years ago and miss your best hidden gems. Getaway is trained on your specific destination.</p>
+            </div>
+          </li>
+          <li class="problem-item">
+            <div class="problem-icon">💸</div>
+            <div>
+              <h4>You're paying for impressions, not conversion</h4>
+              <p>Marketing spend drives visitors to your site. But once there, most leave without a plan. Getaway turns browsers into bookers.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="problem-quote">
+          <blockquote>
+            "The visitor comes to our website, they look at a few photos, and then they go plan their actual trip somewhere else. We work so hard to get them there and then we lose them."
+          </blockquote>
+          <cite>— Common feedback from DMO marketing directors</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="section-inner">
+      <div class="section-eyebrow">How It Works</div>
+      <h2 class="section-title">From signed contract to<br /><em>live in two weeks</em></h2>
+      <div class="section-rule"></div>
+      <p class="section-lead">We handle the build. You review and approve. Your visitors get a world-class planning experience.</p>
+
+      <div class="steps fade-in">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-accent"></div>
+          <h3>We Build It for You</h3>
+          <p>We create a fully branded planner — your colors, your logo, your destination's restaurants, activities, and accommodations. No templates. No DIY configuration. We do the work.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-accent"></div>
+          <h3>You Review &amp; Launch</h3>
+          <p>We send you a live preview link. You test it, give feedback, we refine. When you're happy, we go live on your domain or a subdomain of getaway.expert — your choice.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-accent"></div>
+          <h3>Visitors Plan. You Win.</h3>
+          <p>Embed the link on your homepage, in emails, anywhere. Visitors answer 6 quick questions and get a complete itinerary in 60 seconds — restaurants, shows, lodging, timing, all of it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE DEMO -->
+  <section class="demo" id="demo">
+    <div class="section-inner">
+      <div class="section-eyebrow">Live Example</div>
+      <h2 class="section-title">See a real deployment</h2>
+      <div class="section-rule"></div>
+      <p class="section-lead">This is exactly what your visitors would experience — fully branded to your destination.</p>
+
+      <div class="demo-card fade-in">
+        <div class="demo-city-label">White-Label Demo</div>
+        <div class="demo-city-name">Branson<em>, MO</em></div>
+        <div class="demo-city-desc">Navy &amp; gold branding · Ozarks-specific content · Live AI itinerary generation</div>
+        <div class="demo-tag">✓ Live &amp; fully functional</div>
+        <br />
+        <a href="https://getaway-production-3cf0.up.railway.app" target="_blank" class="btn-primary" style="display:inline-block;">
+          Try the Branson Demo →
+        </a>
+        <p style="font-size:0.78rem; color:rgba(255,255,255,0.25); margin-top:20px; font-family:'Libre Baskerville',serif; font-style:italic;">
+          Every deployment is built from scratch for your destination — colors, content, and local knowledge are yours.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="section-inner">
+      <div class="section-eyebrow">What You Get</div>
+      <h2 class="section-title">Everything your visitors<br /><em>need to say yes</em></h2>
+      <div class="section-rule"></div>
+
+      <div class="features-grid fade-in">
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Fully Branded to Your Destination</h3>
+          <p>Your colors, your fonts, your photography. Visitors never see the Getaway brand — only yours. It lives at a URL you control and looks like it was built just for you. Because it was.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>AI That Knows Your Destination</h3>
+          <p>Not generic AI. We train the planner on your specific restaurants, attractions, events, and local knowledge. No hallucinated businesses, no outdated info — just accurate, local recommendations.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📄</div>
+          <h3>PDF Export &amp; Trip Sharing</h3>
+          <p>Visitors can download a beautifully formatted PDF itinerary to bring on their trip, share with travel companions, and save for later. Every PDF is branded to your destination.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile-First Experience</h3>
+          <p>Built for the phone in the visitor's pocket. Whether they're planning at home or standing on your main street, the experience is fast, clean, and effortless.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔗</div>
+          <h3>Embed Anywhere</h3>
+          <p>Drop a link on your homepage, in your email newsletter, in your visitor guide QR code, or in your social bio. No embed code, no developer needed — just a URL.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Live in Two Weeks</h3>
+          <p>From signed contract to live deployment in under 14 days. No 6-month agency engagement, no procurement gauntlet, no IT project. We build it. You approve it. Done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="who">
+    <div class="section-inner">
+      <div class="section-eyebrow">Who It's For</div>
+      <h2 class="section-title">Built for the people who<br /><em>market destinations</em></h2>
+      <div class="section-rule"></div>
+
+      <div class="who-grid fade-in">
+        <div class="who-card">
+          <h3>Convention &amp; Visitors Bureaus</h3>
+          <p>Turn your destination website from a brochure into a planning tool. Give leisure travelers a reason to stay longer and come back.</p>
+        </div>
+        <div class="who-card">
+          <h3>Tourism Boards &amp; DMOs</h3>
+          <p>Add AI trip planning to your digital presence without a technology budget or internal development team. We handle everything.</p>
+        </div>
+        <div class="who-card">
+          <h3>Chambers of Commerce</h3>
+          <p>Showcase your member businesses inside a real visitor tool. Every recommendation in the planner drives traffic to local restaurants, hotels, and attractions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="section-inner">
+      <div class="section-eyebrow">Pricing</div>
+      <h2 class="section-title">Simple, <em>honest</em> pricing</h2>
+      <div class="section-rule"></div>
+      <p class="section-lead">No per-user fees. No usage limits. No surprises. One flat monthly rate for an enterprise-quality destination planner.</p>
+
+      <div class="pricing-card fade-in">
+        <div class="pricing-tag">Most Popular</div>
+        <div class="pricing-price">$750 <span>/ month</span></div>
+        <div class="pricing-setup">+ $500 one-time setup fee</div>
+
+        <div class="pricing-divider"></div>
+
+        <ul class="pricing-features">
+          <li>Fully custom branded deployment for your destination</li>
+          <li>AI itinerary generation trained on local knowledge</li>
+          <li>Unlimited visitor sessions — no caps, no throttling</li>
+          <li>PDF export with your destination branding</li>
+          <li>Trip sharing &amp; collaborative planning</li>
+          <li>Mobile-optimized experience</li>
+          <li>Ongoing content updates as your destination evolves</li>
+          <li>Dedicated support — real humans, fast responses</li>
+        </ul>
+
+        <a href="#contact" class="btn-primary" style="display:inline-block; width:100%; text-align:center;">
+          Request a Demo
+        </a>
+
+        <p class="pricing-note">All contracts are month-to-month. Cancel anytime. Setup fee waived for annual commitments.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div>
+          <div class="section-eyebrow">Get Started</div>
+          <h2 class="section-title">Let's build your<br /><em>destination planner</em></h2>
+          <div class="section-rule"></div>
+          <p class="section-lead">
+            Tell us a bit about your destination and we'll send you a personalized demo link built for your area — no commitment required.
+          </p>
+          <br /><br />
+          <p style="font-size:0.82rem; color:rgba(255,255,255,0.5); line-height:1.8;">
+            Typical response time: <strong style="color:rgba(255,255,255,0.8);">same business day</strong><br />
+            Demo delivery: <strong style="color:rgba(255,255,255,0.8);">within 5 business days</strong><br />
+            Go-live timeline: <strong style="color:rgba(255,255,255,0.8);">under two weeks</strong>
+          </p>
+        </div>
+
+        <div>
+          <div class="form-success" id="formSuccess">
+            <h3>We'll be in touch soon.</h3>
+            <p>Thanks for reaching out. We'll review your request and send you a personalized demo link within one business day.</p>
+          </div>
+
+          <form class="contact-form" id="contactForm" action="mailto:hello@getaway.expert" method="get" enctype="text/plain">
+            <div class="form-row">
+              <div class="form-field">
+                <label>First Name</label>
+                <input type="text" name="First Name" placeholder="Laurie" required />
+              </div>
+              <div class="form-field">
+                <label>Last Name</label>
+                <input type="text" name="Last Name" placeholder="Smith" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label>Email</label>
+              <input type="email" name="Email" placeholder="you@visitcity.org" required />
+            </div>
+            <div class="form-field">
+              <label>Organization</label>
+              <input type="text" name="Organization" placeholder="Traverse City Tourism" required />
+            </div>
+            <div class="form-field">
+              <label>Destination / Region</label>
+              <input type="text" name="Destination" placeholder="Traverse City, MI" required />
+            </div>
+            <div class="form-field">
+              <label>Organization Type</label>
+              <select name="Type">
+                <option value="">Select one...</option>
+                <option>Convention &amp; Visitors Bureau (CVB)</option>
+                <option>Destination Marketing Organization (DMO)</option>
+                <option>Chamber of Commerce</option>
+                <option>Tourism Board</option>
+                <option>City / County Tourism Office</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Anything else we should know?</label>
+              <textarea name="Message" placeholder="Tell us about your destination, your current website, or anything specific you're hoping to accomplish..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send My Request →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#" class="logo">Get<em>away</em></a>
+    <span class="tagline">No fees. No affiliates. Just honest travel planning.</span>
+    <nav>
+      <a href="mailto:hello@getaway.expert">hello@getaway.expert</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </nav>
+  </footer>
+
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Smooth nav highlight
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      const pos = window.scrollY;
+      document.querySelectorAll('section[id]').forEach(sec => {
+        if (pos >= sec.offsetTop - 100) {
+          navLinks.forEach(l => l.style.color = '');
+          const active = document.querySelector(`.nav-links a[href="#${sec.id}"]`);
+          if (active) active.style.color = 'var(--terra)';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
