@@ -4,15 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Primary SEO -->
-  <title>Getaway | AI Trip Planning Tool for Tourism Boards, CVBs & DMOs</title>
+  <title>Getaway | AI Trip Planning for Tourism Boards, CVBs & DMOs</title>
   <meta name="description" content="Getaway is a white-label AI trip planning tool built for tourism boards, chambers of commerce, and destination marketing organizations. Give every visitor a personalized itinerary — branded to your destination, live in under two weeks." />
   <meta name="keywords" content="AI trip planner for tourism boards, white label travel planning software, DMO technology, CVB digital tools, destination marketing software, AI itinerary generator, tourism technology, destination planning tool" />
   <link rel="canonical" href="https://partners.getaway.expert" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Getaway" />
 
-  <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://partners.getaway.expert" />
   <meta property="og:title" content="Getaway | AI Trip Planning for Tourism Boards & DMOs" />
@@ -20,13 +18,11 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80" />
   <meta property="og:site_name" content="Getaway" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Getaway | AI Trip Planning for Tourism Boards & DMOs" />
   <meta name="twitter:description" content="Give every visitor a fully branded AI trip planner. White-labeled to your destination, live in under two weeks." />
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80" />
 
-  <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,17 +31,6 @@
     "applicationCategory": "TravelApplication",
     "description": "White-label AI trip planning software for tourism boards, CVBs, and destination marketing organizations.",
     "url": "https://partners.getaway.expert",
-    "offers": {
-      "@type": "Offer",
-      "price": "750",
-      "priceCurrency": "USD",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "price": "750",
-        "priceCurrency": "USD",
-        "unitText": "MONTH"
-      }
-    },
     "provider": {
       "@type": "Organization",
       "name": "Getaway",
@@ -53,9 +38,11 @@
     }
   }
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -69,966 +56,388 @@
       --warm-gray: #8C7B6B;
       --rule: #D4C4B0;
       --mag-white: #FEFCF9;
-      --forest: #2D4A2D;
       --font-playfair: 'Playfair Display', serif;
       --font-jost: 'Jost', sans-serif;
       --font-baskerville: 'Libre Baskerville', serif;
     }
 
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: var(--font-jost);
-      font-weight: 400;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+    body { background: var(--cream); color: var(--ink); font-family: var(--font-jost); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
 
     /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(250, 246, 239, 0.92);
-      backdrop-filter: blur(12px);
+    nav.site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(250,246,239,0.96); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--rule);
-      padding: 0 40px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      padding: 0 40px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
     }
-
-    .nav-logo {
-      font-family: var(--font-playfair);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--ink);
-      text-decoration: none;
-      letter-spacing: -0.01em;
-    }
-
-    .nav-logo em {
-      color: var(--terra);
-      font-style: italic;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--warm-gray);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .nav-logo { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; flex-shrink: 0; }
+    .nav-logo em { color: var(--terra); font-style: italic; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-gray); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--terra); }
+    .nav-cta { background: var(--terra) !important; color: white !important; padding: 10px 22px; font-size: 0.72rem !important; font-weight: 700 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; border: none; cursor: pointer; transition: background 0.2s, transform 0.15s !important; text-decoration: none; white-space: nowrap; }
+    .nav-cta:hover { background: var(--terra-light) !important; color: white !important; transform: translateY(-1px); }
 
-    .nav-cta {
-      background: var(--terra) !important;
-      color: white !important;
-      padding: 10px 22px;
-      font-size: 0.75rem !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.12em !important;
-      text-transform: uppercase !important;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s !important;
-      text-decoration: none;
-    }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); transition: all 0.25s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .nav-cta:hover { background: var(--terra-light) !important; color: white !important; }
+    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(250,246,239,0.98); backdrop-filter: blur(16px); border-bottom: 1px solid var(--rule); z-index: 199; padding: 24px 24px 32px; flex-direction: column; gap: 0; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 0.88rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm-gray); text-decoration: none; padding: 14px 0; border-bottom: 1px solid var(--rule); transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--terra); }
+    .mobile-menu .mobile-cta { margin-top: 20px; background: var(--terra); color: white !important; text-align: center; padding: 16px; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; border-bottom: none; }
+    .mobile-menu .mobile-cta:hover { background: var(--terra-light); color: white !important; }
+
+    /* ── SCARCITY BANNER ── */
+    .scarcity-bar { background: var(--ink); padding: 10px 24px; text-align: center; position: fixed; top: 64px; left: 0; right: 0; z-index: 99; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .scarcity-bar p { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+    .scarcity-bar strong { color: var(--terra-light); font-weight: 700; }
 
     /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      background: var(--ink);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-      overflow: hidden;
-    }
+    .hero { min-height: 100vh; background: var(--ink); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 180px 24px 100px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1800&q=75'); background-size: cover; background-position: center; opacity: 0.14; }
+    .hero-grain { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; }
+    .hero-top-rule { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--terra); }
+    .hero-content { position: relative; z-index: 2; max-width: 820px; }
+    .hero-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 24px; }
+    .hero-title { font-family: var(--font-playfair); font-size: clamp(2.6rem, 7vw, 5.5rem); font-weight: 800; color: #fff; line-height: 1.0; margin-bottom: 28px; letter-spacing: -0.02em; }
+    .hero-title em { color: var(--terra-light); font-style: italic; font-weight: 700; }
+    .hero-rule { width: 48px; height: 2px; background: var(--terra); margin: 0 auto 28px; opacity: 0.8; }
+    .hero-subtitle { font-family: var(--font-baskerville); font-size: clamp(1rem, 2vw, 1.2rem); font-style: italic; color: rgba(255,255,255,0.52); margin-bottom: 20px; line-height: 1.7; }
+    .hero-desc { font-size: clamp(0.88rem, 1.6vw, 1rem); font-weight: 300; color: rgba(255,255,255,0.38); max-width: 480px; margin: 0 auto 52px; line-height: 1.9; letter-spacing: 0.02em; }
+    .hero-cta-group { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .btn-primary { padding: 20px 48px; background: var(--terra); color: #fff; font-family: var(--font-jost); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 6px 32px rgba(196,98,45,0.45); }
+    .btn-primary:hover { background: var(--terra-light); transform: translateY(-2px); box-shadow: 0 10px 40px rgba(196,98,45,0.5); }
+    .hero-trial-note { font-size: 0.7rem; color: rgba(255,255,255,0.28); letter-spacing: 0.06em; }
+    .hero-trial-note strong { color: rgba(255,255,255,0.52); }
+    .hero-demo-link { font-size: 0.75rem; color: rgba(255,255,255,0.26); text-decoration: none; transition: color 0.2s; }
+    .hero-demo-link span { color: rgba(255,255,255,0.46); text-decoration: underline; text-underline-offset: 3px; }
+    .hero-demo-link:hover span { color: var(--terra-light); }
+    .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.16); display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .hero-scroll::after { content: ''; width: 1px; height: 40px; background: rgba(255,255,255,0.1); animation: scrollPulse 2.5s ease-in-out infinite; }
+    @keyframes scrollPulse { 0%,100% { opacity:0.2; transform:scaleY(0.7); } 50% { opacity:1; transform:scaleY(1); } }
 
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1800&q=75');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.18;
-    }
+    /* ── STAT BAR ── */
+    .stat-bar { background: var(--terra); padding: 0 40px; }
+    .stat-bar-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); }
+    .stat-item { padding: 36px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,0.15); }
+    .stat-item:last-child { border-right: none; }
+    .stat-number { font-family: var(--font-playfair); font-size: 2.6rem; font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .stat-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.62); }
 
-    .hero-grain {
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-    }
-
-    .hero-top-rule {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 5px;
-      background: var(--terra);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--terra-light);
-      margin-bottom: 20px;
-    }
-
-    .hero-title {
-      font-family: var(--font-playfair);
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 800;
-      color: #fff;
-      line-height: 0.95;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-title em {
-      color: var(--terra-light);
-      font-style: italic;
-      font-weight: 700;
-    }
-
-    .hero-rule {
-      width: 48px;
-      height: 2px;
-      background: var(--terra);
-      margin: 0 auto 24px;
-      opacity: 0.8;
-    }
-
-    .hero-subtitle {
-      font-family: var(--font-baskerville);
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      font-style: italic;
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 16px;
-    }
-
-    .hero-desc {
-      font-size: clamp(0.9rem, 1.8vw, 1.05rem);
-      font-weight: 300;
-      color: rgba(255,255,255,0.55);
-      max-width: 520px;
-      margin: 0 auto 48px;
-      line-height: 1.8;
-      letter-spacing: 0.02em;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      padding: 18px 40px;
-      background: var(--terra);
-      color: #fff;
-      font-family: var(--font-jost);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.2s, transform 0.15s;
-      box-shadow: 0 4px 24px rgba(196, 98, 45, 0.4);
-    }
-
-    .btn-primary:hover {
-      background: var(--terra-light);
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-      padding: 16px 36px;
-      background: transparent;
-      color: rgba(255,255,255,0.65);
-      font-family: var(--font-jost);
-      font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.2);
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .btn-ghost:hover {
-      border-color: rgba(255,255,255,0.5);
-      color: #fff;
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.2);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .hero-scroll::after {
-      content: '';
-      width: 1px;
-      height: 40px;
-      background: rgba(255,255,255,0.15);
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
-    }
+    /* ── MIDWEST BADGE ── */
+    .midwest-badge { background: var(--mag-white); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 20px 40px; text-align: center; }
+    .midwest-badge-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--terra); flex-shrink: 0; animation: pulseDot 2s ease-in-out infinite; }
+    @keyframes pulseDot { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.6; transform:scale(0.85); } }
+    .badge-text { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-gray); }
+    .badge-text strong { color: var(--ink); }
 
     /* ── SECTIONS ── */
-    section {
-      padding: 100px 40px;
-    }
+    section { padding: 100px 40px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; }
+    .section-title { font-family: var(--font-playfair); font-size: clamp(2rem,4vw,3.2rem); font-weight: 700; color: var(--ink); line-height: 1.1; margin-bottom: 20px; }
+    .section-title em { color: var(--terra); font-style: italic; }
+    .section-rule { width: 40px; height: 2px; background: var(--terra); margin-bottom: 28px; opacity: 0.6; }
+    .section-lead { font-size: 1.05rem; font-weight: 300; color: var(--warm-gray); max-width: 560px; line-height: 1.85; }
 
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-eyebrow {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--terra);
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-family: var(--font-playfair);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .section-title em {
-      color: var(--terra);
-      font-style: italic;
-    }
-
-    .section-rule {
-      width: 40px;
-      height: 2px;
-      background: var(--terra);
-      margin-bottom: 24px;
-      opacity: 0.6;
-    }
-
-    .section-lead {
-      font-size: 1.05rem;
-      font-weight: 300;
-      color: var(--warm-gray);
-      max-width: 560px;
-      line-height: 1.8;
-    }
-
-    /* ── PROBLEM SECTION ── */
-    .problem {
-      background: var(--mag-white);
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      margin-top: 56px;
-    }
-
-    .problem-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .problem-item {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-
-    .problem-icon {
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .problem-item h4 {
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      margin-bottom: 4px;
-      color: var(--ink);
-    }
-
-    .problem-item p {
-      font-size: 0.88rem;
-      color: var(--warm-gray);
-      line-height: 1.6;
-    }
-
-    .problem-quote {
-      background: var(--ink);
-      color: #fff;
-      padding: 48px 40px;
-      position: relative;
-    }
-
-    .problem-quote::before {
-      content: '"';
-      font-family: var(--font-playfair);
-      font-size: 8rem;
-      color: var(--terra);
-      opacity: 0.2;
-      position: absolute;
-      top: -10px;
-      left: 24px;
-      line-height: 1;
-    }
-
-    .problem-quote blockquote {
-      font-family: var(--font-baskerville);
-      font-style: italic;
-      font-size: 1.15rem;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 24px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .problem-quote cite {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--terra-light);
-      font-style: normal;
-    }
+    /* ── PROBLEM ── */
+    .problem { background: var(--mag-white); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px; }
+    .problem-list { list-style: none; display: flex; flex-direction: column; gap: 28px; }
+    .problem-item { display: flex; gap: 20px; align-items: flex-start; }
+    .problem-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .problem-item h4 { font-size: 0.88rem; font-weight: 600; letter-spacing: 0.03em; margin-bottom: 5px; color: var(--ink); }
+    .problem-item p { font-size: 0.86rem; color: var(--warm-gray); line-height: 1.65; }
+    .problem-stat-block { background: var(--ink); color: #fff; padding: 52px 44px; position: relative; }
+    .problem-stat-block .stat-headline { font-family: var(--font-playfair); font-size: 3.2rem; font-weight: 800; color: var(--terra-light); line-height: 1; margin-bottom: 12px; letter-spacing: -0.03em; }
+    .problem-stat-block .stat-body { font-family: var(--font-baskerville); font-style: italic; font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.8); margin-bottom: 28px; }
+    .problem-stat-block .stat-source { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+    .problem-stat-block .stat-source a { color: var(--terra-light); text-decoration: none; }
+    .problem-stat-block .stat-source a:hover { text-decoration: underline; }
 
     /* ── HOW IT WORKS ── */
-    .how {
-      background: var(--cream);
-    }
+    .how { background: var(--cream); }
+    .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 60px; background: var(--rule); }
+    .step { background: var(--mag-white); padding: 52px 40px; }
+    .step-num { font-family: var(--font-playfair); font-size: 4.5rem; font-weight: 800; color: var(--cream-dark); line-height: 1; margin-bottom: 20px; letter-spacing: -0.04em; }
+    .step-accent { width: 32px; height: 3px; background: var(--terra); margin-bottom: 24px; }
+    .step h3 { font-family: var(--font-playfair); font-size: 1.35rem; font-weight: 700; color: var(--ink); margin-bottom: 14px; }
+    .step p { font-size: 0.88rem; color: var(--warm-gray); line-height: 1.75; }
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      margin-top: 56px;
-      background: var(--rule);
-    }
-
-    .step {
-      background: var(--mag-white);
-      padding: 48px 36px;
-      position: relative;
-    }
-
-    .step-num {
-      font-family: var(--font-playfair);
-      font-size: 4rem;
-      font-weight: 800;
-      color: var(--cream-dark);
-      line-height: 1;
-      margin-bottom: 16px;
-      letter-spacing: -0.04em;
-    }
-
-    .step h3 {
-      font-family: var(--font-playfair);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-
-    .step p {
-      font-size: 0.9rem;
-      color: var(--warm-gray);
-      line-height: 1.7;
-    }
-
-    .step-accent {
-      width: 32px;
-      height: 3px;
-      background: var(--terra);
-      margin-bottom: 20px;
-    }
-
-    /* ── DEMO SECTION ── */
-    .demo {
-      background: var(--ink);
-      color: #fff;
-      text-align: center;
-    }
-
+    /* ── DEMO ── */
+    .demo { background: var(--ink); color: #fff; }
     .demo .section-eyebrow { color: var(--terra-light); }
     .demo .section-title { color: #fff; }
-    .demo .section-lead { color: rgba(255,255,255,0.55); margin: 0 auto 48px; }
-    .demo .section-rule { margin: 0 auto 24px; }
+    .demo .section-lead { color: rgba(255,255,255,0.48); margin-bottom: 0; }
+    .demo .section-rule { opacity: 0.4; }
+    .demo-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; margin-top: 60px; }
+    .demo-city-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 14px; }
+    .demo-city-name { font-family: var(--font-playfair); font-size: clamp(2.2rem,4vw,3.2rem); font-weight: 700; color: #fff; line-height: 1.05; margin-bottom: 16px; }
+    .demo-city-name em { color: #c4a747; font-style: italic; }
+    .demo-city-desc { font-size: 0.88rem; color: rgba(255,255,255,0.38); margin-bottom: 32px; font-weight: 300; line-height: 1.7; }
+    .demo-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+    .demo-tag { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(196,98,45,0.12); color: var(--terra-light); border: 1px solid rgba(196,98,45,0.25); padding: 6px 14px; }
+    .demo-window { background: #0f0c07; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,0.5); }
+    .demo-window-bar { background: rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
+    .demo-window-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .demo-window-dot:nth-child(1) { background: rgba(255,100,100,0.4); }
+    .demo-window-dot:nth-child(2) { background: rgba(255,180,50,0.4); }
+    .demo-window-dot:nth-child(3) { background: rgba(50,200,100,0.4); }
+    .demo-window-url { flex:1; background: rgba(255,255,255,0.05); border-radius: 3px; padding: 4px 12px; font-size: 0.68rem; color: rgba(255,255,255,0.25); font-family: var(--font-jost); letter-spacing: 0.02em; margin-left: 8px; }
+    .demo-screen { padding: 24px; min-height: 280px; background: linear-gradient(160deg,#1a1208 0%,#0f0c07 100%); position: relative; overflow: hidden; }
+    .demo-screen::before { content:''; position:absolute; top:-40px; right:-40px; width:200px; height:200px; background:radial-gradient(circle,rgba(196,98,45,0.15),transparent 70%); }
+    .demo-screen-eyebrow { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 10px; opacity: 0.8; }
+    .demo-screen-title { font-family: var(--font-playfair); font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 20px; line-height: 1.2; }
+    .demo-day { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-left: 2px solid var(--terra); padding: 12px 16px; margin-bottom: 8px; border-radius: 2px; }
+    .demo-day-label { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 5px; }
+    .demo-day-title { font-size: 0.82rem; font-weight: 600; color: #fff; margin-bottom: 3px; }
+    .demo-day-desc { font-size: 0.72rem; color: rgba(255,255,255,0.35); line-height: 1.4; }
+    .demo-screen-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .demo-screen-footer-left { font-size: 0.65rem; color: rgba(255,255,255,0.25); }
+    .demo-screen-badge { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(196,98,45,0.15); color: var(--terra-light); padding: 4px 10px; border: 1px solid rgba(196,98,45,0.2); }
 
-    .demo-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 48px;
-    }
-
-    .demo-city-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--terra-light);
-      margin-bottom: 12px;
-    }
-
-    .demo-city-name {
-      font-family: var(--font-playfair);
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-
-    .demo-city-name em {
-      color: #c4a747;
-      font-style: italic;
-    }
-
-    .demo-city-desc {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 32px;
-      font-weight: 300;
-      letter-spacing: 0.03em;
-    }
-
-    .demo-tag {
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background: rgba(196, 98, 45, 0.15);
-      color: var(--terra-light);
-      border: 1px solid rgba(196, 98, 45, 0.25);
-      padding: 6px 14px;
-      margin-bottom: 32px;
-    }
+    /* ── INSIGHTS ── */
+    .insights { background: var(--cream-dark); }
+    .insights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px; }
+    .insights-list { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+    .insight-item { display: flex; gap: 16px; align-items: flex-start; }
+    .insight-dash { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 800; color: var(--terra); line-height: 1; flex-shrink: 0; opacity: 0.5; padding-top: 2px; }
+    .insight-item h4 { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+    .insight-item p { font-size: 0.86rem; color: var(--warm-gray); line-height: 1.65; }
+    .insights-callout { background: var(--ink); padding: 52px 44px; }
+    .insights-callout .callout-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 20px; }
+    .insights-callout h3 { font-family: var(--font-playfair); font-size: 1.6rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+    .insights-callout p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 14px; }
+    .insights-callout p:last-of-type { margin-bottom: 0; }
+    .insight-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .insight-pill { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.52); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 6px 14px; }
 
     /* ── FEATURES ── */
-    .features {
-      background: var(--cream-dark);
-    }
+    .features { background: var(--mag-white); border-top: 1px solid var(--rule); }
+    .features-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; margin-top: 60px; background: var(--rule); }
+    .feature-card { background: var(--mag-white); padding: 44px 40px; }
+    .feature-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-bottom: 28px; border-bottom: 1.5px solid var(--terra); padding-bottom: 18px; }
+    .feature-card h3 { font-family: var(--font-playfair); font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+    .feature-card p { font-size: 0.87rem; color: var(--warm-gray); line-height: 1.75; }
+    .feature-compat-note { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terra); background: rgba(196,98,45,0.07); padding: 5px 12px; border: 1px solid rgba(196,98,45,0.15); }
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      margin-top: 56px;
-      background: var(--rule);
-    }
+    /* ── WHO ── */
+    .who { background: var(--cream); }
+    .who-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 36px; margin-top: 60px; }
+    .who-card { border-top: 3px solid var(--terra); padding-top: 28px; }
+    .who-card h3 { font-family: var(--font-playfair); font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+    .who-card p { font-size: 0.87rem; color: var(--warm-gray); line-height: 1.75; }
 
-    .feature-card {
-      background: var(--mag-white);
-      padding: 40px 36px;
-    }
+    /* ── FAQ ── */
+    .faq { background: var(--mag-white); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .faq-list { margin-top: 60px; display: flex; flex-direction: column; gap: 2px; background: var(--rule); }
+    .faq-item { background: var(--mag-white); overflow: hidden; }
+    .faq-question { width: 100%; padding: 28px 36px; background: none; border: none; cursor: pointer; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 20px; transition: background 0.2s; }
+    .faq-question:hover { background: rgba(196,98,45,0.03); }
+    .faq-question span { font-family: var(--font-playfair); font-size: 1.05rem; font-weight: 700; color: var(--ink); line-height: 1.35; }
+    .faq-icon { width: 24px; height: 24px; flex-shrink: 0; position: relative; border: 1.5px solid var(--rule); }
+    .faq-icon::before, .faq-icon::after { content:''; position:absolute; background:var(--terra); transition: transform 0.25s, opacity 0.25s; }
+    .faq-icon::before { width:10px; height:1.5px; top:50%; left:50%; transform:translate(-50%,-50%); }
+    .faq-icon::after { width:1.5px; height:10px; top:50%; left:50%; transform:translate(-50%,-50%); }
+    .faq-item.open .faq-icon::after { transform:translate(-50%,-50%) rotate(90deg); opacity:0; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 36px; }
+    .faq-item.open .faq-answer { max-height: 400px; padding: 0 36px 28px; }
+    .faq-answer p { font-size: 0.9rem; color: var(--warm-gray); line-height: 1.8; margin-bottom: 10px; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-answer strong { color: var(--ink); font-weight: 600; }
 
-    .feature-card h3 {
-      font-family: var(--font-playfair);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 10px;
-    }
-
-    .feature-card p {
-      font-size: 0.88rem;
-      color: var(--warm-gray);
-      line-height: 1.7;
-    }
-
-    .feature-icon {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      border-bottom: 1.5px solid var(--terra);
-      padding-bottom: 16px;
-    }
-
-    /* ── WHO IT'S FOR ── */
-    .who {
-      background: var(--mag-white);
-      border-top: 1px solid var(--rule);
-    }
-
-    .who-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 56px;
-    }
-
-    .who-card {
-      border-top: 3px solid var(--terra);
-      padding-top: 24px;
-    }
-
-    .who-card h3 {
-      font-family: var(--font-playfair);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 10px;
-    }
-
-    .who-card p {
-      font-size: 0.88rem;
-      color: var(--warm-gray);
-      line-height: 1.7;
-    }
-
-    /* ── PRICING ── */
-    .pricing {
-      background: var(--cream);
-      text-align: center;
-    }
-
-    .pricing .section-rule { margin: 0 auto 24px; }
-    .pricing .section-lead { margin: 0 auto 56px; }
-
-    .pricing-card {
-      background: var(--ink);
-      color: #fff;
-      max-width: 520px;
-      margin: 0 auto;
-      padding: 56px 48px;
-      position: relative;
-      border-top: 5px solid var(--terra);
-    }
-
-    .pricing-tag {
-      position: absolute;
-      top: -1px;
-      right: 40px;
-      background: var(--terra);
-      color: #fff;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 6px 16px;
-    }
-
-    .pricing-price {
-      font-family: var(--font-playfair);
-      font-size: 4rem;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .pricing-price span {
-      font-family: var(--font-jost);
-      font-size: 1rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.45);
-    }
-
-    .pricing-setup {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 36px;
-      letter-spacing: 0.03em;
-    }
-
-    .pricing-divider {
-      width: 100%;
-      height: 1px;
-      background: rgba(255,255,255,0.08);
-      margin: 32px 0;
-    }
-
-    .pricing-features {
-      list-style: none;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 40px;
-    }
-
-    .pricing-features li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.75);
-    }
-
-    .pricing-features li::before {
-      content: '—';
-      color: var(--terra-light);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    .pricing-note {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.25);
-      margin-top: 20px;
-      font-style: italic;
-      font-family: var(--font-baskerville);
-    }
+    /* ── CONVICTION ── */
+    .conviction { background: var(--ink); padding: 100px 40px; text-align: center; }
+    .conviction-inner { max-width: 760px; margin: 0 auto; }
+    .conviction-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 28px; }
+    .conviction-statement { font-family: var(--font-playfair); font-size: clamp(1.6rem,3.5vw,2.6rem); font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: 16px; }
+    .conviction-statement em { color: var(--terra-light); font-style: italic; }
+    .conviction-sub { font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.38); line-height: 1.75; max-width: 520px; margin: 0 auto 48px; }
+    .conviction-rule { width: 32px; height: 2px; background: var(--terra); margin: 24px auto 48px; opacity: 0.4; }
 
     /* ── CONTACT ── */
-    .contact {
-      background: var(--terra);
-      color: #fff;
-    }
+    .contact { background: var(--cream); padding: 100px 40px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: start; max-width: 1100px; margin: 0 auto; }
+    .contact .section-lead { margin-bottom: 40px; }
+    .contact-details { display: flex; flex-direction: column; gap: 20px; margin-bottom: 32px; }
+    .contact-detail-item { display: flex; gap: 16px; align-items: flex-start; }
+    .contact-detail-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--terra); margin-top: 8px; flex-shrink: 0; }
+    .contact-detail-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 3px; }
+    .contact-detail-value { font-size: 0.92rem; color: var(--ink); }
+    .contact-trial-note { padding: 20px 24px; background: rgba(196,98,45,0.07); border: 1px solid rgba(196,98,45,0.15); border-left: 3px solid var(--terra); }
+    .contact-trial-note p { font-size: 0.84rem; color: var(--warm-gray); line-height: 1.65; }
+    .contact-trial-note strong { color: var(--ink); }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .contact .section-eyebrow { color: rgba(255,255,255,0.55); }
-    .contact .section-title { color: #fff; }
-    .contact .section-title em { color: rgba(255,255,255,0.75); }
-    .contact .section-rule { background: rgba(255,255,255,0.4); }
-    .contact .section-lead { color: rgba(255,255,255,0.7); }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .form-field label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
-    }
-
-    .form-field input,
-    .form-field select,
-    .form-field textarea {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #fff;
-      font-family: var(--font-jost);
-      font-size: 0.9rem;
-      padding: 12px 16px;
-      outline: none;
-      transition: border-color 0.2s;
-      width: 100%;
-    }
-
-    .form-field input::placeholder,
-    .form-field textarea::placeholder { color: rgba(255,255,255,0.3); }
-
-    .form-field input:focus,
-    .form-field select:focus,
-    .form-field textarea:focus { border-color: rgba(255,255,255,0.6); }
-
-    .form-field select option { background: var(--ink); color: #fff; }
-
-    .form-field textarea { resize: vertical; min-height: 100px; }
-
-    .btn-submit {
-      padding: 18px 40px;
-      background: var(--ink);
-      color: #fff;
-      font-family: var(--font-jost);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-      align-self: flex-start;
-    }
-
-    .btn-submit:hover { background: #2d2010; }
+    .contact-form { display: flex; flex-direction: column; gap: 18px; }
+    .form-success { display: none; background: var(--ink); padding: 48px 40px; text-align: center; }
+    .form-success h3 { font-family: var(--font-playfair); font-size: 1.6rem; color: #fff; margin-bottom: 12px; }
+    .form-success p { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+    .form-field { display: flex; flex-direction: column; gap: 8px; }
+    .form-field label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-gray); }
+    .form-optional { font-size: 0.65rem; color: rgba(0,0,0,0.3); letter-spacing: 0.05em; margin-left: 6px; font-weight: 400; text-transform: none; }
+    .form-field input, .form-field textarea { background: #fff; border: 1px solid var(--rule); color: var(--ink); font-family: var(--font-jost); font-size: 0.9rem; font-weight: 300; padding: 14px 16px; outline: none; transition: border-color 0.2s; }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: rgba(0,0,0,0.22); }
+    .form-field input:focus, .form-field textarea:focus { border-color: var(--terra); }
+    .form-field textarea { min-height: 100px; resize: vertical; line-height: 1.6; }
+    .btn-submit { padding: 20px 40px; background: var(--terra); color: #fff; font-family: var(--font-jost); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 24px rgba(196,98,45,0.2); align-self: flex-start; }
+    .btn-submit:hover { background: var(--terra-light); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(196,98,45,0.3); }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      padding: 32px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
+    footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    footer .logo { font-family: var(--font-playfair); font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.5); text-decoration: none; letter-spacing: -0.01em; }
+    footer .logo em { color: var(--terra); font-style: italic; }
+    footer .tagline { font-size: 0.76rem; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; text-align: center; }
+    footer .footer-nav { display: flex; gap: 28px; }
+    footer .footer-nav a { font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.22); text-decoration: none; transition: color 0.2s; }
+    footer .footer-nav a:hover { color: rgba(255,255,255,0.5); }
 
-    footer .logo {
-      font-family: var(--font-playfair);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-    }
-
-    footer .logo em { color: var(--terra-light); font-style: italic; }
-
-    footer .tagline {
-      font-family: var(--font-baskerville);
-      font-style: italic;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.25);
-    }
-
-    footer nav a {
-      color: rgba(255,255,255,0.35);
-      text-decoration: none;
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
-      margin-left: 24px;
-      transition: color 0.2s;
-    }
-
-    footer nav a:hover { color: var(--terra-light); }
+    /* ── UTILS ── */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+    .back-to-top { position: fixed; bottom: 32px; right: 32px; width: 44px; height: 44px; background: var(--terra); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.2s; z-index: 50; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    .back-to-top:hover { transform: translateY(-2px); background: var(--terra-light); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      nav { padding: 0 20px; }
+    @media (max-width: 960px) {
+      .problem-grid, .demo-layout, .insights-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .features-grid, .steps { grid-template-columns: 1fr; }
+      .who-grid { grid-template-columns: 1fr; gap: 28px; }
+      .stat-bar-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 28px 20px; }
+      .stat-item:last-child { border-bottom: none; }
+    }
+    @media (max-width: 640px) {
       .nav-links { display: none; }
-      section { padding: 72px 24px; }
-      .problem-grid,
-      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-      .steps { grid-template-columns: 1fr; }
-      .features-grid { grid-template-columns: 1fr; }
-      .who-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      footer { flex-direction: column; text-align: center; }
-      footer nav a { margin: 0 12px; }
-    }
-
-    /* ── ANIMATIONS ── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* success message */
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 40px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .form-success h3 {
-      font-family: var(--font-playfair);
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
-
-    .form-success p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
-
-    /* ── BACK TO TOP ── */
-    .back-to-top {
-      position: fixed;
-      bottom: 36px;
-      right: 36px;
-      width: 40px;
-      height: 40px;
-      background: transparent;
-      border: 1px solid var(--rule);
-      color: var(--warm-gray);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.2s, color 0.2s;
-      z-index: 99;
-      border-radius: 0;
-    }
-    .back-to-top.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .back-to-top:hover {
-      border-color: var(--terra);
-      color: var(--terra);
-      background: transparent;
+      .nav-hamburger { display: flex; }
+      nav.site-nav { padding: 0 20px; }
+      section, .contact, .conviction { padding: 72px 20px; }
+      .stat-bar, .midwest-badge { padding: 0 20px; }
+      .faq-question { padding: 22px 24px; }
+      .faq-answer { padding: 0 24px; }
+      .faq-item.open .faq-answer { padding: 0 24px 24px; }
+      .btn-submit { align-self: stretch; text-align: center; }
+      .hero { padding: 190px 20px 100px; }
     }
   </style>
 </head>
 <body>
-  
+
   <!-- NAV -->
-  <nav>
+  <nav class="site-nav">
     <a href="#" class="nav-logo">Get<em>away</em></a>
     <ul class="nav-links">
       <li><a href="#how">How It Works</a></li>
-      <li><a href="#example">See It in Action</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#contact" class="nav-cta">Request a Demo</a></li>
+      <li><a href="#demo">Live Demo</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Free Demo</a></li>
     </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#how" onclick="closeMobile()">How It Works</a>
+    <a href="#demo" onclick="closeMobile()">Live Demo</a>
+    <a href="#faq" onclick="closeMobile()">FAQ</a>
+    <a href="#contact" class="mobile-cta" onclick="closeMobile()">Get a Free Demo Built for Your City →</a>
+  </div>
+
+  <!-- SCARCITY BANNER -->
+  <div class="scarcity-bar">
+    <p>Now booking <strong>Q3 city launches.</strong> Limited build slots available this quarter.</p>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-grain"></div>
     <div class="hero-top-rule"></div>
-
     <div class="hero-content">
-      <div class="hero-eyebrow">For Tourism Boards · Chambers of Commerce · Destination Marketing Organizations</div>
+      <div class="hero-eyebrow">For Tourism Boards · CVBs · DMOs</div>
       <h1 class="hero-title">
-        Your destination.<br />
-        Your brand.<br />
-        <em>AI-powered.</em>
+        Give every visitor a<br /><em>personalized itinerary</em><br />branded to your destination.
       </h1>
       <div class="hero-rule"></div>
-      <p class="hero-subtitle">Trip planning your visitors will actually use</p>
-      <p class="hero-desc">
-        Give every visitor a fully branded AI trip planner that lives alongside your existing site — live in under two weeks, white-labeled to your destination, no technical team or developer required.
-      </p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn-primary">Request a Demo</a>
-        <a href="#how" class="btn-ghost">See How It Works →</a>
+      <p class="hero-subtitle">An AI trip planner that knows your destination the way you do.</p>
+      <p class="hero-desc">Fully white-labeled. Locally trained. Live in under two weeks.<br />No developers. No long contracts. No IT project.</p>
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn-primary">Get a Free Demo Built for Your City</a>
+        <a href="https://bransonmoprototype.up.railway.app" target="_blank" rel="noopener" class="hero-demo-link">or <span>see a live example now &rarr;</span></a>
       </div>
     </div>
-
     <div class="hero-scroll">Scroll</div>
   </section>
 
-  <!-- THE PROBLEM -->
-  <section class="problem">
+  <!-- STAT BAR -->
+  <div class="stat-bar">
+    <div class="stat-bar-inner">
+      <div class="stat-item">
+        <div class="stat-number">&lt;&nbsp;14</div>
+        <div class="stat-label">Days from agreement to live</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">White-labeled to your brand</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Developers needed on your end</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL PROOF BADGE -->
+  <div class="midwest-badge">
+    <div class="midwest-badge-inner">
+      <div class="badge-dot"></div>
+      <p class="badge-text"><strong>Currently building demos</strong> for destination marketing organizations across the country</p>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <section class="problem" id="problem">
     <div class="section-inner">
       <div class="section-eyebrow">The Problem</div>
-      <h2 class="section-title">You inspire the trip.<br /><em>Someone else gets the credit.</em></h2>
+      <h2 class="section-title">Your website tells visitors<br />what exists. <em>It doesn't help them plan.</em></h2>
       <div class="section-rule"></div>
-
       <div class="problem-grid fade-in">
         <ul class="problem-list">
           <li class="problem-item">
-            <div class="problem-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+            <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
             <div>
-              <h4>They leave your site to plan</h4>
-              <p>After browsing your destination site, visitors open ChatGPT, Google, or TripAdvisor to actually build their trip. You lose the relationship — and the data.</p>
+              <h4>Visitors leave without a plan</h4>
+              <p>Most destination websites do an excellent job showcasing what a place offers. But they stop short of helping visitors decide what to do, when to do it, and how to make the most of a short stay. Inspiration without a plan rarely converts to a booked trip.</p>
             </div>
           </li>
           <li class="problem-item">
-            <div class="problem-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
             <div>
-              <h4>You don't know what visitors want</h4>
-              <p>Your analytics show pageviews. Getaway shows you real visitor intent — when people are traveling, who they're bringing, what experiences they care about. Signals that help you market smarter.</p>
+              <h4>Generic AI tools don't know your destination</h4>
+              <p>Tools like ChatGPT generate plausible-sounding itineraries that are frequently inaccurate. They recommend closed businesses, miss seasonal context, and overlook what makes your destination distinct. Visitors who encounter errors lose confidence before they arrive.</p>
             </div>
           </li>
           <li class="problem-item">
-            <div class="problem-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
             <div>
-              <h4>Generic tools don't know your destination</h4>
-              <p>AI tools like ChatGPT hallucinate restaurants that closed years ago and miss your best hidden gems. Getaway is trained on your specific destination.</p>
-            </div>
-          </li>
-          <li class="problem-item">
-            <div class="problem-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-            <div>
-              <h4>You're paying for impressions, not conversion</h4>
-              <p>Your marketing budget gets visitors to your destination page. But without a planning tool, most leave without a clear picture of their trip. Getaway turns that inspiration into a real itinerary — and a reason to commit.</p>
+              <h4>Building a custom solution isn't realistic</h4>
+              <p>A purpose-built AI trip planner requires meaningful development investment, ongoing technical maintenance, and specialized expertise most destination marketing teams don't have. Getaway handles all of it at a fraction of the cost.</p>
             </div>
           </li>
         </ul>
-
-        <div class="problem-quote">
-          <blockquote>
-            Travelers now visit an average of 277 web pages in the 45 days before booking a trip — and your destination site is just one of them.
-          </blockquote>
-          <cite>— Expedia Group Research, 2024</cite>
+        <div class="problem-stat-block">
+          <div class="stat-headline">3&times; more</div>
+          <p class="stat-body">Travelers who arrive with a detailed itinerary spend significantly more and are far more likely to extend their stay than those who plan on the fly.</p>
+          <span class="stat-source">Source: <a href="https://www.destinationanalysts.com" target="_blank" rel="noopener">Destination Analysts</a>, State of the American Traveler</span>
         </div>
       </div>
     </div>
@@ -1038,53 +447,137 @@
   <section class="how" id="how">
     <div class="section-inner">
       <div class="section-eyebrow">How It Works</div>
-      <h2 class="section-title">From signed contract to<br /><em>live in two weeks</em></h2>
+      <h2 class="section-title">Your branded planner.<br /><em>Live in two weeks.</em></h2>
       <div class="section-rule"></div>
-      <p class="section-lead">We handle the build. You review and approve. Your visitors get a world-class planning experience.</p>
-
+      <p class="section-lead">We build it. You approve it. Your visitors use it. From first conversation to a live, branded deployment takes under two weeks.</p>
       <div class="steps fade-in">
         <div class="step">
           <div class="step-num">01</div>
           <div class="step-accent"></div>
-          <h3>We Build It for You</h3>
-          <p>We create a fully branded planner — your colors, your logo, your destination's restaurants, activities, and accommodations. No templates. No DIY configuration. We do the work.</p>
+          <h3>We Build Your Demo</h3>
+          <p>Tell us about your destination. Within 5 business days we'll have a fully functional, branded demo live at a custom URL. Built specifically for your city, not a generic template.</p>
         </div>
         <div class="step">
           <div class="step-num">02</div>
           <div class="step-accent"></div>
-          <h3>You Review &amp; Launch</h3>
-          <p>We send you a live preview link. You test it, give feedback, we refine. When you're happy, we go live on your domain or a subdomain of getaway.expert — your choice.</p>
+          <h3>You Review and Approve</h3>
+          <p>Before anything goes public, you see the full experience and have editorial input. We refine until the content accurately reflects your destination, your voice, and your standards.</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
           <div class="step-accent"></div>
-          <h3>Visitors Plan. You Win.</h3>
-          <p>Embed the link on your homepage, in emails, anywhere. Visitors answer 6 quick questions and get a complete itinerary in 60 seconds — restaurants, shows, lodging, timing, all of it.</p>
+          <h3>Your Visitors Arrive Ready</h3>
+          <p>Travelers get personalized, day-by-day itineraries built around your destination. They save, share, and export their plan. They arrive knowing exactly what they're doing.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- LIVE DEMO -->
-  <section class="demo" id="example">
+  <section class="demo" id="demo">
     <div class="section-inner">
-      <div class="section-eyebrow">See It In Action</div>
-      <h2 class="section-title">A working <em>prototype</em></h2>
+      <div class="section-eyebrow">Live Example</div>
+      <h2 class="section-title" style="color:#fff;">See the product.<br /><em>Right now.</em></h2>
       <div class="section-rule"></div>
-      <p class="section-lead">This is a fully functional example of what we build — same technology, same experience your visitors would get, branded to your destination.</p>
+      <p class="section-lead">This is a fully functional deployment, not a mockup. Every trip it generates is real, locally grounded, and takes about 60 seconds to build.</p>
+      <div class="demo-layout fade-in">
+        <div>
+          <div class="demo-city-label">Live Demo Deployment</div>
+          <div class="demo-city-name">Branson, <em>MO</em></div>
+          <div class="demo-city-desc">Entertainment capital of the Midwest. Live music, world-class shows, Table Rock Lake, and the Ozarks. Every itinerary is generated fresh, trained on local knowledge.</div>
+          <div class="demo-tags">
+            <span class="demo-tag">✓ Fully Functional</span>
+            <span class="demo-tag">✓ Locally Trained</span>
+            <span class="demo-tag">✓ Live Generation</span>
+          </div>
+          <a href="https://bransonmoprototype.up.railway.app" target="_blank" rel="noopener" class="btn-primary">Try the Branson Demo &rarr;</a>
+        </div>
+        <div class="demo-window">
+          <div class="demo-window-bar">
+            <div class="demo-window-dot"></div>
+            <div class="demo-window-dot"></div>
+            <div class="demo-window-dot"></div>
+            <div class="demo-window-url">bransonmoprototype.up.railway.app</div>
+          </div>
+          <div class="demo-screen">
+            <div class="demo-screen-eyebrow">Your Branson Trip &middot; 3 Days &middot; Family of 4</div>
+            <div class="demo-screen-title">A Perfect Long Weekend<br />in the Ozarks</div>
+            <div class="demo-day">
+              <div class="demo-day-label">Day 1 &middot; Arrival</div>
+              <div class="demo-day-title">Silver Dollar City &amp; Dinner on the Strip</div>
+              <div class="demo-day-desc">Theme park, live blacksmithing demos, then Florentina's for dinner</div>
+            </div>
+            <div class="demo-day">
+              <div class="demo-day-label">Day 2 &middot; Full Day</div>
+              <div class="demo-day-title">Table Rock Lake Morning, Live Show Evening</div>
+              <div class="demo-day-desc">Boat rental at State Park Marina, then Dolly Parton's Stampede dinner show</div>
+            </div>
+            <div class="demo-day">
+              <div class="demo-day-label">Day 3 &middot; Departure</div>
+              <div class="demo-day-title">Highway 76 Breakfast &amp; Titanic Museum</div>
+              <div class="demo-day-desc">A locally loved breakfast spot before your drive home</div>
+            </div>
+            <div class="demo-screen-footer">
+              <span class="demo-screen-footer-left">Generated in 18 sec &middot; PDF ready to export</span>
+              <span class="demo-screen-badge">Powered by Getaway</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="demo-card fade-in">
-        <div class="demo-city-label">Working Example</div>
-        <div class="demo-city-name">Branson<em>, MO</em></div>
-        <div class="demo-city-desc">Navy &amp; gold branding · Ozarks-specific content · Live AI itinerary generation</div>
-        <div class="demo-tag">✓ Fully functional — try it yourself</div>
-        <br />
-        <a href="https://bransonmoprototype.up.railway.app" target="_blank" class="btn-primary" style="display:inline-block;">
-          Try the Branson Demo →
-        </a>
-        <p style="font-size:0.78rem; color:rgba(255,255,255,0.25); margin-top:20px; font-family:'Libre Baskerville',serif; font-style:italic;">
-          This is a prototype, not a current client. Every deployment we build is customized from scratch for your destination.
-        </p>
+  <!-- WHAT YOU'LL LEARN -->
+  <section class="insights" id="insights">
+    <div class="section-inner">
+      <div class="section-eyebrow">First-Party Visitor Data</div>
+      <h2 class="section-title">What you'll learn about<br /><em>your visitors</em></h2>
+      <div class="section-rule"></div>
+      <div class="insights-grid fade-in">
+        <ul class="insights-list">
+          <li class="insight-item">
+            <div class="insight-dash">&mdash;</div>
+            <div>
+              <h4>What travelers actually want to do</h4>
+              <p>Every trip request tells you which experiences visitors are prioritizing: dining, outdoor activities, live entertainment, shopping, and family-friendly options.</p>
+            </div>
+          </li>
+          <li class="insight-item">
+            <div class="insight-dash">&mdash;</div>
+            <div>
+              <h4>Trip length, group size &amp; travel window</h4>
+              <p>Real demand data on how long visitors plan to stay, how many are traveling, and when. Captured directly from the planning session, not inferred from pageviews.</p>
+            </div>
+          </li>
+          <li class="insight-item">
+            <div class="insight-dash">&mdash;</div>
+            <div>
+              <h4>Budget signals &amp; spending intent</h4>
+              <p>Travelers self-select budget preferences during planning. That's first-party spending intent data you can't get from web analytics or social media.</p>
+            </div>
+          </li>
+          <li class="insight-item">
+            <div class="insight-dash">&mdash;</div>
+            <div>
+              <h4>Engagement depth, not just page views</h4>
+              <p>The difference between "browsed for 45 seconds" and "spent 8 minutes building a full itinerary" is the difference between a bounce and a booked trip.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="insights-callout">
+          <div class="callout-eyebrow">Why this matters</div>
+          <h3>Data your board actually wants to see</h3>
+          <p>DMOs are increasingly asked to demonstrate ROI. Getaway gives you concrete engagement metrics: sessions, itineraries generated, average trip length planned, top-requested experiences. These tell a better story than page views ever could.</p>
+          <p>And unlike third-party data, this is yours. No algorithms, no platform dependencies. Visitor intent data captured directly on your own branded tool.</p>
+          <div class="insight-pills">
+            <span class="insight-pill">Sessions &amp; itineraries generated</span>
+            <span class="insight-pill">Top-requested experiences</span>
+            <span class="insight-pill">Average planned trip length</span>
+            <span class="insight-pill">Travel window demand</span>
+            <span class="insight-pill">Group size &amp; composition</span>
+            <span class="insight-pill">Budget preference signals</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1092,171 +585,222 @@
   <!-- FEATURES -->
   <section class="features" id="features">
     <div class="section-inner">
-      <div class="section-eyebrow">What You Get</div>
-      <h2 class="section-title">Everything your visitors<br /><em>need to say yes</em></h2>
+      <div class="section-eyebrow">What's Included</div>
+      <h2 class="section-title">Everything you need.<br /><em>Nothing you don't.</em></h2>
       <div class="section-rule"></div>
-
+      <p class="section-lead">Every deployment is fully built and ready to go. No à-la-carte add-ons, no surprise integrations, no technical lift on your end.</p>
       <div class="features-grid fade-in">
         <div class="feature-card">
-          <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 10 10c0 2.76-2.24 4-5 4s-5-1.24-5-4a5 5 0 0 0-10 0"/></svg></div>
-          <h3>Fully Branded to Your Destination</h3>
-          <p>Your colors, your fonts, your photography. Visitors never see the Getaway brand — only yours. It lives at a URL you control and looks like it was built just for you. Because it was.</p>
+          <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+          <h3>100% Your Brand</h3>
+          <p>Your colors, fonts, and destination photography. Visitors never see "Getaway." They see your organization's name on a world-class planning experience.</p>
+          <span class="feature-compat-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Works alongside your existing Simpleview setup</span>
         </div>
         <div class="feature-card">
-          <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></div>
-          <h3>AI That Knows Your Destination</h3>
-          <p>Not generic AI. We train the planner on your specific restaurants, attractions, events, and local knowledge. No hallucinated businesses, no outdated info — just accurate, local recommendations.</p>
+          <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <h3>Locally Trained AI</h3>
+          <p>Not a generic chatbot. Every deployment is trained on your specific destination: the restaurants, attractions, events, and local knowledge that make your area unique.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-          <h3>PDF Export &amp; Trip Sharing</h3>
-          <p>Visitors can download a beautifully formatted PDF itinerary to bring on their trip, share with travel companions, and save for later. Every PDF is branded to your destination.</p>
+          <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <h3>Branded PDF Export</h3>
+          <p>Visitors export their full itinerary as a beautifully designed PDF with your destination's branding on every page. It's a keepsake they'll reference throughout the entire trip.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h3>Collaborative Planning</h3>
+          <p>Travelers share trips with their group, make edits together, and finalize plans collaboratively. More engaged visitors means higher conversion from browsing to booking.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
           <h3>Mobile-First Experience</h3>
-          <p>Built for the phone in the visitor's pocket. Whether they're planning at home or standing on your main street, the experience is fast, clean, and effortless.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
-          <h3>Embed Anywhere</h3>
-          <p>Drop a link on your homepage, in your email newsletter, in your visitor guide QR code, or in your social bio. No embed code, no developer needed — just a URL.</p>
+          <p>Fully optimized for the way travelers actually use it: on their phones, in the car, while planning at the kitchen table. Flawless on every screen size.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
           <h3>Live in Two Weeks</h3>
-          <p>From signed contract to live deployment in under 14 days. No 6-month agency engagement, no procurement gauntlet, no IT project. We build it. You approve it. Done.</p>
+          <p>No 6-month agency engagement. No IT project. We build it, you approve it, it's live. From signed agreement to deployed product in under 14 days.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- WHO IT'S FOR -->
-  <section class="who">
+  <section class="who" id="who">
     <div class="section-inner">
       <div class="section-eyebrow">Who It's For</div>
       <h2 class="section-title">Built for the people who<br /><em>market destinations</em></h2>
       <div class="section-rule"></div>
-
       <div class="who-grid fade-in">
         <div class="who-card">
           <h3>Convention &amp; Visitors Bureaus</h3>
-          <p>Turn your destination website from a brochure into a planning tool. Give leisure travelers a reason to stay longer and come back.</p>
+          <p>Transform your destination website from a digital brochure into an active planning tool. Give leisure travelers a compelling reason to stay longer and come back.</p>
         </div>
         <div class="who-card">
           <h3>Tourism Boards &amp; DMOs</h3>
-          <p>Add AI trip planning to your digital presence without a technology budget or internal development team. We handle everything.</p>
+          <p>Add enterprise-quality AI trip planning to your digital presence without a technology budget or internal development team. We handle everything, start to finish.</p>
         </div>
         <div class="who-card">
           <h3>Chambers of Commerce</h3>
-          <p>Showcase your member businesses inside a real visitor tool. Every recommendation in the planner drives traffic to local restaurants, hotels, and attractions.</p>
+          <p>Showcase member businesses inside a real visitor planning tool. Every Getaway recommendation drives traffic directly to local restaurants, hotels, and attractions.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="pricing" id="pricing">
+  <!-- FAQ -->
+  <section class="faq" id="faq">
     <div class="section-inner">
-      <div class="section-eyebrow">Pricing</div>
-      <h2 class="section-title">Simple, <em>honest</em> pricing</h2>
+      <div class="section-eyebrow">Common Questions</div>
+      <h2 class="section-title">Everything you're<br /><em>probably wondering</em></h2>
       <div class="section-rule"></div>
-      <p class="section-lead">No per-user fees. No usage limits. No surprises. One flat monthly rate for an enterprise-quality destination planner.</p>
+      <div class="faq-list fade-in">
 
-      <div class="pricing-card fade-in">
-        <div class="pricing-tag">Most Popular</div>
-        <div class="pricing-price">$750 <span>/ month</span></div>
-        <div class="pricing-setup">+ $500 one-time setup fee</div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>We already use Simpleview. Does Getaway work with that?</span>
+            <div class="faq-icon"></div>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, completely. Getaway is a standalone tool that lives at its own URL and doesn't touch your existing CMS, Simpleview setup, or website infrastructure. Think of it as a new page in your digital presence, not a replacement for anything you already have.</p>
+            <p>Many DMOs link to it from their Simpleview-powered site, from email campaigns, or from visitor guide QR codes. No integration work required on your end.</p>
+          </div>
+        </div>
 
-        <div class="pricing-divider"></div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What does the demo process actually look like?</span>
+            <div class="faq-icon"></div>
+          </button>
+          <div class="faq-answer">
+            <p>Fill out the form below with your destination and we'll have a fully functional, branded deployment live at a custom URL within 5 business days. You'll get a real working product built specifically for your city.</p>
+            <p>From there, we walk through it together. You review the itineraries, suggest any adjustments, and we refine until the content accurately reflects your destination and your standards. Nothing goes live without your approval.</p>
+          </div>
+        </div>
 
-        <ul class="pricing-features">
-          <li>Fully custom branded deployment for your destination</li>
-          <li>AI itinerary generation trained on local knowledge</li>
-          <li>Unlimited visitor sessions — no caps, no throttling</li>
-          <li>PDF export with your destination branding</li>
-          <li>Trip sharing &amp; collaborative planning</li>
-          <li>Mobile-optimized experience</li>
-          <li>Ongoing content updates as your destination evolves</li>
-          <li>Dedicated support — real humans, fast responses</li>
-        </ul>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What does it cost?</span>
+            <div class="faq-icon"></div>
+          </button>
+          <div class="faq-answer">
+            <p>We save that conversation for the demo call, where we can walk through exactly what's included and answer your specific questions. What we can say: it's a flat monthly rate with no per-user fees, no usage caps, and no long-term contract required. We'll cover everything transparently. No surprises.</p>
+          </div>
+        </div>
 
-        <a href="#contact" class="btn-primary" style="display:inline-block; width:100%; text-align:center;">
-          Request a Demo
-        </a>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Who owns the visitor data collected through the tool?</span>
+            <div class="faq-icon"></div>
+          </button>
+          <div class="faq-answer">
+            <p><strong>You do.</strong> All visitor engagement data belongs to your organization. We don't sell it, share it, or use it for any purpose other than powering your deployment. We're happy to walk through our full data handling approach on the demo call.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What if the AI recommends something inaccurate about our destination?</span>
+            <div class="faq-icon"></div>
+          </button>
+          <div class="faq-answer">
+            <p>Accuracy is built into every deployment. The system is trained with guardrails that prevent inventing venue details, fabricating menu items, or citing unverified claims. Before your deployment goes live, you have full editorial approval. Ongoing updates are included as your destination evolves.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How long does it take to get a demo built for our city?</span>
+            <div class="faq-icon"></div>
+          </button>
+          <div class="faq-answer">
+            <p>Fill out the form below and we'll have a fully functional demo live at a custom URL within <strong>5 business days</strong>. A real working product, built specifically for your destination.</p>
+          </div>
+        </div>
 
       </div>
     </div>
   </section>
+
+  <!-- CONVICTION STRIP -->
+  <div class="conviction">
+    <div class="conviction-inner fade-in">
+      <div class="conviction-eyebrow">The Bottom Line</div>
+      <h2 class="conviction-statement">
+        Your visitors are already planning<br />their trip somewhere. <em>Make sure<br />it's on your platform.</em>
+      </h2>
+      <div class="conviction-rule"></div>
+      <p class="conviction-sub">When travelers plan on TripAdvisor or ChatGPT, your destination loses the conversation. Getaway puts that conversation back on your website, with your branding, your recommendations, and your data.</p>
+      <a href="#contact" class="btn-primary">Get a Free Demo Built for Your City</a>
+    </div>
+  </div>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
-    <div class="section-inner">
-      <div class="contact-grid">
-        <div>
-          <div class="section-eyebrow">Get Started</div>
-          <h2 class="section-title">Let's build something<br /><em>your visitors will love</em></h2>
-          <div class="section-rule"></div>
-          <p class="section-lead">
-            Tell us a bit about your destination and we'll send you a personalized demo link built for your area — no commitment required.
-          </p>
-          <br /><br />
-          <p style="font-size:0.82rem; color:rgba(255,255,255,0.5); line-height:1.8;">
-            Typical response time: <strong style="color:rgba(255,255,255,0.8);">same business day</strong><br />
-            Demo delivery: <strong style="color:rgba(255,255,255,0.8);">within 5 business days</strong><br />
-            Go-live timeline: <strong style="color:rgba(255,255,255,0.8);">under two weeks</strong>
-          </p>
+    <div class="contact-grid">
+      <div>
+        <div class="section-eyebrow">Get Started</div>
+        <h2 class="section-title">See your destination<br /><em>in action. Free.</em></h2>
+        <div class="section-rule"></div>
+        <p class="section-lead">Tell us your destination and we'll build a personalized, fully functional demo within 5 business days. No commitment, no cost.</p>
+
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <div class="contact-detail-dot"></div>
+            <div>
+              <div class="contact-detail-label">Demo delivery</div>
+              <div class="contact-detail-value">Within 5 business days</div>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-dot"></div>
+            <div>
+              <div class="contact-detail-label">Go-live timeline</div>
+              <div class="contact-detail-value">Under two weeks from agreement</div>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-dot"></div>
+            <div>
+              <div class="contact-detail-label">Response time</div>
+              <div class="contact-detail-value">Same business day</div>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <div class="form-success" id="formSuccess">
-            <h3>We'll be in touch soon.</h3>
-            <p>Thanks for reaching out. We'll review your request and send you a personalized demo link within one business day.</p>
+        <div class="contact-trial-note">
+          <p><strong>Now booking Q3 launches.</strong> We build a limited number of new city deployments per quarter to keep quality high. If you're planning a summer or fall launch, now is the right time to start the conversation.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="form-success" id="formSuccess">
+          <h3>We'll be in touch soon.</h3>
+          <p>Thanks for reaching out. We'll review your destination and send you a personalized demo link within one business day.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvwvlqb" method="POST">
+          <input type="hidden" name="_subject" value="New Demo Request — Getaway B2B" />
+
+          <div class="form-field">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-field">
+            <label>Work Email</label>
+            <input type="email" name="email" placeholder="you@visitcity.org" required />
+          </div>
+          <div class="form-field">
+            <label>Destination / City</label>
+            <input type="text" name="destination" placeholder="Traverse City, MI" required />
+          </div>
+          <div class="form-field">
+            <label>Anything else? <span class="form-optional">optional</span></label>
+            <textarea name="message" placeholder="Tell us about your destination, your current website, or what you're hoping to accomplish..."></textarea>
           </div>
 
-          <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvwvlqb" method="POST">
-            <input type="hidden" name="_subject" value="New Demo Request — Getaway B2B" />
-            <div class="form-row">
-              <div class="form-field">
-                <label>First Name</label>
-                <input type="text" name="first_name" placeholder="Jane" required />
-              </div>
-              <div class="form-field">
-                <label>Last Name</label>
-                <input type="text" name="last_name" placeholder="Smith" required />
-              </div>
-            </div>
-            <div class="form-field">
-              <label>Email</label>
-              <input type="email" name="email" placeholder="you@visitcity.org" required />
-            </div>
-            <div class="form-field">
-              <label>Organization</label>
-              <input type="text" name="organization" placeholder="Traverse City Tourism" required />
-            </div>
-            <div class="form-field">
-              <label>Destination / Region</label>
-              <input type="text" name="destination" placeholder="Traverse City, MI" required />
-            </div>
-            <div class="form-field">
-              <label>Organization Type</label>
-              <select name="org_type">
-                <option value="">Select one...</option>
-                <option>Convention &amp; Visitors Bureau (CVB)</option>
-                <option>Destination Marketing Organization (DMO)</option>
-                <option>Chamber of Commerce</option>
-                <option>Tourism Board</option>
-                <option>City / County Tourism Office</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label>Anything else we should know?</label>
-              <textarea name="message" placeholder="Tell us about your destination, your current website, or anything specific you're hoping to accomplish..."></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Send My Request →</button>
-          </form>
-        </div>
+          <button type="submit" class="btn-submit">Get My Free Demo &rarr;</button>
+        </form>
       </div>
     </div>
   </section>
@@ -1264,56 +808,61 @@
   <!-- FOOTER -->
   <footer>
     <a href="#" class="logo">Get<em>away</em></a>
-    <span class="tagline">No fees. No affiliates. Just honest travel planning.</span>
-    <nav>
-      <a href="/cdn-cgi/l/email-protection#bbd3ded7d7d4fbdcdecfdaccdac295dec3cbdec9cf"><span class="__cf_email__" data-cfemail="7b131e1717143b1c1e0f1a0c1a02551e030b1e090f">[email&#160;protected]</span></a>
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
+    <span class="tagline">AI trip planning built for the destinations that know their visitors best.</span>
+    <nav class="footer-nav">
+      <a href="/cdn-cgi/l/email-protection#6e060b0202012e090b1a0f190f17400b161e0b1c1a"><span class="__cf_email__" data-cfemail="3159545d5d5e71565445504650481f544941544345">[email&#160;protected]</span></a>
     </nav>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Fade-in on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Smooth nav highlight
-    const navLinks = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      const pos = window.scrollY;
-      document.querySelectorAll('section[id]').forEach(sec => {
-        if (pos >= sec.offsetTop - 100) {
-          navLinks.forEach(l => l.style.color = '');
-          const active = document.querySelector(`.nav-links a[href="#${sec.id}"]`);
-          if (active) active.style.color = 'var(--terra)';
-        }
-      });
-    });
-  </script>
-
-  <!-- BACK TO TOP -->
   <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="18 15 12 9 6 15"/>
-    </svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     if (window.location.hash) { history.replaceState(null, null, window.location.pathname); }
     window.scrollTo(0, 0);
-    const btt = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      btt.classList.toggle('visible', window.scrollY > 400);
-    });
-  </script>
 
-</body>
-</html>
+    // Fade in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Back to top
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => { btt.classList.toggle('visible', window.scrollY > 400); });
+
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobile() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Form submission
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = form.querySelector('.btn-submit');
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        try {
+          const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+          if (res.ok) { form.style.display = 'none'; success.style.display = 'block
