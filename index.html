@@ -99,14 +99,14 @@
     .scarcity-bar strong { color: var(--terra-light); font-weight: 700; }
 
     /* ── HERO ── */
-    .hero { min-height: 100vh; background: var(--ink); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 180px 24px 100px; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1800&q=75'); background-size: cover; background-position: center; opacity: 0.14; }
+    .hero { min-height: 100vh; background: #221910; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 180px 24px 100px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1800&q=75'); background-size: cover; background-position: center; opacity: 0.22; }
     .hero-grain { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; }
     .hero-top-rule { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--terra); }
     .hero-content { position: relative; z-index: 2; max-width: 820px; }
     .hero-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 24px; }
-    .hero-title { font-family: var(--font-playfair); font-size: clamp(2.6rem, 7vw, 5.5rem); font-weight: 800; color: #fff; line-height: 1.0; margin-bottom: 28px; letter-spacing: -0.02em; }
-    .hero-title em { color: var(--terra-light); font-style: italic; font-weight: 700; }
+    .hero-title { font-family: var(--font-playfair); font-size: clamp(2rem, 4.5vw, 3.8rem); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 28px; letter-spacing: -0.02em; }
+    .hero-title em { color: #D4A87A; font-style: italic; font-weight: 700; }
     .hero-rule { width: 48px; height: 2px; background: var(--terra); margin: 0 auto 28px; opacity: 0.8; }
     .hero-subtitle { font-family: var(--font-baskerville); font-size: clamp(1rem, 2vw, 1.2rem); font-style: italic; color: rgba(255,255,255,0.52); margin-bottom: 20px; line-height: 1.7; }
     .hero-desc { font-size: clamp(0.88rem, 1.6vw, 1rem); font-weight: 300; color: rgba(255,255,255,0.38); max-width: 480px; margin: 0 auto 52px; line-height: 1.9; letter-spacing: 0.02em; }
@@ -238,17 +238,23 @@
     /* ── FAQ ── */
     .faq { background: var(--mag-white); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
     .faq-list { margin-top: 60px; display: flex; flex-direction: column; gap: 2px; background: var(--rule); }
-    .faq-item { background: var(--mag-white); overflow: hidden; }
-    .faq-question { width: 100%; padding: 28px 36px; background: none; border: none; cursor: pointer; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 20px; transition: background 0.2s; }
+    details.faq-item { background: var(--mag-white); overflow: hidden; display: block; }
+    details.faq-item summary { list-style: none; }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    .faq-question {
+      padding: 28px 36px; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      transition: background 0.2s;
+    }
     .faq-question:hover { background: rgba(196,98,45,0.03); }
     .faq-question span { font-family: var(--font-playfair); font-size: 1.05rem; font-weight: 700; color: var(--ink); line-height: 1.35; }
-    .faq-icon { width: 24px; height: 24px; flex-shrink: 0; position: relative; border: 1.5px solid var(--rule); }
-    .faq-icon::before, .faq-icon::after { content:''; position:absolute; background:var(--terra); transition: transform 0.25s, opacity 0.25s; }
-    .faq-icon::before { width:10px; height:1.5px; top:50%; left:50%; transform:translate(-50%,-50%); }
-    .faq-icon::after { width:1.5px; height:10px; top:50%; left:50%; transform:translate(-50%,-50%); }
-    .faq-item.open .faq-icon::after { transform:translate(-50%,-50%) rotate(90deg); opacity:0; }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 36px; }
-    .faq-item.open .faq-answer { max-height: 400px; padding: 0 36px 28px; }
+    .faq-icon { width: 24px; height: 24px; flex-shrink: 0; position: relative; border: 1.5px solid var(--rule); transition: border-color 0.2s; }
+    .faq-icon::before, .faq-icon::after { content: ''; position: absolute; background: var(--terra); transition: transform 0.25s, opacity 0.25s; }
+    .faq-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .faq-icon::after  { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    details[open] .faq-icon { border-color: var(--terra); }
+    details[open] .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+    .faq-answer { padding: 4px 36px 28px; }
     .faq-answer p { font-size: 0.9rem; color: var(--warm-gray); line-height: 1.8; margin-bottom: 10px; }
     .faq-answer p:last-child { margin-bottom: 0; }
     .faq-answer strong { color: var(--ink); font-weight: 600; }
@@ -655,69 +661,51 @@
       <div class="section-eyebrow">Common Questions</div>
       <h2 class="section-title">Everything you're<br /><em>probably wondering</em></h2>
       <div class="section-rule"></div>
-      <div class="faq-list fade-in">
+      <div class="faq-list">
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>We already use Simpleview. Does Getaway work with that?</span>
-            <div class="faq-icon"></div>
-          </button>
+        <details class="faq-item">
+          <summary class="faq-question"><span>We already use Simpleview. Does Getaway work with that?</span><div class="faq-icon"></div></summary>
           <div class="faq-answer">
             <p>Yes, completely. Getaway is a standalone tool that lives at its own URL and doesn't touch your existing CMS, Simpleview setup, or website infrastructure. Think of it as a new page in your digital presence, not a replacement for anything you already have.</p>
             <p>Many DMOs link to it from their Simpleview-powered site, from email campaigns, or from visitor guide QR codes. No integration work required on your end.</p>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What does the demo process actually look like?</span>
-            <div class="faq-icon"></div>
-          </button>
+        <details class="faq-item">
+          <summary class="faq-question"><span>What does the demo process actually look like?</span><div class="faq-icon"></div></summary>
           <div class="faq-answer">
-            <p>Fill out the form below with your destination and we'll have a fully functional, branded deployment live at a custom URL within 5 business days. You'll get a real working product built specifically for your city.</p>
+            <p>Fill out the form below with your destination and we'll have a fully functional, branded deployment live at a custom URL within 5 business days. A real working product built specifically for your city.</p>
             <p>From there, we walk through it together. You review the itineraries, suggest any adjustments, and we refine until the content accurately reflects your destination and your standards. Nothing goes live without your approval.</p>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What does it cost?</span>
-            <div class="faq-icon"></div>
-          </button>
+        <details class="faq-item">
+          <summary class="faq-question"><span>What does it cost?</span><div class="faq-icon"></div></summary>
           <div class="faq-answer">
             <p>We save that conversation for the demo call, where we can walk through exactly what's included and answer your specific questions. What we can say: it's a flat monthly rate with no per-user fees, no usage caps, and no long-term contract required. We'll cover everything transparently. No surprises.</p>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Who owns the visitor data collected through the tool?</span>
-            <div class="faq-icon"></div>
-          </button>
+        <details class="faq-item">
+          <summary class="faq-question"><span>Who owns the visitor data collected through the tool?</span><div class="faq-icon"></div></summary>
           <div class="faq-answer">
             <p><strong>You do.</strong> All visitor engagement data belongs to your organization. We don't sell it, share it, or use it for any purpose other than powering your deployment. We're happy to walk through our full data handling approach on the demo call.</p>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What if the AI recommends something inaccurate about our destination?</span>
-            <div class="faq-icon"></div>
-          </button>
+        <details class="faq-item">
+          <summary class="faq-question"><span>What if the AI recommends something inaccurate about our destination?</span><div class="faq-icon"></div></summary>
           <div class="faq-answer">
             <p>Accuracy is built into every deployment. The system is trained with guardrails that prevent inventing venue details, fabricating menu items, or citing unverified claims. Before your deployment goes live, you have full editorial approval. Ongoing updates are included as your destination evolves.</p>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>How long does it take to get a demo built for our city?</span>
-            <div class="faq-icon"></div>
-          </button>
+        <details class="faq-item">
+          <summary class="faq-question"><span>How long does it take to get a demo built for our city?</span><div class="faq-icon"></div></summary>
           <div class="faq-answer">
             <p>Fill out the form below and we'll have a fully functional demo live at a custom URL within <strong>5 business days</strong>. A real working product, built specifically for your destination.</p>
           </div>
-        </div>
+        </details>
 
       </div>
     </div>
@@ -848,15 +836,8 @@
       mobileMenu.classList.remove('open');
     }
 
-    // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
+
+
 
     // Form submission
     const form = document.getElementById('contactForm');
@@ -869,4 +850,20 @@
         btn.disabled = true;
         try {
           const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-          if (res.ok) { form.style.display = 'none'; success.style.display = 'block
+          if (res.ok) {
+            form.style.display = 'none';
+            success.style.display = 'block';
+          } else {
+            btn.textContent = 'Something went wrong — try again';
+            btn.disabled = false;
+          }
+        } catch {
+          btn.textContent = 'Something went wrong — try again';
+          btn.disabled = false;
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
