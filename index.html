@@ -299,8 +299,9 @@
     footer .footer-nav a:hover { color: rgba(255,255,255,0.5); }
 
     /* ── UTILS ── */
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-in.visible { opacity: 1; transform: none; }
+    .fade-in { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
+    .js-animate .fade-in { opacity: 0; transform: translateY(20px); }
+    .js-animate .fade-in.visible { opacity: 1; transform: none; }
     .back-to-top { position: fixed; bottom: 32px; right: 32px; width: 44px; height: 44px; background: var(--terra); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.2s; z-index: 50; }
     .back-to-top.visible { opacity: 1; pointer-events: auto; }
     .back-to-top:hover { transform: translateY(-2px); background: var(--terra-light); }
@@ -822,11 +823,14 @@
     if (window.location.hash) { history.replaceState(null, null, window.location.pathname); }
     window.scrollTo(0, 0);
 
-    // Fade in
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    // Only animate if IntersectionObserver is supported
+    if ('IntersectionObserver' in window) {
+      document.body.classList.add('js-animate');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    }
 
     // Back to top
     const btt = document.getElementById('backToTop');
