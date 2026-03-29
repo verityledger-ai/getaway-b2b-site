@@ -47,15 +47,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #1A1208;
+      --ink: #0F2B35;
       --terra: #C4622D;
       --terra-light: #E8845A;
       --terra-pale: #F2C4A8;
-      --cream: #FAF6EF;
-      --cream-dark: #F0E8DA;
-      --warm-gray: #8C7B6B;
-      --rule: #D4C4B0;
-      --mag-white: #FEFCF9;
+      --cream: #F8F7F4;
+      --cream-dark: #EDF0F1;
+      --warm-gray: #4A5E68;
+      --rule: #D8DFE2;
+      --mag-white: #FFFFFF;
+      --teal: #1A7A6D;
+      --teal-light: #5DBFAE;
       --font-playfair: 'Playfair Display', serif;
       --font-jost: 'Jost', sans-serif;
       --font-baskerville: 'Libre Baskerville', serif;
@@ -93,33 +95,24 @@
     .mobile-menu .mobile-cta { margin-top: 20px; background: var(--terra); color: white !important; text-align: center; padding: 16px; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; border-bottom: none; }
     .mobile-menu .mobile-cta:hover { background: var(--terra-light); color: white !important; }
 
-    /* ── SCARCITY BANNER ── */
-    .scarcity-bar { background: var(--ink); padding: 10px 24px; text-align: center; position: fixed; top: 64px; left: 0; right: 0; z-index: 99; border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .scarcity-bar p { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-    .scarcity-bar strong { color: var(--terra-light); font-weight: 700; }
 
     /* ── HERO ── */
-    .hero { min-height: 100vh; background: #221910; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 180px 24px 100px; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1800&q=75'); background-size: cover; background-position: center; opacity: 0.22; }
+    .hero { min-height: 100vh; background: #0A1F28; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 140px 24px 140px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1800&q=75'); background-size: cover; background-position: center; opacity: 0.18; }
     .hero-grain { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; }
     .hero-top-rule { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--terra); }
     .hero-content { position: relative; z-index: 2; max-width: 820px; }
-    .hero-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 24px; }
+    .hero-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 24px; }
     .hero-title { font-family: var(--font-playfair); font-size: clamp(2rem, 4.5vw, 3.8rem); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 28px; letter-spacing: -0.02em; }
-    .hero-title em { color: #D4A87A; font-style: italic; font-weight: 700; }
+    .hero-title em { color: #E8C097; font-style: italic; font-weight: 700; }
     .hero-rule { width: 48px; height: 2px; background: var(--terra); margin: 0 auto 28px; opacity: 0.8; }
-    .hero-subtitle { font-family: var(--font-baskerville); font-size: clamp(1rem, 2vw, 1.2rem); font-style: italic; color: rgba(255,255,255,0.52); margin-bottom: 20px; line-height: 1.7; }
-    .hero-desc { font-size: clamp(0.88rem, 1.6vw, 1rem); font-weight: 300; color: rgba(255,255,255,0.38); max-width: 480px; margin: 0 auto 52px; line-height: 1.9; letter-spacing: 0.02em; }
+    .hero-subtitle { font-family: var(--font-baskerville); font-size: clamp(1rem, 2vw, 1.2rem); font-style: italic; color: rgba(255,255,255,0.7); margin-bottom: 20px; line-height: 1.7; }
+    .hero-desc { font-size: clamp(0.88rem, 1.6vw, 1rem); font-weight: 400; color: rgba(255,255,255,0.72); max-width: 480px; margin: 0 auto 52px; line-height: 1.9; letter-spacing: 0.02em; }
     .hero-cta-group { display: flex; flex-direction: column; align-items: center; gap: 16px; }
     .btn-primary { padding: 20px 48px; background: var(--terra); color: #fff; font-family: var(--font-jost); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 6px 32px rgba(196,98,45,0.45); }
     .btn-primary:hover { background: var(--terra-light); transform: translateY(-2px); box-shadow: 0 10px 40px rgba(196,98,45,0.5); }
     .hero-trial-note { font-size: 0.7rem; color: rgba(255,255,255,0.28); letter-spacing: 0.06em; }
     .hero-trial-note strong { color: rgba(255,255,255,0.52); }
-    .hero-demo-link { font-size: 0.75rem; color: rgba(255,255,255,0.26); text-decoration: none; transition: color 0.2s; }
-    .hero-demo-link span { color: rgba(255,255,255,0.46); text-decoration: underline; text-underline-offset: 3px; }
-    .hero-demo-link:hover span { color: var(--terra-light); }
-    .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.16); display: flex; flex-direction: column; align-items: center; gap: 10px; }
-    .hero-scroll::after { content: ''; width: 1px; height: 40px; background: rgba(255,255,255,0.1); animation: scrollPulse 2.5s ease-in-out infinite; }
     @keyframes scrollPulse { 0%,100% { opacity:0.2; transform:scaleY(0.7); } 50% { opacity:1; transform:scaleY(1); } }
 
     /* ── STAT BAR ── */
@@ -155,10 +148,10 @@
     .problem-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
     .problem-item h4 { font-size: 0.88rem; font-weight: 600; letter-spacing: 0.03em; margin-bottom: 5px; color: var(--ink); }
     .problem-item p { font-size: 0.86rem; color: var(--warm-gray); line-height: 1.65; }
-    .problem-stat-block { background: var(--ink); color: #fff; padding: 52px 44px; position: relative; }
-    .problem-stat-block .stat-headline { font-family: var(--font-playfair); font-size: 3.2rem; font-weight: 800; color: var(--terra-light); line-height: 1; margin-bottom: 12px; letter-spacing: -0.03em; }
+    .problem-stat-block { background: #0A1F28; color: #fff; padding: 52px 44px; position: relative; }
+    .problem-stat-block .stat-headline { font-family: var(--font-playfair); font-size: 3.2rem; font-weight: 800; color: var(--teal-light); line-height: 1; margin-bottom: 12px; letter-spacing: -0.03em; }
     .problem-stat-block .stat-body { font-family: var(--font-baskerville); font-style: italic; font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.8); margin-bottom: 28px; }
-    .problem-stat-block .stat-source { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+    .problem-stat-block .stat-source { font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.65); font-weight: 500; }
     .problem-stat-block .stat-source a { color: var(--terra-light); text-decoration: none; }
     .problem-stat-block .stat-source a:hover { text-decoration: underline; }
 
@@ -166,42 +159,42 @@
     .how { background: var(--cream); }
     .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 60px; background: var(--rule); }
     .step { background: var(--mag-white); padding: 52px 40px; }
-    .step-num { font-family: var(--font-playfair); font-size: 4.5rem; font-weight: 800; color: var(--cream-dark); line-height: 1; margin-bottom: 20px; letter-spacing: -0.04em; }
+    .step-num { font-family: var(--font-playfair); font-size: 4.5rem; font-weight: 800; color: #C8D4D8; line-height: 1; margin-bottom: 20px; letter-spacing: -0.04em; }
     .step-accent { width: 32px; height: 3px; background: var(--terra); margin-bottom: 24px; }
     .step h3 { font-family: var(--font-playfair); font-size: 1.35rem; font-weight: 700; color: var(--ink); margin-bottom: 14px; }
     .step p { font-size: 0.88rem; color: var(--warm-gray); line-height: 1.75; }
 
     /* ── DEMO ── */
-    .demo { background: var(--ink); color: #fff; }
-    .demo .section-eyebrow { color: var(--terra-light); }
+    .demo { background: #0A1F28; color: #fff; }
+    .demo .section-eyebrow { color: var(--teal-light); }
     .demo .section-title { color: #fff; }
-    .demo .section-lead { color: rgba(255,255,255,0.48); margin-bottom: 0; }
+    .demo .section-lead { color: rgba(255,255,255,0.72); margin-bottom: 0; }
     .demo .section-rule { opacity: 0.4; }
     .demo-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; margin-top: 60px; }
-    .demo-city-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 14px; }
+    .demo-city-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 14px; }
     .demo-city-name { font-family: var(--font-playfair); font-size: clamp(2.2rem,4vw,3.2rem); font-weight: 700; color: #fff; line-height: 1.05; margin-bottom: 16px; }
-    .demo-city-name em { color: #c4a747; font-style: italic; }
-    .demo-city-desc { font-size: 0.88rem; color: rgba(255,255,255,0.38); margin-bottom: 32px; font-weight: 300; line-height: 1.7; }
+    .demo-city-name em { color: #E8C097; font-style: italic; }
+    .demo-city-desc { font-size: 0.9rem; color: rgba(255,255,255,0.75); margin-bottom: 32px; font-weight: 300; line-height: 1.7; }
     .demo-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
-    .demo-tag { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(196,98,45,0.12); color: var(--terra-light); border: 1px solid rgba(196,98,45,0.25); padding: 6px 14px; }
-    .demo-window { background: #0f0c07; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,0.5); }
-    .demo-window-bar { background: rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
+    .demo-tag { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(93,191,174,0.15); color: var(--teal-light); border: 1px solid rgba(93,191,174,0.3); padding: 6px 14px; }
+    .demo-window { background: #fff; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,0.4); }
+    .demo-window-bar { background: var(--ink); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 10px 16px; display: flex; align-items: center; gap: 8px; }
     .demo-window-dot { width: 8px; height: 8px; border-radius: 50%; }
-    .demo-window-dot:nth-child(1) { background: rgba(255,100,100,0.4); }
-    .demo-window-dot:nth-child(2) { background: rgba(255,180,50,0.4); }
-    .demo-window-dot:nth-child(3) { background: rgba(50,200,100,0.4); }
-    .demo-window-url { flex:1; background: rgba(255,255,255,0.05); border-radius: 3px; padding: 4px 12px; font-size: 0.68rem; color: rgba(255,255,255,0.25); font-family: var(--font-jost); letter-spacing: 0.02em; margin-left: 8px; }
-    .demo-screen { padding: 24px; min-height: 280px; background: linear-gradient(160deg,#1a1208 0%,#0f0c07 100%); position: relative; overflow: hidden; }
-    .demo-screen::before { content:''; position:absolute; top:-40px; right:-40px; width:200px; height:200px; background:radial-gradient(circle,rgba(196,98,45,0.15),transparent 70%); }
-    .demo-screen-eyebrow { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 10px; opacity: 0.8; }
-    .demo-screen-title { font-family: var(--font-playfair); font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 20px; line-height: 1.2; }
-    .demo-day { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-left: 2px solid var(--terra); padding: 12px 16px; margin-bottom: 8px; border-radius: 2px; }
-    .demo-day-label { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 5px; }
-    .demo-day-title { font-size: 0.82rem; font-weight: 600; color: #fff; margin-bottom: 3px; }
-    .demo-day-desc { font-size: 0.72rem; color: rgba(255,255,255,0.35); line-height: 1.4; }
-    .demo-screen-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.07); }
-    .demo-screen-footer-left { font-size: 0.65rem; color: rgba(255,255,255,0.25); }
-    .demo-screen-badge { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(196,98,45,0.15); color: var(--terra-light); padding: 4px 10px; border: 1px solid rgba(196,98,45,0.2); }
+    .demo-window-dot:nth-child(1) { background: rgba(255,100,100,0.5); }
+    .demo-window-dot:nth-child(2) { background: rgba(255,180,50,0.5); }
+    .demo-window-dot:nth-child(3) { background: rgba(50,200,100,0.5); }
+    .demo-window-url { flex:1; background: rgba(255,255,255,0.08); border-radius: 3px; padding: 4px 12px; font-size: 0.68rem; color: rgba(255,255,255,0.45); font-family: var(--font-jost); letter-spacing: 0.02em; margin-left: 8px; }
+    .demo-screen { padding: 24px; min-height: 280px; background: #fff; position: relative; overflow: hidden; }
+    .demo-screen::before { content:''; position:absolute; top:-40px; right:-40px; width:200px; height:200px; background:radial-gradient(circle,rgba(26,122,109,0.08),transparent 70%); }
+    .demo-screen-eyebrow { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; font-weight: 600; }
+    .demo-screen-title { font-family: var(--font-playfair); font-size: 1.4rem; font-weight: 700; color: var(--ink); margin-bottom: 20px; line-height: 1.2; }
+    .demo-day { background: var(--cream); border: 1px solid var(--rule); border-left: 2px solid var(--terra); padding: 12px 16px; margin-bottom: 8px; border-radius: 2px; }
+    .demo-day-label { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 5px; }
+    .demo-day-title { font-size: 0.82rem; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+    .demo-day-desc { font-size: 0.72rem; color: var(--warm-gray); line-height: 1.4; }
+    .demo-screen-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--rule); }
+    .demo-screen-footer-left { font-size: 0.65rem; color: var(--warm-gray); }
+    .demo-screen-badge { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(196,98,45,0.08); color: var(--terra); padding: 4px 10px; border: 1px solid rgba(196,98,45,0.2); }
 
     /* ── INSIGHTS ── */
     .insights { background: var(--cream-dark); }
@@ -211,13 +204,13 @@
     .insight-dash { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 800; color: var(--terra); line-height: 1; flex-shrink: 0; opacity: 0.5; padding-top: 2px; }
     .insight-item h4 { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
     .insight-item p { font-size: 0.86rem; color: var(--warm-gray); line-height: 1.65; }
-    .insights-callout { background: var(--ink); padding: 52px 44px; }
-    .insights-callout .callout-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 20px; }
+    .insights-callout { background: #0A1F28; padding: 52px 44px; }
+    .insights-callout .callout-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 20px; }
     .insights-callout h3 { font-family: var(--font-playfair); font-size: 1.6rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px; }
-    .insights-callout p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 14px; }
+    .insights-callout p { font-size: 0.9rem; color: rgba(255,255,255,0.82); line-height: 1.75; margin-bottom: 14px; }
     .insights-callout p:last-of-type { margin-bottom: 0; }
     .insight-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
-    .insight-pill { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.52); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 6px 14px; }
+    .insight-pill { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; }
 
     /* ── FEATURES ── */
     .features { background: var(--mag-white); border-top: 1px solid var(--rule); }
@@ -260,12 +253,12 @@
     .faq-answer strong { color: var(--ink); font-weight: 600; }
 
     /* ── CONVICTION ── */
-    .conviction { background: var(--ink); padding: 100px 40px; text-align: center; }
+    .conviction { background: #0A1F28; padding: 100px 40px; text-align: center; }
     .conviction-inner { max-width: 760px; margin: 0 auto; }
     .conviction-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 28px; }
     .conviction-statement { font-family: var(--font-playfair); font-size: clamp(1.6rem,3.5vw,2.6rem); font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: 16px; }
-    .conviction-statement em { color: var(--terra-light); font-style: italic; }
-    .conviction-sub { font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.38); line-height: 1.75; max-width: 520px; margin: 0 auto 48px; }
+    .conviction-statement em { color: var(--teal-light); font-style: italic; }
+    .conviction-sub { font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.72); line-height: 1.75; max-width: 520px; margin: 0 auto 48px; }
     .conviction-rule { width: 32px; height: 2px; background: var(--terra); margin: 24px auto 48px; opacity: 0.4; }
 
     /* ── CONTACT ── */
@@ -282,7 +275,7 @@
     .contact-trial-note strong { color: var(--ink); }
 
     .contact-form { display: flex; flex-direction: column; gap: 18px; }
-    .form-success { display: none; background: var(--ink); padding: 48px 40px; text-align: center; }
+    .form-success { display: none; background: #0A1F28; padding: 48px 40px; text-align: center; }
     .form-success h3 { font-family: var(--font-playfair); font-size: 1.6rem; color: #fff; margin-bottom: 12px; }
     .form-success p { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
     .form-field { display: flex; flex-direction: column; gap: 8px; }
@@ -299,10 +292,10 @@
     footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
     footer .logo { font-family: var(--font-playfair); font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.5); text-decoration: none; letter-spacing: -0.01em; }
     footer .logo em { color: var(--terra); font-style: italic; }
-    footer .tagline { font-size: 0.76rem; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; text-align: center; }
+    footer .tagline { font-size: 0.76rem; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; text-align: center; }
     footer .footer-nav { display: flex; gap: 28px; }
-    footer .footer-nav a { font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.22); text-decoration: none; transition: color 0.2s; }
-    footer .footer-nav a:hover { color: rgba(255,255,255,0.5); }
+    footer .footer-nav a { font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+    footer .footer-nav a:hover { color: rgba(255,255,255,0.9); }
 
     /* ── UTILS ── */
     .fade-in { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -344,7 +337,7 @@
       <li><a href="#how">How It Works</a></li>
       <li><a href="#demo">Live Demo</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact" class="nav-cta">Get a Free Demo</a></li>
+      <li><a href="#contact" class="nav-cta">Schedule a Demo</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -356,12 +349,7 @@
     <a href="#how" onclick="closeMobile()">How It Works</a>
     <a href="#demo" onclick="closeMobile()">Live Demo</a>
     <a href="#faq" onclick="closeMobile()">FAQ</a>
-    <a href="#contact" class="mobile-cta" onclick="closeMobile()">Get a Free Demo Built for Your City →</a>
-  </div>
-
-  <!-- SCARCITY BANNER -->
-  <div class="scarcity-bar">
-    <p>Now booking <strong>Q3 city launches.</strong> Limited build slots available this quarter.</p>
+    <a href="#contact" class="mobile-cta" onclick="closeMobile()">Schedule a Demo &rarr;</a>
   </div>
 
   <!-- HERO -->
@@ -370,19 +358,17 @@
     <div class="hero-grain"></div>
     <div class="hero-top-rule"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">For Tourism Boards · CVBs · DMOs</div>
+      <div class="hero-eyebrow">For Tourism Boards · Convention &amp; Visitors Bureaus · Destination Marketing Organizations</div>
       <h1 class="hero-title">
         Give every visitor a<br /><em>personalized itinerary</em><br />branded to your destination.
       </h1>
       <div class="hero-rule"></div>
-      <p class="hero-subtitle">An AI trip planner that knows your destination the way you do.</p>
+      <p class="hero-subtitle">A trip planner that knows your destination the way you do.</p>
       <p class="hero-desc">Fully white-labeled. Locally trained. Live in under two weeks.<br />No developers. No long contracts. No IT project.</p>
       <div class="hero-cta-group">
-        <a href="#contact" class="btn-primary">Get a Free Demo Built for Your City</a>
-        <a href="https://bransonmoprototype.up.railway.app" target="_blank" rel="noopener" class="hero-demo-link">or <span>see a live example now &rarr;</span></a>
+        <a href="#contact" class="btn-primary">Schedule a Demo</a>
       </div>
     </div>
-    <div class="hero-scroll">Scroll</div>
   </section>
 
   <!-- STAT BAR -->
@@ -403,13 +389,7 @@
     </div>
   </div>
 
-  <!-- SOCIAL PROOF BADGE -->
-  <div class="midwest-badge">
-    <div class="midwest-badge-inner">
-      <div class="badge-dot"></div>
-      <p class="badge-text"><strong>Currently building demos</strong> for destination marketing organizations across the country</p>
-    </div>
-  </div>
+
 
   <!-- PROBLEM -->
   <section class="problem" id="problem">
@@ -437,14 +417,14 @@
             <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
             <div>
               <h4>Building a custom solution isn't realistic</h4>
-              <p>A purpose-built AI trip planner requires meaningful development investment, ongoing technical maintenance, and specialized expertise most destination marketing teams don't have. Getaway handles all of it at a fraction of the cost.</p>
+              <p>A purpose-built trip planner requires meaningful development investment, ongoing technical maintenance, and specialized expertise most destination marketing teams don't have. Getaway handles all of it at a fraction of the cost.</p>
             </div>
           </li>
         </ul>
         <div class="problem-stat-block">
-          <div class="stat-headline">3&times; more</div>
-          <p class="stat-body">Travelers who arrive with a detailed itinerary spend significantly more and are far more likely to extend their stay than those who plan on the fly.</p>
-          <span class="stat-source">Source: <a href="https://www.destinationanalysts.com" target="_blank" rel="noopener">Destination Analysts</a>, State of the American Traveler</span>
+          <div class="stat-headline">The gap</div>
+          <p class="stat-body">Visitors spend hours researching a destination before they arrive. Most of that research happens on TripAdvisor, Google, and ChatGPT. When it happens there, you learn nothing. When it happens on your platform, you know exactly who is coming, what they want to do, how long they plan to stay, and what they're willing to spend. That intelligence is what Getaway gives you.</p>
+          <span class="stat-source">This is the problem Getaway solves.</span>
         </div>
       </div>
     </div>
@@ -486,7 +466,7 @@
       <div class="section-eyebrow">Live Example</div>
       <h2 class="section-title" style="color:#fff;">See the product.<br /><em>Right now.</em></h2>
       <div class="section-rule"></div>
-      <p class="section-lead">This is a fully functional deployment, not a mockup. Every trip it generates is real, locally grounded, and takes about 60 seconds to build.</p>
+      <p class="section-lead">This is a fully functional deployment, not a mockup. Every trip it generates is real, locally grounded, and takes about 90 seconds to build.</p>
       <div class="demo-layout fade-in">
         <div>
           <div class="demo-city-label">Live Demo Deployment</div>
@@ -497,7 +477,7 @@
             <span class="demo-tag">✓ Locally Trained</span>
             <span class="demo-tag">✓ Live Generation</span>
           </div>
-          <a href="https://bransonmoprototype.up.railway.app" target="_blank" rel="noopener" class="btn-primary">Try the Branson Demo &rarr;</a>
+          <a href="https://bransonmoprototype.up.railway.app" target="_blank" rel="noopener" class="btn-primary">Explore the Branson Experience &rarr;</a>
         </div>
         <div class="demo-window">
           <div class="demo-window-bar">
@@ -525,7 +505,7 @@
               <div class="demo-day-desc">A locally loved breakfast spot before your drive home</div>
             </div>
             <div class="demo-screen-footer">
-              <span class="demo-screen-footer-left">Generated in 18 sec &middot; PDF ready to export</span>
+              <span class="demo-screen-footer-left">Generated in 90 sec &middot; PDF ready to export</span>
               <span class="demo-screen-badge">Powered by Getaway</span>
             </div>
           </div>
@@ -601,7 +581,7 @@
           <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
           <h3>100% Your Brand</h3>
           <p>Your colors, fonts, and destination photography. Visitors never see "Getaway." They see your organization's name on a world-class planning experience.</p>
-          <span class="feature-compat-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Works alongside your existing Simpleview setup</span>
+          <span class="feature-compat-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Works alongside your existing setup</span>
         </div>
         <div class="feature-card">
           <div class="feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
@@ -664,25 +644,25 @@
       <div class="faq-list">
 
         <details class="faq-item">
-          <summary class="faq-question"><span>We already use Simpleview. Does Getaway work with that?</span><div class="faq-icon"></div></summary>
+          <summary class="faq-question"><span>Does Getaway work with our existing website and technology setup?</span><div class="faq-icon"></div></summary>
           <div class="faq-answer">
-            <p>Yes, completely. Getaway is a standalone tool that lives at its own URL and doesn't touch your existing CMS, Simpleview setup, or website infrastructure. Think of it as a new page in your digital presence, not a replacement for anything you already have.</p>
-            <p>Many DMOs link to it from their Simpleview-powered site, from email campaigns, or from visitor guide QR codes. No integration work required on your end.</p>
+            <p>Yes, completely. Getaway lives at its own URL and doesn't touch your existing CMS or website infrastructure. Most organizations simply link to it from their existing site, from email campaigns, or from visitor guide QR codes.</p>
+            <p>It can also be embedded directly into an existing page via iframe, so visitors never have to leave your website. No integration work, no IT project required on your end.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-question"><span>What does the demo process actually look like?</span><div class="faq-icon"></div></summary>
           <div class="faq-answer">
-            <p>Fill out the form below with your destination and we'll have a fully functional, branded deployment live at a custom URL within 5 business days. A real working product built specifically for your city.</p>
-            <p>From there, we walk through it together. You review the itineraries, suggest any adjustments, and we refine until the content accurately reflects your destination and your standards. Nothing goes live without your approval.</p>
+            <p>It starts with a conversation. We want to understand your destination, your visitors, and what you're trying to accomplish before we build anything. From there, we put together a deployment built specifically for your city and walk through it together on a follow-up call.</p>
+            <p>You give us direction on what's working and what needs adjustment. We refine it. Nothing goes to your visitors until you're confident it accurately represents your destination.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-question"><span>What does it cost?</span><div class="faq-icon"></div></summary>
           <div class="faq-answer">
-            <p>We save that conversation for the demo call, where we can walk through exactly what's included and answer your specific questions. What we can say: it's a flat monthly rate with no per-user fees, no usage caps, and no long-term contract required. We'll cover everything transparently. No surprises.</p>
+            <p>Less than a single digital billboard per month. We cover the specifics on the call, where we can answer questions about what's included for your destination. Flat monthly rate, no per-user fees, no usage caps.</p>
           </div>
         </details>
 
@@ -696,14 +676,15 @@
         <details class="faq-item">
           <summary class="faq-question"><span>What if the AI recommends something inaccurate about our destination?</span><div class="faq-icon"></div></summary>
           <div class="faq-answer">
-            <p>Accuracy is built into every deployment. The system is trained with guardrails that prevent inventing venue details, fabricating menu items, or citing unverified claims. Before your deployment goes live, you have full editorial approval. Ongoing updates are included as your destination evolves.</p>
+            <p>Accuracy is built into every deployment. The system is trained with guardrails that prevent inventing venue details, fabricating menu items, or citing unverified claims. It recommends by category and reputation rather than specific details it can't verify.</p>
+            <p>We also stay current as your destination evolves. If something changes, we update the deployment to reflect it.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-question"><span>How long does it take to get a demo built for our city?</span><div class="faq-icon"></div></summary>
           <div class="faq-answer">
-            <p>Fill out the form below and we'll have a fully functional demo live at a custom URL within <strong>5 business days</strong>. A real working product, built specifically for your destination.</p>
+            <p>After an initial conversation, we typically have a fully functional deployment ready within <strong>5 business days</strong>. From there, the path from approved demo to live product is under two weeks.</p>
           </div>
         </details>
 
@@ -720,7 +701,7 @@
       </h2>
       <div class="conviction-rule"></div>
       <p class="conviction-sub">When travelers plan on TripAdvisor or ChatGPT, your destination loses the conversation. Getaway puts that conversation back on your website, with your branding, your recommendations, and your data.</p>
-      <a href="#contact" class="btn-primary">Get a Free Demo Built for Your City</a>
+      <a href="#contact" class="btn-primary">Schedule a Demo</a>
     </div>
   </div>
 
@@ -728,17 +709,24 @@
   <section class="contact" id="contact">
     <div class="contact-grid">
       <div>
-        <div class="section-eyebrow">Get Started</div>
-        <h2 class="section-title">See your destination<br /><em>in action. Free.</em></h2>
+        <div class="section-eyebrow">Get in Touch</div>
+        <h2 class="section-title">Start with<br /><em>a conversation.</em></h2>
         <div class="section-rule"></div>
-        <p class="section-lead">Tell us your destination and we'll build a personalized, fully functional demo within 5 business days. No commitment, no cost.</p>
+        <p class="section-lead">Tell us about your destination and what you're trying to accomplish. We'll take it from there.</p>
 
         <div class="contact-details">
           <div class="contact-detail-item">
             <div class="contact-detail-dot"></div>
             <div>
+              <div class="contact-detail-label">Response time</div>
+              <div class="contact-detail-value">Within 2 business days</div>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-dot"></div>
+            <div>
               <div class="contact-detail-label">Demo delivery</div>
-              <div class="contact-detail-value">Within 5 business days</div>
+              <div class="contact-detail-value">Within 5 business days of our call</div>
             </div>
           </div>
           <div class="contact-detail-item">
@@ -748,28 +736,21 @@
               <div class="contact-detail-value">Under two weeks from agreement</div>
             </div>
           </div>
-          <div class="contact-detail-item">
-            <div class="contact-detail-dot"></div>
-            <div>
-              <div class="contact-detail-label">Response time</div>
-              <div class="contact-detail-value">Same business day</div>
-            </div>
-          </div>
         </div>
 
         <div class="contact-trial-note">
-          <p><strong>Now booking Q3 launches.</strong> We build a limited number of new city deployments per quarter to keep quality high. If you're planning a summer or fall launch, now is the right time to start the conversation.</p>
+          <p><strong>Build slots fill quickly.</strong> We work with a limited number of new destinations at a time to maintain quality. If you're ready to move, now is the right time to start the conversation.</p>
         </div>
       </div>
 
       <div>
         <div class="form-success" id="formSuccess">
           <h3>We'll be in touch soon.</h3>
-          <p>Thanks for reaching out. We'll review your destination and send you a personalized demo link within one business day.</p>
+          <p>Thanks for reaching out. Expect to hear from us within 2 business days.</p>
         </div>
 
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvwvlqb" method="POST">
-          <input type="hidden" name="_subject" value="New Demo Request — Getaway B2B" />
+          <input type="hidden" name="_subject" value="New Inquiry — Getaway B2B" />
 
           <div class="form-field">
             <label>Your Name</label>
@@ -788,7 +769,7 @@
             <textarea name="message" placeholder="Tell us about your destination, your current website, or what you're hoping to accomplish..."></textarea>
           </div>
 
-          <button type="submit" class="btn-submit">Get My Free Demo &rarr;</button>
+          <button type="submit" class="btn-submit">Schedule a Demo &rarr;</button>
         </form>
       </div>
     </div>
@@ -797,9 +778,9 @@
   <!-- FOOTER -->
   <footer>
     <a href="#" class="logo">Get<em>away</em></a>
-    <span class="tagline">AI trip planning built for the destinations that know their visitors best.</span>
+    <span class="tagline">Trip planning built for the destinations that know their visitors best.</span>
     <nav class="footer-nav">
-      <a href="/cdn-cgi/l/email-protection#6e060b0202012e090b1a0f190f17400b161e0b1c1a"><span class="__cf_email__" data-cfemail="3159545d5d5e71565445504650481f544941544345">[email&#160;protected]</span></a>
+      <a href="mailto:partners@getaway.expert">partners@getaway.expert</a>
     </nav>
   </footer>
 
