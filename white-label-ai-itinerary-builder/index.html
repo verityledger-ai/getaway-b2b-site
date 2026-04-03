@@ -154,21 +154,21 @@
     }
 
     /* Customization Grid */
-    .custom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0 40px; }
+    .custom-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0 40px; }
     .custom-card {
-      background: var(--mag-white); border: 1px solid var(--rule); padding: 28px 24px;
+      background: var(--mag-white); border: 1px solid var(--rule); padding: 32px 24px;
+      text-align: center; transition: box-shadow 0.2s, transform 0.15s;
     }
-    .custom-card-label {
-      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--terra); margin-bottom: 10px;
+    .custom-card:hover { box-shadow: 0 8px 32px rgba(15,43,53,0.08); transform: translateY(-2px); }
+    .custom-card-icon {
+      width: 48px; height: 48px; margin: 0 auto 18px;
+      background: rgba(196,98,45,0.08); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
     }
+    .custom-card-icon svg { width: 22px; height: 22px; stroke: var(--terra); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
     .custom-card h3 {
-      font-family: var(--font-playfair); font-size: 1.05rem; font-weight: 700;
-      color: var(--ink); margin-bottom: 8px;
-    }
-    .custom-card p {
-      font-size: 0.88rem; color: var(--warm-gray); line-height: 1.7;
-      margin-bottom: 0; max-width: none;
+      font-family: var(--font-playfair); font-size: 1rem; font-weight: 700;
+      color: var(--ink); line-height: 1.3;
     }
 
     /* Data Points */
@@ -335,7 +335,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
-      .custom-grid { grid-template-columns: 1fr; }
+      .custom-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 640px) {
       .product-hero { padding: 140px 20px 60px; }
@@ -420,24 +420,20 @@
 
     <div class="custom-grid">
       <div class="custom-card">
-        <div class="custom-card-label">Visual Identity</div>
-        <h3>Your colors, your logo, your look</h3>
-        <p>The interface adapts to your brand palette, typography feel, and visual style. When visitors arrive, they see your destination, not a generic tech product.</p>
+        <div class="custom-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg></div>
+        <h3>Your colors, logo &amp; look</h3>
       </div>
       <div class="custom-card">
-        <div class="custom-card-label">Destination Knowledge</div>
-        <h3>Trained on what locals actually know</h3>
-        <p>The AI is trained on your specific restaurants, attractions, events, trails, and seasonal context. It knows which places are walkable from each other and which spots are best on a Tuesday vs. a Saturday.</p>
+        <div class="custom-card-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Trained on local knowledge</h3>
       </div>
       <div class="custom-card">
-        <div class="custom-card-label">Partner Visibility</div>
-        <h3>Your businesses, surfaced contextually</h3>
-        <p>Partner restaurants, hotels, outfitters, and attractions appear in itineraries when they're the right fit for that visitor. No pay-to-play. No algorithmic mystery. The right business for the right traveler.</p>
+        <div class="custom-card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Partner businesses surfaced contextually</h3>
       </div>
       <div class="custom-card">
-        <div class="custom-card-label">Tone &amp; Voice</div>
+        <div class="custom-card-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>Speaks like your destination</h3>
-        <p>A mountain town's itinerary reads differently than a Gulf Coast beach destination. The AI adapts its tone, pacing, and recommendations to match the character of your place.</p>
       </div>
     </div>
 
