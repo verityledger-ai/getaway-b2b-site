@@ -112,9 +112,15 @@
     .blog-listing { max-width: 900px; margin: 0 auto; padding: 64px 24px 100px; }
     .blog-card {
       background: var(--mag-white); border: 1px solid var(--rule);
-      padding: 40px 44px; margin-bottom: 28px; transition: box-shadow 0.2s, transform 0.15s;
+      margin-bottom: 28px; transition: box-shadow 0.2s, transform 0.15s;
+      display: grid; grid-template-columns: 260px 1fr; overflow: hidden;
     }
     .blog-card:hover { box-shadow: 0 8px 32px rgba(15,43,53,0.08); transform: translateY(-2px); }
+    .blog-card-thumb {
+      background-size: cover; background-position: center;
+      min-height: 200px;
+    }
+    .blog-card-body { padding: 36px 40px; }
     .blog-card-eyebrow {
       font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em;
       text-transform: uppercase; color: var(--terra); margin-bottom: 14px;
@@ -142,8 +148,10 @@
     .blog-card-link:hover { color: var(--terra-light); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      .blog-card { padding: 28px 24px; }
+    @media (max-width: 740px) {
+      .blog-card { grid-template-columns: 1fr; }
+      .blog-card-thumb { min-height: 180px; }
+      .blog-card-body { padding: 28px 24px; }
       .blog-hero { padding: 140px 20px 60px; }
     }
   </style>
@@ -195,43 +203,55 @@
   <div class="blog-listing">
 
     <div class="blog-card">
-      <div class="blog-card-eyebrow">Visitor Experience &middot; Conversion Strategy</div>
-      <h2><a href="/blog/personalized-itineraries-vs-static-guides">Personalized Itineraries vs. Static Travel Guides: What Today's Travelers Actually Want</a></h2>
-      <div class="blog-card-meta">
-        Laurie Laramie <span>&middot;</span> March 28, 2026 <span>&middot;</span> 7 min read
+      <div class="blog-card-thumb" style="background-image:url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=520&q=80')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-eyebrow">Visitor Experience &middot; Conversion Strategy</div>
+        <h2><a href="/blog/personalized-itineraries-vs-static-guides">Personalized Itineraries vs. Static Travel Guides: What Today's Travelers Actually Want</a></h2>
+        <div class="blog-card-meta">
+          Laurie Laramie <span>&middot;</span> March 28, 2026 <span>&middot;</span> 7 min read
+        </div>
+        <p class="blog-card-excerpt">Static travel guides and "things to do" lists don't convert like they used to. Here's what the research says about personalized AI itineraries and visitor behavior.</p>
+        <a href="/blog/personalized-itineraries-vs-static-guides" class="blog-card-link">Read more &rarr;</a>
       </div>
-      <p class="blog-card-excerpt">Static travel guides and "things to do" lists don't convert like they used to. Here's what the research says about personalized AI itineraries and visitor behavior.</p>
-      <a href="/blog/personalized-itineraries-vs-static-guides" class="blog-card-link">Read more &rarr;</a>
     </div>
 
     <div class="blog-card">
-      <div class="blog-card-eyebrow">Industry Trends &middot; 2026 Strategy</div>
-      <h2><a href="/blog/dmo-ai-itinerary-planner-2026">Why Your DMO Website Needs an AI Itinerary Planner in 2026</a></h2>
-      <div class="blog-card-meta">
-        Laurie Laramie <span>&middot;</span> March 21, 2026 <span>&middot;</span> 8 min read
+      <div class="blog-card-thumb" style="background-image:url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=520&q=80')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-eyebrow">Industry Trends &middot; 2026 Strategy</div>
+        <h2><a href="/blog/dmo-ai-itinerary-planner-2026">Why Your DMO Website Needs an AI Itinerary Planner in 2026</a></h2>
+        <div class="blog-card-meta">
+          Laurie Laramie <span>&middot;</span> March 21, 2026 <span>&middot;</span> 8 min read
+        </div>
+        <p class="blog-card-excerpt">Every major player in travel has launched an AI trip planner. Google, Tripadvisor, Expedia, Airbnb. If your DMO website still offers static lists and PDF guides, you're training visitors to plan their trip somewhere else.</p>
+        <a href="/blog/dmo-ai-itinerary-planner-2026" class="blog-card-link">Read more &rarr;</a>
       </div>
-      <p class="blog-card-excerpt">Every major player in travel has launched an AI trip planner. Google, Tripadvisor, Expedia, Airbnb. If your DMO website still offers static lists and PDF guides, you're training visitors to plan their trip somewhere else.</p>
-      <a href="/blog/dmo-ai-itinerary-planner-2026" class="blog-card-link">Read more &rarr;</a>
     </div>
 
     <div class="blog-card">
-      <div class="blog-card-eyebrow">Data Strategy &middot; Visitor Intelligence</div>
-      <h2><a href="/blog/first-party-data-ai-itinerary-tools">First-Party Data: The Hidden Value of AI Itinerary Tools for DMOs</a></h2>
-      <div class="blog-card-meta">
-        Laurie Laramie <span>&middot;</span> March 14, 2026 <span>&middot;</span> 9 min read
+      <div class="blog-card-thumb" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=520&q=80')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-eyebrow">Data Strategy &middot; Visitor Intelligence</div>
+        <h2><a href="/blog/first-party-data-ai-itinerary-tools">First-Party Data: The Hidden Value of AI Itinerary Tools for DMOs</a></h2>
+        <div class="blog-card-meta">
+          Laurie Laramie <span>&middot;</span> March 14, 2026 <span>&middot;</span> 9 min read
+        </div>
+        <p class="blog-card-excerpt">Every time a visitor uses an AI itinerary tool on your website, they're telling you something. No cookies. No tracking pixels. No third-party data brokers. This is first-party data.</p>
+        <a href="/blog/first-party-data-ai-itinerary-tools" class="blog-card-link">Read more &rarr;</a>
       </div>
-      <p class="blog-card-excerpt">Every time a visitor uses an AI itinerary tool on your website, they're telling you something. No cookies. No tracking pixels. No third-party data brokers. This is first-party data.</p>
-      <a href="/blog/first-party-data-ai-itinerary-tools" class="blog-card-link">Read more &rarr;</a>
     </div>
 
     <div class="blog-card">
-      <div class="blog-card-eyebrow">For DMOs &middot; Tourism Boards &middot; CVBs</div>
-      <h2><a href="/blog/ai-trip-planning-midwest-dmos">AI Trip Planning for Midwest DMOs: How Smart Itineraries Drive Visitor Engagement</a></h2>
-      <div class="blog-card-meta">
-        Laurie Laramie <span>&middot;</span> March 7, 2026 <span>&middot;</span> 8 min read
+      <div class="blog-card-thumb" style="background-image:url('/images/blog/ai-trip-planning-midwest-dmos.jpeg')"></div>
+      <div class="blog-card-body">
+        <div class="blog-card-eyebrow">For DMOs &middot; Tourism Boards &middot; CVBs</div>
+        <h2><a href="/blog/ai-trip-planning-midwest-dmos">AI Trip Planning for Midwest DMOs: How Smart Itineraries Drive Visitor Engagement</a></h2>
+        <div class="blog-card-meta">
+          Laurie Laramie <span>&middot;</span> March 7, 2026 <span>&middot;</span> 8 min read
+        </div>
+        <p class="blog-card-excerpt">Most destination websites do an excellent job of telling visitors what exists. The challenge is that inspiration alone rarely converts to a planned trip. Visitors browse, bookmark a few links, and then turn to...</p>
+        <a href="/blog/ai-trip-planning-midwest-dmos" class="blog-card-link">Read more &rarr;</a>
       </div>
-      <p class="blog-card-excerpt">Most destination websites do an excellent job of telling visitors what exists. The challenge is that inspiration alone rarely converts to a planned trip. Visitors browse, bookmark a few links, and then turn to...</p>
-      <a href="/blog/ai-trip-planning-midwest-dmos" class="blog-card-link">Read more &rarr;</a>
     </div>
 
   </div>
