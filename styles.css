@@ -35,8 +35,10 @@ nav.site-nav {
   padding: 0 40px; height: 64px;
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-logo { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; flex-shrink: 0; }
+.nav-logo { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; flex-shrink: 0; display: flex; align-items: center; gap: 8px; }
 .nav-logo em { color: var(--terra); font-style: italic; }
+.nav-home-icon { width: 16px; height: 16px; stroke: var(--warm-gray); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; transition: stroke 0.2s; }
+.nav-logo:hover .nav-home-icon { stroke: var(--terra); }
 .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
 .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm-gray); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--terra); }
