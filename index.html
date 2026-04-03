@@ -297,6 +297,39 @@
     footer .footer-nav a { font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
     footer .footer-nav a:hover { color: rgba(255,255,255,0.9); }
 
+    /* ── BLOG PREVIEW ── */
+    .blog-preview { background: var(--cream); border-top: 1px solid var(--rule); }
+    .blog-preview .section-inner { max-width: 1100px; margin: 0 auto; }
+    .blog-preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+    .blog-preview-card {
+      background: var(--mag-white); border: 1px solid var(--rule); border-radius: 8px;
+      padding: 32px 28px; transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .blog-preview-card:hover { box-shadow: 0 8px 32px rgba(15,43,53,0.08); transform: translateY(-2px); }
+    .blog-preview-card h3 {
+      font-family: var(--font-jost); font-size: 1.02rem; font-weight: 600;
+      color: var(--ink); line-height: 1.4; margin-bottom: 10px;
+    }
+    .blog-preview-card h3 a { color: var(--ink); text-decoration: none; transition: color 0.2s; }
+    .blog-preview-card h3 a:hover { color: var(--terra); }
+    .blog-preview-date {
+      font-size: 0.72rem; color: var(--warm-gray); margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .blog-preview-excerpt {
+      font-size: 0.86rem; color: var(--warm-gray); line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .blog-preview-link {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--terra); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .blog-preview-link:hover { color: var(--terra-light); }
+    @media (max-width: 960px) {
+      .blog-preview-grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+
     /* ── UTILS ── */
     .fade-in { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
     .js-animate .fade-in { opacity: 0; transform: translateY(20px); }
@@ -773,6 +806,35 @@
 
           <button type="submit" class="btn-submit">Schedule a Demo &rarr;</button>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="blog-preview">
+    <div class="section-inner">
+      <div class="section-eyebrow">Latest</div>
+      <h2 class="section-title">From the <em>Blog</em></h2>
+      <div class="section-rule"></div>
+      <div class="blog-preview-grid fade-in">
+        <div class="blog-preview-card">
+          <h3><a href="/blog/personalized-itineraries-vs-static-guides">Personalized Itineraries vs. Static Travel Guides: What Today's Travelers Actually Want</a></h3>
+          <div class="blog-preview-date">March 28, 2026</div>
+          <p class="blog-preview-excerpt">Static travel guides and "things to do" lists don't convert like they used to. Here's what the research says about personalized AI itineraries and visitor behavior.</p>
+          <a href="/blog/personalized-itineraries-vs-static-guides" class="blog-preview-link">Read more &rarr;</a>
+        </div>
+        <div class="blog-preview-card">
+          <h3><a href="/blog/dmo-ai-itinerary-planner-2026">Why Your DMO Website Needs an AI Itinerary Planner in 2026</a></h3>
+          <div class="blog-preview-date">March 21, 2026</div>
+          <p class="blog-preview-excerpt">Every major player in travel has launched an AI trip planner. If your DMO website still offers static lists and PDF guides, you're training visitors to plan their trip somewhere else.</p>
+          <a href="/blog/dmo-ai-itinerary-planner-2026" class="blog-preview-link">Read more &rarr;</a>
+        </div>
+        <div class="blog-preview-card">
+          <h3><a href="/blog/first-party-data-ai-itinerary-tools">First-Party Data: The Hidden Value of AI Itinerary Tools for DMOs</a></h3>
+          <div class="blog-preview-date">March 14, 2026</div>
+          <p class="blog-preview-excerpt">Every time a visitor uses an AI itinerary tool on your website, they're telling you something. No cookies. No tracking pixels. No third-party data brokers. This is first-party data.</p>
+          <a href="/blog/first-party-data-ai-itinerary-tools" class="blog-preview-link">Read more &rarr;</a>
+        </div>
       </div>
     </div>
   </section>
