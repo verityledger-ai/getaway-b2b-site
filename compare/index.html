@@ -114,46 +114,8 @@
     .compare-content a { color: var(--terra); text-decoration: underline; text-underline-offset: 2px; }
     .compare-content a:hover { color: var(--terra-light); }
 
-    /* Approach Cards */
-    .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 36px 0 48px; }
-    .approach-card {
-      background: var(--mag-white); border: 1px solid var(--rule); border-radius: 8px;
-      padding: 32px 28px; position: relative;
-    }
-    .approach-card.highlight {
-      border: 2px solid var(--terra); box-shadow: 0 8px 32px rgba(196,98,45,0.1);
-    }
-    .approach-badge {
-      position: absolute; top: -1px; right: 24px;
-      background: var(--terra); color: #fff; font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 14px;
-      border-radius: 0 0 4px 4px;
-    }
-    .approach-card h3 {
-      font-family: var(--font-playfair); font-size: 1.15rem; font-weight: 700;
-      color: var(--ink); margin-bottom: 6px;
-    }
-    .approach-type {
-      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--warm-gray); margin-bottom: 14px;
-    }
-    .approach-card p {
-      font-size: 0.9rem; color: var(--warm-gray); line-height: 1.7;
-      margin-bottom: 16px; max-width: none;
-    }
-    .approach-pros, .approach-cons {
-      font-size: 0.84rem; line-height: 1.7; margin-bottom: 8px;
-    }
-    .approach-pros { color: var(--teal); }
-    .approach-cons { color: #B85C3A; }
-    .approach-pros strong, .approach-cons strong {
-      font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
-    }
-
     /* Comparison Table */
-    .compare-table-wrap { overflow-x: auto; margin: 36px 0 48px; position: relative; }
-    .compare-table-wrap::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 40px; background: linear-gradient(to right, transparent, rgba(248,247,244,0.9)); pointer-events: none; z-index: 1; }
-    .scroll-hint { display: none; text-align: center; font-size: 0.72rem; color: var(--warm-gray); letter-spacing: 0.06em; margin-top: -40px; margin-bottom: 40px; }
+    .compare-table-wrap { overflow-x: auto; margin: 36px 0 48px; }
     .compare-table {
       width: 100%; border-collapse: collapse; font-size: 0.84rem; min-width: 900px;
     }
@@ -181,16 +143,6 @@
     }
     .check { color: var(--teal); font-weight: 700; }
     .cross { color: #B85C3A; }
-
-    /* Pullquote */
-    .pullquote {
-      border-left: 4px solid var(--terra); background: var(--mag-white);
-      padding: 28px 32px; margin: 36px 0; max-width: 720px;
-    }
-    .pullquote p {
-      font-family: var(--font-playfair); font-style: italic; font-size: 1.15rem;
-      color: var(--ink); line-height: 1.6; margin-bottom: 0; max-width: none;
-    }
 
     /* CTA */
     .compare-cta {
@@ -230,15 +182,6 @@
     .compare-bottom { padding-bottom: 80px; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      .approach-grid { grid-template-columns: 1fr; }
-    }
-    @media (min-width: 961px) {
-      .compare-table-wrap::after { display: none; }
-    }
-    @media (max-width: 960px) {
-      .scroll-hint { display: block; }
-    }
     @media (max-width: 640px) {
       .compare-hero { padding: 140px 20px 60px; }
       .compare-content { padding: 36px 20px 0; }
@@ -308,46 +251,7 @@
 
     <p>There are four ways a DMO can add AI trip planning to its website today. Each one involves real tradeoffs in cost, control, accuracy, and the data you get back. Here's an honest look at all four.</p>
 
-    <h2>The Four Approaches</h2>
-
-    <div class="approach-grid">
-
-      <div class="approach-card">
-        <h3>General-Purpose AI</h3>
-        <div class="approach-type">ChatGPT, Google AI Overviews, Copilot</div>
-        <p>Visitors use a general-purpose AI to plan their trip. The AI pulls from whatever web data it has about your destination. Your DMO isn't involved in the experience at all.</p>
-        <div class="approach-pros"><strong>Upside:</strong> Free. Already available. Visitors are using it whether you want them to or not.</div>
-        <div class="approach-cons"><strong>Downside:</strong> No local training. Recommends closed businesses. No brand presence. You get zero data. Your partner businesses have no visibility. The AI might send visitors to a chain restaurant instead of the local gem you exist to promote.</div>
-      </div>
-
-      <div class="approach-card">
-        <h3>Agency-Built Custom Tool</h3>
-        <div class="approach-type">Custom development by a digital agency</div>
-        <p>You hire an agency to build a bespoke AI trip planning tool for your website. They design, develop, and deploy a custom solution tailored to your destination.</p>
-        <div class="approach-pros"><strong>Upside:</strong> Fully custom. Can be designed exactly to your specifications. Deep integration with existing systems if needed.</div>
-        <div class="approach-cons"><strong>Downside:</strong> 4-8 month timeline. $50K-$150K+ build cost. Requires ongoing developer maintenance. Most DMO teams don't have technical staff to manage it long-term. If the agency relationship ends, you're stuck maintaining code you didn't write.</div>
-      </div>
-
-      <div class="approach-card">
-        <h3>Enterprise Travel Platform</h3>
-        <div class="approach-type">Platforms built for hotels, OTAs, and tour operators</div>
-        <p>Some enterprise travel technology companies have added AI itinerary features to their platforms. These tools are designed for the broader travel industry, not specifically for destination marketing organizations.</p>
-        <div class="approach-pros"><strong>Upside:</strong> Established companies. Broad feature sets. May integrate with booking engines and reservation systems.</div>
-        <div class="approach-cons"><strong>Downside:</strong> Your destination is one of thousands in their system. Recommendations are driven by commercial partnerships (who pays them), not local expertise. Limited white-labeling. DMO-specific needs like partner visibility, visitor data ownership, and grant-ready reporting are afterthoughts, not core features.</div>
-      </div>
-
-      <div class="approach-card highlight">
-        <div class="approach-badge">Getaway's Approach</div>
-        <h3>Purpose-Built White-Label Tool</h3>
-        <div class="approach-type">Built specifically for DMOs, branded to your destination</div>
-        <p>A white-label AI itinerary tool designed from the ground up for destination marketing organizations. Trained on your specific destination. Branded to your organization. Deployed on your website.</p>
-        <div class="approach-pros"><strong>Upside:</strong> Locally trained AI. 100% your brand. Live in under two weeks. No developers needed on your end. First-party visitor data belongs to you. Partner businesses get contextual visibility. Grant-ready engagement metrics from day one.</div>
-        <div class="approach-cons"><strong>Downside:</strong> Doesn't include booking engine integration (by design, to stay CMS-agnostic).</div>
-      </div>
-
-    </div>
-
-    <h2>Side-by-Side Comparison</h2>
+    <h2>How the Approaches Compare</h2>
 
     <div class="compare-table-wrap">
       <table class="compare-table">
@@ -397,42 +301,15 @@
             <td class="highlight-col"><span class="check">100% yours. We never sell or share it</span></td>
           </tr>
           <tr>
-            <td>Partner visibility</td>
-            <td class="cross">Algorithmic. No DMO input</td>
-            <td>Customizable</td>
-            <td>Pay-to-play or algorithmic</td>
-            <td class="highlight-col"><span class="check">Contextual. Right business, right visitor</span></td>
-          </tr>
-          <tr>
             <td>IT/dev staff required</td>
             <td>No</td>
             <td class="cross">Yes, ongoing</td>
             <td>Some</td>
             <td class="highlight-col"><span class="check">None</span></td>
           </tr>
-          <tr>
-            <td>Works with Simpleview</td>
-            <td>N/A</td>
-            <td>Depends on build</td>
-            <td>Varies</td>
-            <td class="highlight-col"><span class="check">Yes. Embeds on any CMS via link or iframe</span></td>
-          </tr>
-          <tr>
-            <td>Grant-ready metrics</td>
-            <td class="cross">No</td>
-            <td>If built that way</td>
-            <td>Limited</td>
-            <td class="highlight-col"><span class="check">Yes. Sessions, itineraries, interests, origins</span></td>
-          </tr>
         </tbody>
       </table>
     </div>
-    <div class="scroll-hint">Swipe to compare all approaches &rarr;</div>
-
-    <div class="pullquote">
-      <p>The right question isn't "should we add AI trip planning?" Travelers are already using AI to plan trips to your destination. The question is whether they do it on your website, with your data, featuring your partners, or on someone else's platform where you're invisible.</p>
-    </div>
-
     <h2>What to Ask Any Vendor</h2>
 
     <p>If you're evaluating AI trip planning tools for your DMO, these are the questions that separate serious solutions from demos that look good in a pitch meeting:</p>
