@@ -22,6 +22,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="White-Label AI Itinerary Builder for DMOs" />
   <meta name="twitter:description" content="Your brand. Your data. Your destination knowledge. See what a white-label AI itinerary builder looks like when it's built for your DMO." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80" />
 
   <script type="application/ld+json">
   {
@@ -54,65 +55,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink: #0F2B35;
-      --terra: #C4622D;
-      --terra-light: #E8845A;
-      --terra-pale: #F2C4A8;
-      --cream: #F8F7F4;
-      --cream-dark: #EDF0F1;
-      --warm-gray: #4A5E68;
-      --rule: #D8DFE2;
-      --mag-white: #FFFFFF;
-      --teal: #1A7A6D;
-      --teal-light: #5DBFAE;
-      --font-playfair: 'Playfair Display', serif;
-      --font-jost: 'Jost', sans-serif;
-      --font-baskerville: 'Libre Baskerville', serif;
-    }
-
-    html { scroll-behavior: smooth; }
-    body { background: var(--cream); color: var(--ink); font-family: var(--font-jost); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
-
-    /* ── ACCESSIBILITY ── */
-    .skip-link { position: absolute; top: -100%; left: 16px; background: var(--terra); color: #fff; padding: 12px 24px; font-size: 0.85rem; font-weight: 600; z-index: 999; text-decoration: none; border-radius: 0 0 4px 4px; }
-    .skip-link:focus { top: 0; }
-    *:focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
-    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
-
-    /* ── NAV ── */
-    nav.site-nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      background: rgba(250,246,239,0.96); backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--rule);
-      padding: 0 40px; height: 64px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; flex-shrink: 0; }
-    .nav-logo em { color: var(--terra); font-style: italic; }
-    .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
-    .nav-links a { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm-gray); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--terra); }
-    .nav-cta { background: var(--terra) !important; color: white !important; padding: 10px 22px; font-size: 0.72rem !important; font-weight: 700 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; border: none; cursor: pointer; transition: background 0.2s, transform 0.15s !important; text-decoration: none; white-space: nowrap; }
-    .nav-cta:hover { background: var(--terra-light) !important; color: white !important; transform: translateY(-1px); }
-
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); transition: all 0.25s; }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(250,246,239,0.98); backdrop-filter: blur(16px); border-bottom: 1px solid var(--rule); z-index: 199; padding: 24px 24px 32px; flex-direction: column; gap: 0; }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-size: 0.88rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm-gray); text-decoration: none; padding: 14px 0; border-bottom: 1px solid var(--rule); transition: color 0.2s; }
-    .mobile-menu a:hover { color: var(--terra); }
-    .mobile-menu .mobile-cta { margin-top: 20px; background: var(--terra); color: white !important; text-align: center; padding: 16px; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; border-bottom: none; }
-    .mobile-menu .mobile-cta:hover { background: var(--terra-light); color: white !important; }
-
     /* ── HERO ── */
     .product-hero {
       background: #0A1F28; padding: 160px 24px 80px; text-align: center;
@@ -337,23 +282,11 @@
       margin-bottom: 0; max-width: none;
     }
 
-    /* ── FOOTER ── */
-    footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-    footer .logo { font-family: var(--font-playfair); font-size: 1.3rem; font-weight: 700; color: rgba(255,255,255,0.5); text-decoration: none; letter-spacing: -0.01em; }
-    footer .logo em { color: var(--terra); font-style: italic; }
-    footer .tagline { font-size: 0.76rem; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; text-align: center; }
-    footer .footer-nav { display: flex; gap: 28px; }
-    footer .footer-nav a { font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
-    footer .footer-nav a:hover { color: rgba(255,255,255,0.9); }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
       .custom-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
-      nav.site-nav { padding: 0 20px; }
       .product-hero { padding: 140px 20px 60px; }
       .product-content { padding: 36px 20px 0; }
       .product-cta { padding: 36px 24px; margin: 40px 20px 0; }
@@ -460,7 +393,7 @@
     <div class="screenshot-showcase">
 
       <div class="screenshot-hero">
-        <img src="/images/product/homepage.jpg" alt="Getaway white-label AI trip planner homepage branded for Branson, Missouri with Plan My Trip call to action" width="1438" height="784" loading="lazy" />
+        <img src="/images/product/homepage.jpg" srcset="/images/product/sm/homepage.jpg 720w, /images/product/homepage.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Getaway white-label AI trip planner homepage branded for Branson, Missouri with Plan My Trip call to action" width="1438" height="784" loading="lazy" />
       </div>
       <p>The visitor lands on a fully branded experience. Destination name, hero photography, and messaging that feels like a natural extension of the DMO's website.</p>
 
@@ -468,14 +401,14 @@
 
       <div class="screenshot-row">
         <div class="screenshot-card">
-          <img src="/images/product/question-duration.jpg" alt="Trip duration question asking how long the visitor will stay, with options from Weekend to Two Weeks" width="1431" height="819" loading="lazy" />
+          <img src="/images/product/question-duration.jpg" srcset="/images/product/sm/question-duration.jpg 720w, /images/product/question-duration.jpg 1440w" sizes="(max-width: 768px) 100vw, 540px" alt="Trip duration question asking how long the visitor will stay, with options from Weekend to Two Weeks" width="1431" height="819" loading="lazy" />
           <div class="screenshot-caption">
             <div class="screenshot-caption-label">Question 1</div>
             <p>How long is the trip? Options from a weekend to two weeks.</p>
           </div>
         </div>
         <div class="screenshot-card">
-          <img src="/images/product/question-timing.jpg" alt="Travel timing question showing a 12-month calendar grid with seasonal labels and emoji icons" width="1438" height="784" loading="lazy" />
+          <img src="/images/product/question-timing.jpg" srcset="/images/product/sm/question-timing.jpg 720w, /images/product/question-timing.jpg 1440w" sizes="(max-width: 768px) 100vw, 540px" alt="Travel timing question showing a 12-month calendar grid with seasonal labels and emoji icons" width="1438" height="784" loading="lazy" />
           <div class="screenshot-caption">
             <div class="screenshot-caption-label">Question 2</div>
             <p>When are they visiting? Seasonal context shapes every recommendation.</p>
@@ -485,14 +418,14 @@
 
       <div class="screenshot-row">
         <div class="screenshot-card">
-          <img src="/images/product/question-group.jpg" alt="Travel group question asking who is joining, with Solo, Couple, Family, and Friends options and age selectors for children" width="1438" height="784" loading="lazy" />
+          <img src="/images/product/question-group.jpg" srcset="/images/product/sm/question-group.jpg 720w, /images/product/question-group.jpg 1440w" sizes="(max-width: 768px) 100vw, 540px" alt="Travel group question asking who is joining, with Solo, Couple, Family, and Friends options and age selectors for children" width="1438" height="784" loading="lazy" />
           <div class="screenshot-caption">
             <div class="screenshot-caption-label">Question 3</div>
             <p>Who's traveling? Solo, couple, family (with children's ages), or friends.</p>
           </div>
         </div>
         <div class="screenshot-card">
-          <img src="/images/product/question-vibe.jpg" alt="Interest selection question with four category cards: Shows and entertainment, Lake and outdoors, Family attractions, and Food and leisure" width="1438" height="784" loading="lazy" />
+          <img src="/images/product/question-vibe.jpg" srcset="/images/product/sm/question-vibe.jpg 720w, /images/product/question-vibe.jpg 1440w" sizes="(max-width: 768px) 100vw, 540px" alt="Interest selection question with four category cards: Shows and entertainment, Lake and outdoors, Family attractions, and Food and leisure" width="1438" height="784" loading="lazy" />
           <div class="screenshot-caption">
             <div class="screenshot-caption-label">Question 4</div>
             <p>What's their vibe? Interest categories tailored to the destination.</p>
@@ -502,14 +435,14 @@
 
       <div class="screenshot-row">
         <div class="screenshot-card">
-          <img src="/images/product/question-budget.jpg" alt="Budget range question with four options from Budget-friendly to No limit" width="1431" height="819" loading="lazy" />
+          <img src="/images/product/question-budget.jpg" srcset="/images/product/sm/question-budget.jpg 720w, /images/product/question-budget.jpg 1440w" sizes="(max-width: 768px) 100vw, 540px" alt="Budget range question with four options from Budget-friendly to No limit" width="1431" height="819" loading="lazy" />
           <div class="screenshot-caption">
             <div class="screenshot-caption-label">Question 5</div>
             <p>Budget range. Hotels, dining, and activities scale accordingly.</p>
           </div>
         </div>
         <div class="screenshot-card">
-          <img src="/images/product/question-details.jpg" alt="Free-text field for must-haves and hard no's, showing example: ideal spots for traveling with small children, gluten free, one date night" width="1431" height="819" loading="lazy" />
+          <img src="/images/product/question-details.jpg" srcset="/images/product/sm/question-details.jpg 720w, /images/product/question-details.jpg 1440w" sizes="(max-width: 768px) 100vw, 540px" alt="Free-text field for must-haves and hard no's, showing example: ideal spots for traveling with small children, gluten free, one date night" width="1431" height="819" loading="lazy" />
           <div class="screenshot-caption">
             <div class="screenshot-caption-label">Question 6</div>
             <p>Any must-haves or hard no's. Dietary needs, accessibility, specific requests.</p>
@@ -522,17 +455,17 @@
       <div class="section-label">The Generated Itinerary</div>
 
       <div class="screenshot-hero">
-        <img src="/images/product/itinerary-hero.jpg" alt="Magazine-style itinerary hero for Branson Missouri showing trip details: 3 days, Family, Shows and entertainment with Lake and outdoors, Mid-range budget, and navigation tabs for Itinerary, Stays, Eat and Do, Budget, Weather, Packing, and Top Picks" width="1438" height="784" loading="lazy" />
+        <img src="/images/product/itinerary-hero.jpg" srcset="/images/product/sm/itinerary-hero.jpg 720w, /images/product/itinerary-hero.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Magazine-style itinerary hero for Branson Missouri showing trip details: 3 days, Family, Shows and entertainment with Lake and outdoors, Mid-range budget, and navigation tabs for Itinerary, Stays, Eat and Do, Budget, Weather, Packing, and Top Picks" width="1438" height="784" loading="lazy" />
       </div>
       <p>The itinerary opens with a magazine-style hero showing the trip summary: destination, duration, group type, interests, and budget. Tabbed navigation lets visitors explore their itinerary, curated accommodations, restaurants, weather, packing lists, and top picks. They can share, save, invite travel companions, email, text, or export as PDF.</p>
 
       <div class="screenshot-hero">
-        <img src="/images/product/itinerary-days.jpg" alt="Day-by-day itinerary showing three columns for Day 1, Day 2, and Day 3, each with morning, afternoon, and evening activities including Silver Dollar City, Table Rock Lake State Park, Branson Landing, Showboat Branson Belle, and Dolly Parton's Stampede with ratings, hours, and distances" width="1438" height="784" loading="lazy" />
+        <img src="/images/product/itinerary-days.jpg" srcset="/images/product/sm/itinerary-days.jpg 720w, /images/product/itinerary-days.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Day-by-day itinerary showing three columns for Day 1, Day 2, and Day 3, each with morning, afternoon, and evening activities including Silver Dollar City, Table Rock Lake State Park, Branson Landing, Showboat Branson Belle, and Dolly Parton's Stampede with ratings, hours, and distances" width="1438" height="784" loading="lazy" />
       </div>
       <p>Every day is structured around the visitor's rhythm: morning activities, afternoon experiences, evening plans. Each recommendation includes ratings, hours, distance from downtown, and a description written from local knowledge. Visitors can swap any recommendation with one tap.</p>
 
       <div class="screenshot-hero">
-        <img src="/images/product/itinerary-stays.jpg" alt="Curated Accommodations section showing three hotel recommendations across budget, mid-range, and splurge tiers: Comfort Inn and Suites, Hilton Branson Convention Center, and Big Cedar Lodge" width="1438" height="784" loading="lazy" />
+        <img src="/images/product/itinerary-stays.jpg" srcset="/images/product/sm/itinerary-stays.jpg 720w, /images/product/itinerary-stays.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Curated Accommodations section showing three hotel recommendations across budget, mid-range, and splurge tiers: Comfort Inn and Suites, Hilton Branson Convention Center, and Big Cedar Lodge" width="1438" height="784" loading="lazy" />
       </div>
       <p>Accommodations are curated across price tiers, not listed alphabetically from a booking engine. The AI recommends hotels that match the visitor's budget, group size, and proximity to their planned activities.</p>
 
