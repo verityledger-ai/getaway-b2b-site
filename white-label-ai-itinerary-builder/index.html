@@ -654,7 +654,7 @@
       }
 
       function goTo(i) {
-        slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        track.scrollTo({ left: i * track.offsetWidth, behavior: 'smooth' });
         updateInfo(i);
         resetAuto();
       }
@@ -672,15 +672,23 @@
         }, 80);
       });
 
-      // Auto-advance
+      // Auto-advance only when carousel is visible
+      let carouselVisible = false;
+      const visObserver = new IntersectionObserver(([entry]) => {
+        carouselVisible = entry.isIntersecting;
+        if (carouselVisible) resetAuto(); else clearInterval(autoTimer);
+      }, { threshold: 0.3 });
+      visObserver.observe(document.getElementById('productCarousel'));
+
       function resetAuto() {
         clearInterval(autoTimer);
         autoTimer = setInterval(() => {
+          if (!carouselVisible) return;
           goTo(current < slides.length - 1 ? current + 1 : 0);
         }, 5000);
       }
       track.addEventListener('mouseenter', () => clearInterval(autoTimer));
-      track.addEventListener('mouseleave', resetAuto);
+      track.addEventListener('mouseleave', () => { if (carouselVisible) resetAuto(); });
       resetAuto();
     })();
   </script>
