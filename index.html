@@ -176,45 +176,6 @@
     .feature-card p { font-size: 0.87rem; color: var(--warm-gray); line-height: 1.75; }
     .feature-compat-note { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terra); background: rgba(196,98,45,0.07); padding: 5px 12px; border: 1px solid rgba(196,98,45,0.15); }
 
-    /* ── WHO ── */
-    .who { background: var(--cream); }
-    .who-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 36px; margin-top: 60px; }
-    .who-card { border-top: 3px solid var(--terra); padding-top: 28px; }
-    .who-card h3 { font-family: var(--font-playfair); font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
-    .who-card p { font-size: 0.87rem; color: var(--warm-gray); line-height: 1.75; }
-
-    /* ── FAQ ── */
-    .faq { background: var(--mag-white); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-    .faq-list { margin-top: 60px; display: flex; flex-direction: column; gap: 2px; background: var(--rule); }
-    details.faq-item { background: var(--mag-white); overflow: hidden; display: block; }
-    details.faq-item summary { list-style: none; }
-    details.faq-item summary::-webkit-details-marker { display: none; }
-    .faq-question {
-      padding: 28px 36px; cursor: pointer;
-      display: flex; align-items: center; justify-content: space-between; gap: 20px;
-      transition: background 0.2s;
-    }
-    .faq-question:hover { background: rgba(196,98,45,0.03); }
-    .faq-question span { font-family: var(--font-playfair); font-size: 1.05rem; font-weight: 700; color: var(--ink); line-height: 1.35; }
-    .faq-icon { width: 24px; height: 24px; flex-shrink: 0; position: relative; border: 1.5px solid var(--rule); transition: border-color 0.2s; }
-    .faq-icon::before, .faq-icon::after { content: ''; position: absolute; background: var(--terra); transition: transform 0.25s, opacity 0.25s; }
-    .faq-icon::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-    .faq-icon::after  { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-    details[open] .faq-icon { border-color: var(--terra); }
-    details[open] .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
-    .faq-answer { padding: 4px 36px 28px; }
-    .faq-answer p { font-size: 0.9rem; color: var(--warm-gray); line-height: 1.8; margin-bottom: 10px; }
-    .faq-answer p:last-child { margin-bottom: 0; }
-    .faq-answer strong { color: var(--ink); font-weight: 600; }
-
-    /* ── CONVICTION ── */
-    .conviction { background: #0A1F28; padding: 100px 40px; text-align: center; }
-    .conviction-inner { max-width: 760px; margin: 0 auto; }
-    .conviction-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.45em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 28px; }
-    .conviction-statement { font-family: var(--font-playfair); font-size: clamp(1.6rem,3.5vw,2.6rem); font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: 16px; }
-    .conviction-statement em { color: var(--teal-light); font-style: italic; }
-    .conviction-sub { font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.72); line-height: 1.75; max-width: 520px; margin: 0 auto 48px; }
-    .conviction-rule { width: 32px; height: 2px; background: var(--terra); margin: 24px auto 48px; opacity: 0.4; }
 
     /* ── CONTACT ── */
     .contact { background: var(--cream); padding: 100px 40px; }
@@ -280,17 +241,13 @@
     @media (max-width: 960px) {
       .problem-grid, .demo-layout, .insights-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
       .features-grid, .steps { grid-template-columns: 1fr; }
-      .who-grid { grid-template-columns: 1fr; gap: 28px; }
       .stat-bar-inner { grid-template-columns: 1fr; }
       .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 28px 20px; }
       .stat-item:last-child { border-bottom: none; }
     }
     @media (max-width: 640px) {
-      section, .contact, .conviction { padding: 72px 20px; }
+      section, .contact { padding: 72px 20px; }
       .stat-bar, .midwest-badge { padding: 0 20px; }
-      .faq-question { padding: 22px 24px; }
-      .faq-answer { padding: 0 24px; }
-      .faq-item.open .faq-answer { padding: 0 24px 24px; }
       .btn-submit { align-self: stretch; text-align: center; }
       .hero { padding: 190px 20px 100px; }
     }
@@ -588,72 +545,7 @@
     </div>
   </section>
 
-  <!-- WHO IT'S FOR -->
-  <section class="who" id="who">
-    <div class="section-inner">
-      <div class="section-eyebrow">Who It's For</div>
-      <h2 class="section-title">Built for the people who<br /><em>market destinations</em></h2>
-      <div class="section-rule"></div>
-      <div class="who-grid fade-in">
-        <div class="who-card">
-          <h3>Convention &amp; Visitors Bureaus</h3>
-          <p>Transform your destination website from a digital brochure into an active planning tool. Give leisure travelers a compelling reason to stay longer and come back.</p>
-        </div>
-        <div class="who-card">
-          <h3>Tourism Boards &amp; DMOs</h3>
-          <p>Add enterprise-quality AI trip planning to your digital presence without a technology budget or internal development team. We handle everything, start to finish.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="section-inner">
-      <div class="section-eyebrow">Common Questions</div>
-      <h2 class="section-title">Everything you're<br /><em>probably wondering</em></h2>
-      <div class="section-rule"></div>
-      <div class="faq-list">
-
-        <details class="faq-item">
-          <summary class="faq-question"><span>Does Getaway work with our existing website and technology setup?</span><div class="faq-icon"></div></summary>
-          <div class="faq-answer">
-            <p>Yes, completely. Getaway lives at its own URL and doesn't touch your existing CMS or website infrastructure. Most organizations simply link to it from their existing site, from email campaigns, or from visitor guide QR codes.</p>
-            <p>It can also be embedded directly into an existing page via iframe, so visitors never have to leave your website. No integration work, no IT project required on your end.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-question"><span>Who owns the visitor data collected through the tool?</span><div class="faq-icon"></div></summary>
-          <div class="faq-answer">
-            <p><strong>You do.</strong> All visitor engagement data belongs to your organization. We don't sell it, share it, or use it for any purpose other than powering your deployment. We're happy to walk through our full data handling approach on the demo call.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-question"><span>What does it cost?</span><div class="faq-icon"></div></summary>
-          <div class="faq-answer">
-            <p>Less than a single digital billboard per month. We cover the specifics on the call, where we can answer questions about what's included for your destination. Flat monthly rate, no per-user fees, no usage caps.</p>
-          </div>
-        </details>
-
-      </div>
-      <p style="text-align:center;margin-top:36px;"><a href="/faq" style="color:var(--terra);font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;">See all frequently asked questions &rarr;</a></p>
-    </div>
-  </section>
-
-  <!-- CONVICTION STRIP -->
-  <div class="conviction">
-    <div class="conviction-inner fade-in">
-      <div class="conviction-eyebrow">The Bottom Line</div>
-      <h2 class="conviction-statement">
-        Your visitors are already planning<br />their trip somewhere. <em>Make sure<br />it's on your platform.</em>
-      </h2>
-      <div class="conviction-rule"></div>
-      <p class="conviction-sub">When travelers plan on TripAdvisor or ChatGPT, your destination loses the conversation. Getaway puts that conversation back on your website, with your branding, your recommendations, and your data.</p>
-      <a href="#contact" class="btn-primary">Schedule a Demo</a>
-    </div>
-  </div>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
