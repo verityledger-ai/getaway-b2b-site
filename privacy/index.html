@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Privacy Policy | Getaway.expert Partners</title>
+  <meta name="description" content="Privacy policy for Getaway Travel LLC. How we collect, use, share, and protect your personal information when you use the Getaway platform and its white-label deployments." />
+  <link rel="canonical" href="https://partners.getaway.expert/privacy" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://partners.getaway.expert/privacy" />
+  <meta property="og:title" content="Privacy Policy | Getaway" />
+  <meta property="og:description" content="How Getaway collects, uses, and protects visitor data." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Privacy Policy | Getaway" />
+  <meta name="twitter:description" content="How Getaway collects, uses, and protects visitor data." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80" />
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; frame-ancestors 'none';" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    /* ── HERO ── */
+    .privacy-hero {
+      background: #0A1F28; padding: 160px 24px 80px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1920&q=80') center / cover no-repeat;
+      opacity: 0.18;
+    }
+    .hero-grain {
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-top-rule { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--terra); }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .privacy-hero h1 {
+      font-family: var(--font-playfair); font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800; color: #fff; margin-bottom: 20px; line-height: 1.15;
+    }
+    .privacy-hero .hero-sub {
+      font-family: var(--font-baskerville); font-style: italic;
+      font-size: 1.05rem; color: rgba(255,255,255,0.7); line-height: 1.7;
+    }
+
+    /* ── CONTENT ── */
+    .privacy-content {
+      max-width: 720px; margin: 0 auto; padding: 48px 24px 80px;
+      font-size: 0.92rem; color: var(--ink); line-height: 1.8;
+    }
+    .privacy-content .effective {
+      font-size: 0.82rem; color: var(--warm-gray); margin-bottom: 40px;
+      letter-spacing: 0.02em;
+    }
+    .privacy-content h2 {
+      font-family: var(--font-playfair); font-size: 1.25rem; font-weight: 700;
+      color: var(--ink); margin-top: 48px; margin-bottom: 16px;
+    }
+    .privacy-content p { margin-bottom: 16px; color: var(--warm-gray); }
+    .privacy-content strong { color: var(--ink); }
+    .privacy-content a { color: var(--terra); text-decoration: underline; text-underline-offset: 2px; }
+    .privacy-content a:hover { color: var(--terra-light); }
+    .privacy-content table {
+      width: 100%; border-collapse: collapse; margin: 16px 0 24px;
+      font-size: 0.85rem;
+    }
+    .privacy-content th, .privacy-content td {
+      border: 1px solid var(--rule); padding: 10px 14px; text-align: left;
+    }
+    .privacy-content th {
+      background: var(--cream-dark); font-weight: 600; color: var(--ink);
+    }
+    .privacy-content td { color: var(--warm-gray); }
+    .privacy-contact {
+      background: var(--cream-dark); border: 1px solid var(--rule);
+      padding: 24px; margin-top: 48px;
+    }
+    .privacy-contact h2 { margin-top: 0; }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb { max-width: 720px; margin: 0 auto; padding: 28px 24px 0; }
+    .breadcrumb ol { list-style: none; display: flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; }
+    .breadcrumb a { color: var(--warm-gray); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--terra); }
+    .breadcrumb .sep { color: var(--rule); }
+    .breadcrumb .current { color: var(--ink); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .privacy-hero { padding: 140px 20px 60px; }
+      .privacy-content { padding: 36px 20px 60px; }
+      .breadcrumb { padding: 20px 20px 0; }
+      .privacy-content table { font-size: 0.78rem; }
+      .privacy-content th, .privacy-content td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="/" class="nav-logo">Get<em>away</em></a>
+    <ul class="nav-links">
+      <li><a href="/white-label-ai-itinerary-builder">Product</a></li>
+      <li><a href="/#how">How It Works</a></li>
+      <li><a href="/#demo">Live Demo</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/compare">Compare</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Schedule a Demo</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/white-label-ai-itinerary-builder" onclick="closeMobile()">Product</a>
+    <a href="/#how" onclick="closeMobile()">How It Works</a>
+    <a href="/#demo" onclick="closeMobile()">Live Demo</a>
+    <a href="/faq" onclick="closeMobile()">FAQ</a>
+    <a href="/compare" onclick="closeMobile()">Compare</a>
+    <a href="/blog" onclick="closeMobile()">Blog</a>
+    <a href="/#contact" class="mobile-cta" onclick="closeMobile()">Schedule a Demo &rarr;</a>
+  </div>
+
+  <main id="main">
+  <!-- HERO -->
+  <div class="privacy-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-top-rule"></div>
+    <div class="hero-content">
+      <h1>Privacy Policy</h1>
+      <p class="hero-sub">How we collect, use, and protect your data.</p>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li class="sep">/</li>
+      <li class="current">Privacy Policy</li>
+    </ol>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="privacy-content">
+
+    <p class="effective">Effective Date: March 30, 2026 &middot; Last Updated: March 30, 2026</p>
+
+    <p>Getaway Travel LLC (&ldquo;Getaway,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the Getaway.expert platform and its white-label deployments (collectively, the &ldquo;Service&rdquo;). This Privacy Policy explains how we collect, use, share, and protect your personal information when you use the Service.</p>
+
+    <h2>1. Information We Collect</h2>
+
+    <p><strong>Account Information.</strong> When you create an account, we collect your name, email address, and password (stored in hashed form). If you sign up through a third-party provider (e.g., Google), we receive your name and email from that provider.</p>
+
+    <p><strong>Trip and Preference Data.</strong> When you create an itinerary, we collect the information you provide: destination, travel dates, number of travelers, budget range, and interest preferences. This data is used to generate personalized recommendations.</p>
+
+    <p><strong>Usage Data.</strong> We automatically collect information about how you interact with the Service, including pages viewed, features used, session duration, clicks, device type, browser type, IP address, and referring URL.</p>
+
+    <p><strong>Cookies and Similar Technologies.</strong> We use strictly necessary cookies for authentication and session management. We use analytics cookies only with your consent. See Section 8 for details.</p>
+
+    <h2>2. How We Use Your Information</h2>
+
+    <p>We use your information to: provide and personalize the Service, including generating AI-powered travel itineraries; communicate with you about your account, trips, and service updates; improve and develop new features; ensure security and prevent fraud; comply with legal obligations; and, with your consent, send promotional communications.</p>
+
+    <h2>3. AI-Powered Recommendations</h2>
+
+    <p><strong>How it works.</strong> When you request a travel itinerary, your trip preferences (destination, dates, traveler count, budget, interests) are sent to Anthropic, PBC (&ldquo;Anthropic&rdquo;), the provider of the Claude AI model, via their API. Anthropic processes this data to generate your personalized recommendations.</p>
+
+    <p><strong>What Anthropic receives.</strong> Anthropic receives only the trip preference data you submit for that specific request. It does not receive your name, email address, or account credentials.</p>
+
+    <p><strong>Anthropic&rsquo;s data practices.</strong> Anthropic&rsquo;s API does not use customer inputs to train its models. For details on how Anthropic handles data, see <a href="https://www.anthropic.com/privacy">Anthropic&rsquo;s Privacy Policy</a>.</p>
+
+    <p><strong>Your choice.</strong> By using the itinerary generation feature, you consent to this processing. If you do not want your preferences processed by AI, you may browse the Service without generating an itinerary.</p>
+
+    <h2>4. How We Share Your Information</h2>
+
+    <p>We do not sell your personal information. We share your data only in the following circumstances:</p>
+
+    <p><strong>Service Providers.</strong> We share data with third-party providers who help us operate the Service:</p>
+
+    <table>
+      <tr><th>Provider</th><th>Purpose</th><th>Data Shared</th></tr>
+      <tr><td>Anthropic, PBC</td><td>AI itinerary generation</td><td>Trip preferences only</td></tr>
+      <tr><td>Railway</td><td>Cloud hosting and infrastructure</td><td>All Service data (encrypted at rest and in transit)</td></tr>
+      <tr><td>Unsplash</td><td>Destination imagery</td><td>Image search queries (destination names)</td></tr>
+    </table>
+
+    <p><strong>White-Label Partners.</strong> If you use a white-label deployment operated by a destination marketing organization (DMO) or tourism board, that partner is a separate data controller for the data collected through their deployment. Their use of your data is subject to their own privacy policy.</p>
+
+    <p><strong>Legal Requirements.</strong> We may disclose your information if required by law, subpoena, court order, or government request, or to protect the rights, safety, or property of Getaway, our users, or the public.</p>
+
+    <p><strong>Business Transfers.</strong> In the event of a merger, acquisition, or sale of assets, your data may be transferred as part of that transaction. We will notify you before your data becomes subject to a different privacy policy.</p>
+
+    <h2>5. Data Retention</h2>
+
+    <p>We retain your data for the following periods:</p>
+
+    <table>
+      <tr><th>Data Category</th><th>Retention Period</th></tr>
+      <tr><td>Account data (name, email, credentials)</td><td>While your account is active, plus 30 days after deletion request</td></tr>
+      <tr><td>Trip and itinerary data</td><td>While your account is active; deleted when account is deleted</td></tr>
+      <tr><td>Server and application logs</td><td>90 days, then automatically purged</td></tr>
+      <tr><td>Analytics and usage data</td><td>24 months, then anonymized</td></tr>
+      <tr><td>Payment and billing records</td><td>7 years (required by tax and accounting law)</td></tr>
+    </table>
+
+    <h2>6. Your Rights</h2>
+
+    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+
+    <p><strong>Access and Portability.</strong> You can request a copy of the personal data we hold about you in a machine-readable format.</p>
+
+    <p><strong>Correction.</strong> You can update your account information at any time through the Service. For other corrections, contact us.</p>
+
+    <p><strong>Deletion.</strong> You can delete your account through the account settings page. Upon deletion, we will remove your personal data within 30 days, except for data we are legally required to retain. Trip data and preferences are permanently deleted with your account.</p>
+
+    <p><strong>Objection and Restriction.</strong> You may object to or request restriction of certain processing activities. We will honor such requests unless we have a compelling legitimate interest.</p>
+
+    <p><strong>Withdraw Consent.</strong> Where processing is based on consent (e.g., analytics cookies, promotional emails), you may withdraw consent at any time without affecting the lawfulness of prior processing.</p>
+
+    <p>To exercise these rights, contact us at <a href="mailto:privacy@getaway.expert">privacy@getaway.expert</a>. We will respond within 30 days.</p>
+
+    <h2>7. Security</h2>
+
+    <p>We implement industry-standard security measures including: encrypted data transmission (TLS/HTTPS), hashed and salted password storage, rate limiting on authentication and API endpoints, role-based access controls, security headers (Content Security Policy, HSTS, X-Frame-Options), and regular security reviews. No system is 100% secure, and we cannot guarantee absolute security, but we are committed to protecting your data.</p>
+
+    <h2>8. Cookie Policy</h2>
+
+    <p><strong>Strictly Necessary Cookies.</strong> These cookies are required for the Service to function (authentication, session management). They cannot be disabled.</p>
+
+    <p><strong>Analytics Cookies.</strong> We use analytics cookies to understand how the Service is used and to improve it. These cookies are only set after you provide consent through our cookie banner. You can change your preference at any time through the cookie settings link in the footer.</p>
+
+    <p>We do not use advertising or third-party tracking cookies.</p>
+
+    <h2>9. International Data Transfers</h2>
+
+    <p>The Service is hosted in the United States. If you access the Service from outside the United States, your data will be transferred to and processed in the United States. We rely on Standard Contractual Clauses or other approved transfer mechanisms where required by applicable law.</p>
+
+    <h2>10. Children&rsquo;s Privacy</h2>
+
+    <p>The Service is not directed to children under the age of 16. We do not knowingly collect personal information from children. If we become aware that we have collected data from a child, we will delete it promptly. If you believe a child has provided us with personal data, please contact us.</p>
+
+    <h2>11. Changes to This Policy</h2>
+
+    <p>We may update this Privacy Policy from time to time. We will notify you of material changes by posting the updated policy on the Service with a new effective date. If the changes are significant, we will also notify you by email. Your continued use of the Service after the effective date constitutes acceptance of the updated policy.</p>
+
+    <h2>12. California Privacy Rights (CCPA/CPRA)</h2>
+
+    <p>If you are a California resident, you have the right to: know what personal information we collect, disclose, and sell (we do not sell personal information); request deletion of your personal information; opt out of the sale of personal information (not applicable &mdash; we do not sell data); and not be discriminated against for exercising your rights. To submit a request, email <a href="mailto:privacy@getaway.expert">privacy@getaway.expert</a> with the subject line &ldquo;California Privacy Request.&rdquo;</p>
+
+    <div class="privacy-contact">
+      <h2>13. Contact Us</h2>
+      <p>Getaway Travel LLC<br />
+      Email: <a href="mailto:privacy@getaway.expert">privacy@getaway.expert</a><br />
+      For data protection inquiries, include &ldquo;Privacy&rdquo; in your subject line.</p>
+    </div>
+
+  </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="/" class="logo">Get<em>away</em></a>
+    <span class="tagline">Trip planning built for the destinations that know their visitors best.</span>
+    <nav class="footer-nav">
+      <a href="mailto:partners@getaway.expert">partners@getaway.expert</a>
+      <a href="/privacy">Privacy Policy</a>
+    </nav>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobile() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+  </script>
+
+</body>
+</html>
