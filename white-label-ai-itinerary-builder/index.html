@@ -249,37 +249,88 @@
 
     .product-bottom { padding-bottom: 80px; }
 
-    /* Product Screenshots */
-    .screenshot-showcase {
-      margin: 40px 0 48px;
+    /* Product Carousel */
+    .product-carousel {
+      margin: 40px 0 48px; position: relative;
     }
-    .screenshot-hero {
+    .carousel-viewport {
       border: 1px solid var(--rule); border-radius: 6px; overflow: hidden;
-      box-shadow: 0 16px 48px rgba(0,0,0,0.08); margin-bottom: 40px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
     }
-    .screenshot-hero img {
+    .carousel-track {
+      display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+      scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    .carousel-slide {
+      flex: 0 0 100%; scroll-snap-align: start; position: relative;
+    }
+    .carousel-slide img {
       width: 100%; height: auto; display: block;
     }
-    .screenshot-row {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;
+    .carousel-slide-summary {
+      aspect-ratio: 1438 / 784; background: var(--ink); display: flex;
+      flex-direction: column; align-items: center; justify-content: center;
+      padding: 48px 40px; text-align: center;
     }
-    .screenshot-card {
-      border: 1px solid var(--rule); border-radius: 6px; overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    .carousel-slide-summary h3 {
+      font-family: var(--font-playfair); font-size: 1.4rem; font-weight: 700;
+      color: #fff; margin-bottom: 32px; line-height: 1.3;
     }
-    .screenshot-card img {
-      width: 100%; height: auto; display: block;
+    .summary-features {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px;
+      list-style: none; text-align: left; max-width: 480px;
     }
-    .screenshot-caption {
-      padding: 16px 20px; background: var(--mag-white);
+    .summary-features li {
+      font-size: 0.92rem; color: rgba(255,255,255,0.8); padding-left: 20px;
+      position: relative; line-height: 1.6;
     }
-    .screenshot-caption-label {
+    .summary-features li::before {
+      content: ''; position: absolute; left: 0; top: 9px;
+      width: 8px; height: 8px; border-radius: 50%; background: var(--teal-light);
+    }
+    .carousel-nav {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: calc(100% - 100px); display: flex;
+      align-items: center; justify-content: space-between;
+      padding: 0 8px; pointer-events: none;
+    }
+    .carousel-prev, .carousel-next {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.9); border: 1px solid var(--rule);
+      font-size: 1.2rem; color: var(--ink); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: auto; transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .carousel-prev:hover, .carousel-next:hover {
+      background: #fff; transform: scale(1.05);
+    }
+    .carousel-info {
+      padding: 20px 24px 16px; background: var(--mag-white);
+      border: 1px solid var(--rule); border-top: none;
+      border-radius: 0 0 6px 6px;
+    }
+    .carousel-step-label {
       font-size: 0.58rem; font-weight: 600; letter-spacing: 0.3em;
       text-transform: uppercase; color: var(--terra); margin-bottom: 4px;
     }
-    .screenshot-caption p {
-      font-size: 0.84rem; color: var(--warm-gray); line-height: 1.5;
+    .carousel-caption {
+      font-size: 0.9rem; color: var(--warm-gray); line-height: 1.6;
       margin-bottom: 0; max-width: none;
+    }
+    .carousel-dots {
+      display: flex; justify-content: center; gap: 8px;
+      margin-top: 16px;
+    }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--rule); border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.2s; padding: 0;
+    }
+    .carousel-dot.active {
+      background: var(--terra); transform: scale(1.25);
     }
 
     /* ── RESPONSIVE ── */
@@ -295,7 +346,11 @@
       .data-points { grid-template-columns: 1fr; }
       .deploy-options { grid-template-columns: 1fr; }
       .custom-grid { grid-template-columns: 1fr; }
-      .screenshot-row { grid-template-columns: 1fr; }
+      .carousel-prev, .carousel-next { width: 32px; height: 32px; font-size: 1rem; }
+      .carousel-info { padding: 16px 20px 12px; }
+      .summary-features { grid-template-columns: 1fr; gap: 12px; }
+      .carousel-slide-summary { padding: 32px 24px; }
+      .carousel-slide-summary h3 { font-size: 1.15rem; margin-bottom: 24px; }
     }
   </style>
 </head>
@@ -390,86 +445,66 @@
 
     <p>Every visitor follows the same simple path. No apps to download. No learning curve. Six quick questions, then a complete trip plan built around how they actually want to travel. Here's the real product, live in our Branson, MO deployment.</p>
 
-    <div class="screenshot-showcase">
-
-      <div class="screenshot-hero">
-        <img src="/images/product/homepage.jpg" srcset="/images/product/sm/homepage.jpg 720w, /images/product/homepage.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Getaway white-label AI trip planner homepage branded for Branson, Missouri with Plan My Trip call to action" width="1438" height="784" loading="lazy" />
-      </div>
-      <p>The visitor lands on a fully branded experience. Destination name, hero photography, and messaging that feels like a natural extension of the DMO's website.</p>
-
-      <div class="section-label">Six Questions, Under 60 Seconds</div>
-
-      <div class="screenshot-row">
-        <div class="screenshot-card">
-          <img src="/images/product/question-duration.jpg" srcset="/images/product/sm/question-duration.jpg 720w, /images/product/question-duration.jpg 1440w" sizes="(max-width: 768px) 100vw, 540px" alt="Trip duration question asking how long the visitor will stay, with options from Weekend to Two Weeks" width="1431" height="819" loading="lazy" />
-          <div class="screenshot-caption">
-            <div class="screenshot-caption-label">Question 1</div>
-            <p>How long is the trip? Options from a weekend to two weeks.</p>
+    <div class="product-carousel" id="productCarousel">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide" data-label="The Branded Experience" data-step="1 of 11" data-caption="The visitor lands on a fully branded experience matching your destination's identity.">
+            <img src="/images/product/homepage.jpg" srcset="/images/product/sm/homepage.jpg 720w, /images/product/homepage.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Getaway white-label AI trip planner homepage branded for Branson, Missouri" width="1438" height="784" loading="lazy" />
           </div>
-        </div>
-        <div class="screenshot-card">
-          <img src="/images/product/question-timing.jpg" srcset="/images/product/sm/question-timing.jpg 720w, /images/product/question-timing.jpg 1440w" sizes="(max-width: 768px) 100vw, 540px" alt="Travel timing question showing a 12-month calendar grid with seasonal labels and emoji icons" width="1438" height="784" loading="lazy" />
-          <div class="screenshot-caption">
-            <div class="screenshot-caption-label">Question 2</div>
-            <p>When are they visiting? Seasonal context shapes every recommendation.</p>
+          <div class="carousel-slide" data-label="Six Questions, Under 60 Seconds" data-step="2 of 11" data-caption="How long is the trip? Options from a weekend to two weeks.">
+            <img src="/images/product/question-duration.jpg" srcset="/images/product/sm/question-duration.jpg 720w, /images/product/question-duration.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Trip duration question with options from Weekend to Two Weeks" width="1431" height="819" loading="lazy" />
           </div>
-        </div>
-      </div>
-
-      <div class="screenshot-row">
-        <div class="screenshot-card">
-          <img src="/images/product/question-group.jpg" srcset="/images/product/sm/question-group.jpg 720w, /images/product/question-group.jpg 1440w" sizes="(max-width: 768px) 100vw, 540px" alt="Travel group question asking who is joining, with Solo, Couple, Family, and Friends options and age selectors for children" width="1438" height="784" loading="lazy" />
-          <div class="screenshot-caption">
-            <div class="screenshot-caption-label">Question 3</div>
-            <p>Who's traveling? Solo, couple, family (with children's ages), or friends.</p>
+          <div class="carousel-slide" data-label="Six Questions, Under 60 Seconds" data-step="3 of 11" data-caption="When are they visiting? Seasonal context shapes every recommendation.">
+            <img src="/images/product/question-timing.jpg" srcset="/images/product/sm/question-timing.jpg 720w, /images/product/question-timing.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Travel timing question with 12-month calendar grid" width="1438" height="784" loading="lazy" />
           </div>
-        </div>
-        <div class="screenshot-card">
-          <img src="/images/product/question-vibe.jpg" srcset="/images/product/sm/question-vibe.jpg 720w, /images/product/question-vibe.jpg 1440w" sizes="(max-width: 768px) 100vw, 540px" alt="Interest selection question with four category cards: Shows and entertainment, Lake and outdoors, Family attractions, and Food and leisure" width="1438" height="784" loading="lazy" />
-          <div class="screenshot-caption">
-            <div class="screenshot-caption-label">Question 4</div>
-            <p>What's their vibe? Interest categories tailored to the destination.</p>
+          <div class="carousel-slide" data-label="Six Questions, Under 60 Seconds" data-step="4 of 11" data-caption="Who's traveling? Solo, couple, family, or friends.">
+            <img src="/images/product/question-group.jpg" srcset="/images/product/sm/question-group.jpg 720w, /images/product/question-group.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Travel group question with Solo, Couple, Family, and Friends options" width="1438" height="784" loading="lazy" />
           </div>
-        </div>
-      </div>
-
-      <div class="screenshot-row">
-        <div class="screenshot-card">
-          <img src="/images/product/question-budget.jpg" srcset="/images/product/sm/question-budget.jpg 720w, /images/product/question-budget.jpg 1440w" sizes="(max-width: 768px) 100vw, 540px" alt="Budget range question with four options from Budget-friendly to No limit" width="1431" height="819" loading="lazy" />
-          <div class="screenshot-caption">
-            <div class="screenshot-caption-label">Question 5</div>
-            <p>Budget range. Hotels, dining, and activities scale accordingly.</p>
+          <div class="carousel-slide" data-label="Six Questions, Under 60 Seconds" data-step="5 of 11" data-caption="What's their vibe? Interest categories tailored to your destination.">
+            <img src="/images/product/question-vibe.jpg" srcset="/images/product/sm/question-vibe.jpg 720w, /images/product/question-vibe.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Interest selection with four category cards" width="1438" height="784" loading="lazy" />
           </div>
-        </div>
-        <div class="screenshot-card">
-          <img src="/images/product/question-details.jpg" srcset="/images/product/sm/question-details.jpg 720w, /images/product/question-details.jpg 1440w" sizes="(max-width: 768px) 100vw, 540px" alt="Free-text field for must-haves and hard no's, showing example: ideal spots for traveling with small children, gluten free, one date night" width="1431" height="819" loading="lazy" />
-          <div class="screenshot-caption">
-            <div class="screenshot-caption-label">Question 6</div>
-            <p>Any must-haves or hard no's. Dietary needs, accessibility, specific requests.</p>
+          <div class="carousel-slide" data-label="Six Questions, Under 60 Seconds" data-step="6 of 11" data-caption="Budget range. Hotels, dining, and activities scale accordingly.">
+            <img src="/images/product/question-budget.jpg" srcset="/images/product/sm/question-budget.jpg 720w, /images/product/question-budget.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Budget range question with four options" width="1431" height="819" loading="lazy" />
+          </div>
+          <div class="carousel-slide" data-label="Six Questions, Under 60 Seconds" data-step="7 of 11" data-caption="Must-haves or hard no's. Dietary needs, accessibility, specific requests.">
+            <img src="/images/product/question-details.jpg" srcset="/images/product/sm/question-details.jpg 720w, /images/product/question-details.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Free-text field for must-haves and special requests" width="1431" height="819" loading="lazy" />
+          </div>
+          <div class="carousel-slide" data-label="The Generated Itinerary" data-step="8 of 11" data-caption="The complete trip plan with tabs for stays, dining, weather, and more.">
+            <img src="/images/product/itinerary-hero.jpg" srcset="/images/product/sm/itinerary-hero.jpg 720w, /images/product/itinerary-hero.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Magazine-style itinerary hero for Branson Missouri" width="1438" height="784" loading="lazy" />
+          </div>
+          <div class="carousel-slide" data-label="The Generated Itinerary" data-step="9 of 11" data-caption="Morning, afternoon, evening — structured around the visitor's rhythm.">
+            <img src="/images/product/itinerary-days.jpg" srcset="/images/product/sm/itinerary-days.jpg 720w, /images/product/itinerary-days.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Day-by-day itinerary with morning, afternoon, and evening activities" width="1438" height="784" loading="lazy" />
+          </div>
+          <div class="carousel-slide" data-label="The Generated Itinerary" data-step="10 of 11" data-caption="Hotels curated by budget tier, not listed from a booking engine.">
+            <img src="/images/product/itinerary-stays.jpg" srcset="/images/product/sm/itinerary-stays.jpg 720w, /images/product/itinerary-stays.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Curated Accommodations across budget, mid-range, and splurge tiers" width="1438" height="784" loading="lazy" />
+          </div>
+          <div class="carousel-slide" data-label="The Generated Itinerary" data-step="11 of 11" data-caption="Every itinerary includes tools visitors actually use — beyond the day-by-day plan.">
+            <div class="carousel-slide-summary">
+              <h3>Every Itinerary Also Includes</h3>
+              <ul class="summary-features">
+                <li>Packing List</li>
+                <li>Weather Forecast</li>
+                <li>Top Picks</li>
+                <li>Budget Breakdown</li>
+                <li>Share & Export (email, text, PDF)</li>
+                <li>Invite Travel Companions</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-
-      <p>Each question captures first-party visitor data your organization has never had access to before: where they're from, when they're coming, who they're with, what they care about, and how much they want to spend. Every answer is data you own.</p>
-
-      <div class="section-label">The Generated Itinerary</div>
-
-      <div class="screenshot-hero">
-        <img src="/images/product/itinerary-hero.jpg" srcset="/images/product/sm/itinerary-hero.jpg 720w, /images/product/itinerary-hero.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Magazine-style itinerary hero for Branson Missouri showing trip details: 3 days, Family, Shows and entertainment with Lake and outdoors, Mid-range budget, and navigation tabs for Itinerary, Stays, Eat and Do, Budget, Weather, Packing, and Top Picks" width="1438" height="784" loading="lazy" />
+      <div class="carousel-nav">
+        <button class="carousel-prev" id="carouselPrev" aria-label="Previous slide">&lsaquo;</button>
+        <button class="carousel-next" id="carouselNext" aria-label="Next slide">&rsaquo;</button>
       </div>
-      <p>The itinerary opens with a magazine-style hero showing the trip summary: destination, duration, group type, interests, and budget. Tabbed navigation lets visitors explore their itinerary, curated accommodations, restaurants, weather, packing lists, and top picks. They can share, save, invite travel companions, email, text, or export as PDF.</p>
-
-      <div class="screenshot-hero">
-        <img src="/images/product/itinerary-days.jpg" srcset="/images/product/sm/itinerary-days.jpg 720w, /images/product/itinerary-days.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Day-by-day itinerary showing three columns for Day 1, Day 2, and Day 3, each with morning, afternoon, and evening activities including Silver Dollar City, Table Rock Lake State Park, Branson Landing, Showboat Branson Belle, and Dolly Parton's Stampede with ratings, hours, and distances" width="1438" height="784" loading="lazy" />
+      <div class="carousel-info">
+        <div class="carousel-step-label" id="carouselLabel">The Branded Experience &mdash; 1 of 11</div>
+        <p class="carousel-caption" id="carouselCaption">The visitor lands on a fully branded experience matching your destination's identity.</p>
+        <div class="carousel-dots" id="carouselDots"></div>
       </div>
-      <p>Every day is structured around the visitor's rhythm: morning activities, afternoon experiences, evening plans. Each recommendation includes ratings, hours, distance from downtown, and a description written from local knowledge. Visitors can swap any recommendation with one tap.</p>
-
-      <div class="screenshot-hero">
-        <img src="/images/product/itinerary-stays.jpg" srcset="/images/product/sm/itinerary-stays.jpg 720w, /images/product/itinerary-stays.jpg 1440w" sizes="(max-width: 768px) 100vw, 720px" alt="Curated Accommodations section showing three hotel recommendations across budget, mid-range, and splurge tiers: Comfort Inn and Suites, Hilton Branson Convention Center, and Big Cedar Lodge" width="1438" height="784" loading="lazy" />
-      </div>
-      <p>Accommodations are curated across price tiers, not listed alphabetically from a booking engine. The AI recommends hotels that match the visitor's budget, group size, and proximity to their planned activities.</p>
-
     </div>
+
+    <p>Each question captures first-party visitor data your organization has never had access to before: where they're from, when they're coming, who they're with, what they care about, and how much they want to spend. Every answer is data you own.</p>
 
     <div class="pullquote">
       <p>The average visitor spends 10-15 minutes interacting with the AI trip planner. Compare that to 25-40 seconds on a static "things to do" page. That's not a small improvement. That's a fundamentally different relationship with your visitor.</p>
@@ -586,6 +621,68 @@
       hamburger.classList.remove('open');
       mobileMenu.classList.remove('open');
     }
+
+    // Carousel
+    (function() {
+      const track = document.getElementById('carouselTrack');
+      const slides = track.querySelectorAll('.carousel-slide');
+      const label = document.getElementById('carouselLabel');
+      const caption = document.getElementById('carouselCaption');
+      const dotsWrap = document.getElementById('carouselDots');
+      const prev = document.getElementById('carouselPrev');
+      const next = document.getElementById('carouselNext');
+      let current = 0;
+      let autoTimer;
+
+      // Build dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+      });
+
+      function updateInfo(i) {
+        const s = slides[i];
+        label.innerHTML = s.dataset.label + ' &mdash; ' + s.dataset.step;
+        caption.textContent = s.dataset.caption;
+        dotsWrap.querySelectorAll('.carousel-dot').forEach((d, j) => {
+          d.classList.toggle('active', j === i);
+        });
+        current = i;
+      }
+
+      function goTo(i) {
+        slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        updateInfo(i);
+        resetAuto();
+      }
+
+      prev.addEventListener('click', () => goTo(current > 0 ? current - 1 : slides.length - 1));
+      next.addEventListener('click', () => goTo(current < slides.length - 1 ? current + 1 : 0));
+
+      // Detect scroll-snap settle
+      let scrollTimeout;
+      track.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          const idx = Math.round(track.scrollLeft / track.offsetWidth);
+          if (idx !== current && idx >= 0 && idx < slides.length) updateInfo(idx);
+        }, 80);
+      });
+
+      // Auto-advance
+      function resetAuto() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => {
+          goTo(current < slides.length - 1 ? current + 1 : 0);
+        }, 5000);
+      }
+      track.addEventListener('mouseenter', () => clearInterval(autoTimer));
+      track.addEventListener('mouseleave', resetAuto);
+      resetAuto();
+    })();
   </script>
 
 </body>
