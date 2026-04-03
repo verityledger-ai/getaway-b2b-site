@@ -52,6 +52,8 @@
   }
   </script>
 
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; frame-ancestors 'none';" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
@@ -78,6 +80,12 @@
 
     html { scroll-behavior: smooth; }
     body { background: var(--cream); color: var(--ink); font-family: var(--font-jost); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+
+    /* ── ACCESSIBILITY ── */
+    .skip-link { position: absolute; top: -100%; left: 16px; background: var(--terra); color: #fff; padding: 12px 24px; font-size: 0.85rem; font-weight: 600; z-index: 999; text-decoration: none; border-radius: 0 0 4px 4px; }
+    .skip-link:focus { top: 0; }
+    *:focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
 
     /* ── NAV ── */
     nav.site-nav {
@@ -232,6 +240,7 @@
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- NAV -->
   <nav class="site-nav">
@@ -261,6 +270,7 @@
     <a href="/#contact" class="mobile-cta" onclick="closeMobile()">Schedule a Demo &rarr;</a>
   </div>
 
+  <main id="main">
   <!-- POST HERO -->
   <section class="post-hero">
     <div class="hero-bg"></div>
@@ -375,12 +385,15 @@
 
     <!-- CTA -->
     <div class="article-cta">
-      <h3>See it in action</h3>
-      <p>Explore the live Branson, MO demo &mdash; a fully functional AI trip planner built for a real Midwest destination.</p>
-      <a href="https://bransonmoprototype.up.railway.app" target="_blank" rel="noopener" class="btn-primary">Explore the Branson Demo &rarr;</a>
+      <h3>Ready to bring AI trip planning to your destination?</h3>
+      <p>We'll build a demo for your city and walk through the product live. No commitment, no IT project required.</p>
+      <a href="/#contact" class="btn-primary">Schedule a Demo &rarr;</a>
+      <p style="margin-top:16px;font-size:0.85rem;color:var(--warm-gray);">Or <a href="https://bransonmoprototype.up.railway.app" target="_blank" rel="noopener noreferrer" style="color:var(--terra);">explore the live Branson demo</a> to see it in action.</p>
     </div>
 
   </div>
+
+  </main>
 
   <!-- FOOTER -->
   <footer>

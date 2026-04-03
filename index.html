@@ -39,6 +39,8 @@
   }
   </script>
 
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src https://formspree.io; frame-ancestors 'none';" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
@@ -65,6 +67,12 @@
 
     html { scroll-behavior: smooth; }
     body { background: var(--cream); color: var(--ink); font-family: var(--font-jost); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+
+    /* ── ACCESSIBILITY ── */
+    .skip-link { position: absolute; top: -100%; left: 16px; background: var(--terra); color: #fff; padding: 12px 24px; font-size: 0.85rem; font-weight: 600; z-index: 999; text-decoration: none; border-radius: 0 0 4px 4px; }
+    .skip-link:focus { top: 0; }
+    *:focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
 
     /* ── NAV ── */
     nav.site-nav {
@@ -112,8 +120,8 @@
     .hero-cta-group { display: flex; flex-direction: column; align-items: center; gap: 16px; }
     .btn-primary { padding: 20px 48px; background: var(--terra); color: #fff; font-family: var(--font-jost); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 6px 32px rgba(196,98,45,0.45); }
     .btn-primary:hover { background: var(--terra-light); transform: translateY(-2px); box-shadow: 0 10px 40px rgba(196,98,45,0.5); }
-    .hero-trial-note { font-size: 0.7rem; color: rgba(255,255,255,0.28); letter-spacing: 0.06em; }
-    .hero-trial-note strong { color: rgba(255,255,255,0.52); }
+    .hero-trial-note { font-size: 0.7rem; color: rgba(255,255,255,0.55); letter-spacing: 0.06em; }
+    .hero-trial-note strong { color: rgba(255,255,255,0.72); }
     @keyframes scrollPulse { 0%,100% { opacity:0.2; transform:scaleY(0.7); } 50% { opacity:1; transform:scaleY(1); } }
 
     /* ── STAT BAR ── */
@@ -363,10 +371,11 @@
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- NAV -->
   <nav class="site-nav">
-    <a href="#" class="nav-logo">Get<em>away</em></a>
+    <a href="/" class="nav-logo">Get<em>away</em></a>
     <ul class="nav-links">
       <li><a href="/white-label-ai-itinerary-builder">Product</a></li>
       <li><a href="#how">How It Works</a></li>
@@ -393,6 +402,7 @@
   </div>
 
   <!-- HERO -->
+  <main id="main">
   <section class="hero">
     <div class="hero-bg"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1800&q=75" alt="Travelers exploring a scenic mountain lake destination at sunrise" width="1800" height="1200" loading="eager" /></div>
     <div class="hero-grain"></div>
@@ -517,7 +527,7 @@
             <span class="demo-tag">✓ Locally Trained</span>
             <span class="demo-tag">✓ Live Generation</span>
           </div>
-          <a href="https://bransonmoprototype.up.railway.app" target="_blank" rel="noopener" class="btn-primary">Explore the Branson Experience &rarr;</a>
+          <a href="https://bransonmoprototype.up.railway.app" target="_blank" rel="noopener noreferrer" class="btn-primary">Explore the Branson Experience &rarr;</a>
         </div>
         <div class="demo-window">
           <div class="demo-window-bar">
@@ -692,10 +702,9 @@
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question"><span>What does the demo process actually look like?</span><div class="faq-icon"></div></summary>
+          <summary class="faq-question"><span>Who owns the visitor data collected through the tool?</span><div class="faq-icon"></div></summary>
           <div class="faq-answer">
-            <p>It starts with a conversation. We want to understand your destination, your visitors, and what you're trying to accomplish before we build anything. From there, we put together a deployment built specifically for your city and walk through it together on a follow-up call.</p>
-            <p>You give us direction on what's working and what needs adjustment. We refine it. Nothing goes to your visitors until you're confident it accurately represents your destination.</p>
+            <p><strong>You do.</strong> All visitor engagement data belongs to your organization. We don't sell it, share it, or use it for any purpose other than powering your deployment. We're happy to walk through our full data handling approach on the demo call.</p>
           </div>
         </details>
 
@@ -706,29 +715,8 @@
           </div>
         </details>
 
-        <details class="faq-item">
-          <summary class="faq-question"><span>Who owns the visitor data collected through the tool?</span><div class="faq-icon"></div></summary>
-          <div class="faq-answer">
-            <p><strong>You do.</strong> All visitor engagement data belongs to your organization. We don't sell it, share it, or use it for any purpose other than powering your deployment. We're happy to walk through our full data handling approach on the demo call.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-question"><span>What if the AI recommends something inaccurate about our destination?</span><div class="faq-icon"></div></summary>
-          <div class="faq-answer">
-            <p>Accuracy is built into every deployment. The system is trained with guardrails that prevent inventing venue details, fabricating menu items, or citing unverified claims. It recommends by category and reputation rather than specific details it can't verify.</p>
-            <p>We also stay current as your destination evolves. If something changes, we update the deployment to reflect it.</p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-question"><span>How long does it take to get a demo built for our city?</span><div class="faq-icon"></div></summary>
-          <div class="faq-answer">
-            <p>After an initial conversation, we typically have a fully functional deployment ready within <strong>5 business days</strong>. From there, the path from approved demo to live product is under two weeks.</p>
-          </div>
-        </details>
-
       </div>
+      <p style="text-align:center;margin-top:36px;"><a href="/faq" style="color:var(--terra);font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;">See all frequently asked questions &rarr;</a></p>
     </div>
   </section>
 
@@ -779,7 +767,7 @@
         </div>
 
         <div class="contact-trial-note">
-          <p><strong>Build slots fill quickly.</strong> We work with a limited number of new destinations at a time to maintain quality. If you're ready to move, now is the right time to start the conversation.</p>
+          <p>We onboard one new destination at a time to ensure quality. Tell us about yours and we'll take it from there.</p>
         </div>
       </div>
 
@@ -792,21 +780,23 @@
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvwvlqb" method="POST">
           <input type="hidden" name="_subject" value="New Inquiry — Getaway B2B" />
 
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
           <div class="form-field">
-            <label>Your Name</label>
-            <input type="text" name="name" placeholder="Jane Smith" required />
+            <label for="field-name">Your Name</label>
+            <input type="text" name="name" id="field-name" placeholder="Jane Smith" required />
           </div>
           <div class="form-field">
-            <label>Work Email</label>
-            <input type="email" name="email" placeholder="you@visitcity.org" required />
+            <label for="field-email">Work Email</label>
+            <input type="email" name="email" id="field-email" placeholder="you@visitcity.org" required />
           </div>
           <div class="form-field">
-            <label>Destination / City</label>
-            <input type="text" name="destination" placeholder="Traverse City, MI" required />
+            <label for="field-destination">Destination / City</label>
+            <input type="text" name="destination" id="field-destination" placeholder="Traverse City, MI" required />
           </div>
           <div class="form-field">
-            <label>Anything else? <span class="form-optional">optional</span></label>
-            <textarea name="message" placeholder="Tell us about your destination, your current website, or what you're hoping to accomplish..."></textarea>
+            <label for="field-message">Anything else? <span class="form-optional">optional</span></label>
+            <textarea name="message" id="field-message" placeholder="Tell us about your destination, your current website, or what you're hoping to accomplish..."></textarea>
           </div>
 
           <button type="submit" class="btn-submit">Schedule a Demo &rarr;</button>
@@ -843,10 +833,11 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
-    <a href="#" class="logo">Get<em>away</em></a>
+    <a href="/" class="logo">Get<em>away</em></a>
     <span class="tagline">Trip planning built for the destinations that know their visitors best.</span>
     <nav class="footer-nav">
       <a href="mailto:partners@getaway.expert">partners@getaway.expert</a>

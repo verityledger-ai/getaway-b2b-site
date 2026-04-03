@@ -41,6 +41,8 @@
   }
   </script>
 
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; frame-ancestors 'none';" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
@@ -67,6 +69,12 @@
 
     html { scroll-behavior: smooth; }
     body { background: var(--cream); color: var(--ink); font-family: var(--font-jost); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+
+    /* ── ACCESSIBILITY ── */
+    .skip-link { position: absolute; top: -100%; left: 16px; background: var(--terra); color: #fff; padding: 12px 24px; font-size: 0.85rem; font-weight: 600; z-index: 999; text-decoration: none; border-radius: 0 0 4px 4px; }
+    .skip-link:focus { top: 0; }
+    *:focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
 
     /* ── NAV ── */
     nav.site-nav {
@@ -293,6 +301,7 @@
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- NAV -->
   <nav class="site-nav">
@@ -323,6 +332,7 @@
   </div>
 
   <!-- HERO -->
+  <main id="main">
   <div class="compare-hero">
     <div class="hero-bg"></div>
     <div class="hero-grain"></div>
@@ -500,7 +510,7 @@
     <div class="compare-cta">
       <h3>See it for yourself.</h3>
       <p>Our live Branson, MO deployment is fully functional. Plan a trip, see the experience, and decide if this is the right approach for your destination.</p>
-      <a href="https://bransonmoprototype.up.railway.app" target="_blank" rel="noopener" class="btn-primary">Try the Live Demo &rarr;</a>
+      <a href="https://bransonmoprototype.up.railway.app" target="_blank" rel="noopener noreferrer" class="btn-primary">Try the Live Demo &rarr;</a>
       <div class="compare-cta-links">
         <a href="/#contact">Schedule a demo call</a>
         <a href="/faq">Read the FAQ</a>
@@ -510,6 +520,8 @@
     <div class="compare-bottom"></div>
 
   </div>
+
+  </main>
 
   <!-- FOOTER -->
   <footer>
