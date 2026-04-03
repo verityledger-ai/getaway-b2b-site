@@ -73,9 +73,21 @@
 
     /* ── BLOG HERO ── */
     .blog-hero {
-      background: var(--ink); padding: 160px 24px 80px; text-align: center;
-      border-bottom: 5px solid var(--terra);
+      background: #0A1F28; padding: 160px 24px 80px; text-align: center;
+      position: relative; overflow: hidden;
     }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1920&q=80') center / cover no-repeat;
+      opacity: 0.18;
+    }
+    .hero-grain {
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-top-rule { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--terra); }
+    .hero-content { position: relative; z-index: 1; }
     .blog-hero h1 {
       font-family: var(--font-playfair); font-size: clamp(2.2rem, 4vw, 3.4rem);
       font-weight: 800; color: #fff; margin-bottom: 16px;
@@ -164,8 +176,13 @@
 
   <!-- HERO -->
   <div class="blog-hero">
-    <h1>Blog</h1>
-    <p>Insights on AI trip planning for destination marketing organizations</p>
+    <div class="hero-bg"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-top-rule"></div>
+    <div class="hero-content">
+      <h1>Blog</h1>
+      <p>The case for smarter visitor experiences.</p>
+    </div>
   </div>
 
   <!-- BLOG LISTING -->
