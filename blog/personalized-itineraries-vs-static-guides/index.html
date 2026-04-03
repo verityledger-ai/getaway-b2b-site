@@ -40,6 +40,18 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://partners.getaway.expert/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://partners.getaway.expert/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Personalized Itineraries vs. Static Travel Guides" }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
@@ -287,10 +299,16 @@
     </div>
   </section>
 
-  <!-- BACK TO BLOG -->
-  <div style="max-width:720px;margin:0 auto;padding:28px 24px 0;">
-    <a href="/blog" style="font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);text-decoration:none;">&larr; Back to Blog</a>
-  </div>
+  <!-- BREADCRUMB -->
+  <nav aria-label="Breadcrumb" style="max-width:720px;margin:0 auto;padding:28px 24px 0;">
+    <ol style="list-style:none;display:flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;">
+      <li><a href="/" style="color:var(--warm-gray);text-decoration:none;">Home</a></li>
+      <li style="color:var(--rule);">/</li>
+      <li><a href="/blog" style="color:var(--warm-gray);text-decoration:none;">Blog</a></li>
+      <li style="color:var(--rule);">/</li>
+      <li style="color:var(--terra);">Personalized Itineraries vs. Static Guides</li>
+    </ol>
+  </nav>
 
   <!-- ARTICLE BODY -->
   <div class="article-body">
