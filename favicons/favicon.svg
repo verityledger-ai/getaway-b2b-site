@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Getaway Icon Mark — Ink</title>
+  <!-- Ink circle background -->
+  <circle cx="256" cy="256" r="256" fill="#0F2B35"/>
+  <!-- Subtle inner ring -->
+  <circle cx="256" cy="256" r="236" fill="none" stroke="#C4622D" stroke-width="2" opacity="0.35"/>
+  <!-- G monogram: Playfair Display-inspired geometry -->
+  <g transform="translate(256 268)">
+    <!-- Main G shape, drawn as path so it is type-independent -->
+    <path d="
+      M 0 -128
+      A 128 128 0 1 0 0 128
+      A 128 128 0 0 0 120 52
+      L 120 -6
+      L 14 -6
+      L 14 38
+      L 72 38
+      A 80 80 0 1 1 72 -80
+      A 80 80 0 0 1 120 -52
+      L 120 -96
+      A 128 128 0 0 0 0 -128
+      Z"
+      fill="#F8F7F4"/>
+    <!-- Terra italic serif accent tick beneath the G (echoes the italic 'away') -->
+    <path d="M -60 96 Q 0 114 80 96" stroke="#C4622D" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
